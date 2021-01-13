@@ -1,10 +1,10 @@
 package update
 
 type Config struct {
-	ConnectionCheckUrl  string                     `json:"connectionCheckUrl"`
+	ConnectionCheckURL  string                     `json:"connectionCheckUrl"`
 	Core                ConfigInfo                 `json:"core"`
 	Deprecations        map[string]DeprecationInfo `json:"deprecations"`
-	Id                  string                     `json:"id"`
+	ID                  string                     `json:"id"`
 	Plugins             map[string]PluginInfo      `json:"plugins"`
 	UpdateCenterVersion string                     `json:"updateCenterVersion"`
 }
@@ -14,12 +14,12 @@ type ConfigInfo struct {
 	Name      string `json:"core"`
 	Sha1      string `json:"sha1"`
 	Sha256    string `json:"sha256"`
-	Url       string `json:"url"`
+	URL       string `json:"url"`
 	Version   string `json:"version"`
 }
 
 type DeprecationInfo struct {
-	Url string `json:"url"`
+	URL string `json:"url"`
 }
 
 type PluginInfo struct {
@@ -27,18 +27,18 @@ type PluginInfo struct {
 	Name         string       `json:"name"`
 	Sha1         string       `json:"sha1"`
 	Sha256       string       `json:"sha256"`
-	Url          string       `json:"url"`
+	URL          string       `json:"url"`
 	Version      string       `json:"version"`
 	RequiredCore string       `json:"requiredCore"`
 	Dependencies []Dependency `json:"dependencies"`
 }
 
 type WarningInfo struct {
-	Id       string        `json:"id"`
+	ID       string        `json:"id"`
 	Message  string        `json:"message"`
 	Name     string        `json:"name"`
 	Type     string        `json:"type"`
-	Url      string        `json:"url"`
+	URL      string        `json:"url"`
 	Versions []VersionInfo `json:"versions"`
 }
 

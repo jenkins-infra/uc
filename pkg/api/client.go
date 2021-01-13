@@ -85,12 +85,12 @@ type Client struct {
 
 // REST performs a REST request and parses the response.
 func (c Client) GET(version string, data interface{}) error {
-	requestUrl := url
+	requestURL := url
 	if version != "" {
-		requestUrl += "?version=" + version
+		requestURL += "?version=" + version
 	}
-	logrus.Infof("checking url: %s", requestUrl)
-	req, err := http.NewRequest(http.MethodGet, requestUrl, nil)
+	logrus.Infof("checking url: %s", requestURL)
+	req, err := http.NewRequest(http.MethodGet, requestURL, nil)
 	if err != nil {
 		return err
 	}
