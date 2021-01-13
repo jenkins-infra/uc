@@ -299,7 +299,6 @@ func TestCanParseUpdateCentre_CompleteList_WithVersion(t *testing.T) {
 	t.Logf(strings.Join(depsAsStrings, "\n    - "))
 }
 
-
 func TestCanParseUpdateCentre_CompleteListWithVersions(t *testing.T) {
 	u := update.Updater{}
 

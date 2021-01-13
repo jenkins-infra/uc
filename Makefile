@@ -1,6 +1,6 @@
 SHELL := /bin/bash
-NAME := updatecenter
-BINARY_NAME := updatecenter
+NAME := uc
+BINARY_NAME := uc
 GO := GO111MODULE=on GO15VENDOREXPERIMENT=1 go
 GO_NOMOD := GO111MODULE=off go
 PACKAGE_NAME := github.com/garethjevans/updatecenter

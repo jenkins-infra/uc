@@ -43,14 +43,13 @@ func FromStrings(input []string) ([]DepInfo, error) {
 	return deps, nil
 }
 
-func AsStrings(deps []DepInfo) []string{
+func AsStrings(deps []DepInfo) []string {
 	out := []string{}
 	for _, d := range deps {
 		out = append(out, d.String())
 	}
 	return out
 }
-
 
 type Updater struct {
 	config              *Config
@@ -107,10 +106,7 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 			if !Contains(deps, p.Name) {
 				deps = append(deps, DepInfo{Name: p.Name, Version: p.Version})
 			} else {
-				err := setVersionIfNewer(deps, p.Name, p.Version)
-				if err != nil {
-					return nil, err
-				}
+				setVersionIfNewer(deps, p.Name, p.Version)
 			}
 
 			if u.includeDependencies {
@@ -120,10 +116,7 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 						if !Contains(deps, d.Name) {
 							deps = append(deps, DepInfo{Name: d.Name, Version: d.Version})
 						} else {
-							err := setVersionIfNewer(deps, d.Name, d.Version)
-							if err != nil {
-								return nil, err
-							}
+							setVersionIfNewer(deps, d.Name, d.Version)
 						}
 					}
 				}
@@ -138,7 +131,7 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 	return deps, nil
 }
 
-func setVersionIfNewer(deps []DepInfo, name string, version string) error {
+func setVersionIfNewer(deps []DepInfo, name string, version string) {
 	for i := range deps {
 		if deps[i].Name == name {
 			v1, err := semver.NewVersion(deps[i].Version)
@@ -158,5 +151,4 @@ func setVersionIfNewer(deps []DepInfo, name string, version string) error {
 			}
 		}
 	}
-	return nil
 }
