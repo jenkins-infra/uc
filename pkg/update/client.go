@@ -1,8 +1,14 @@
 package update
 
 import (
-	"github.com/Masterminds/semver"
+	"fmt"
+	"sort"
+	"strings"
+
+	"github.com/Masterminds/semver/v3"
 	"github.com/garethjevans/updatecenter/pkg/api"
+	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
 )
 
 type DepInfo struct {
@@ -10,9 +16,46 @@ type DepInfo struct {
 	Version string
 }
 
+func (d *DepInfo) String() string {
+	return fmt.Sprintf("%s:%s", d.Name, d.Version)
+}
+
+func FromString(in string) (*DepInfo, error) {
+	if strings.Contains(in, ":") {
+		parts := strings.Split(in, ":")
+		if len(parts) != 2 {
+			return nil, errors.New("unable to parse plugin:version for " + in)
+		}
+		return &DepInfo{Name: parts[0], Version: parts[1]}, nil
+	}
+	return &DepInfo{Name: in, Version: "0.0.0"}, nil
+}
+
+func FromStrings(input []string) ([]DepInfo, error) {
+	deps := []DepInfo{}
+	for _, in := range input {
+		d, err := FromString(in)
+		if err != nil {
+			return nil, err
+		}
+		deps = append(deps, *d)
+	}
+	return deps, nil
+}
+
 type Updater struct {
-	config *Config
-	client *api.Client
+	config              *Config
+	client              *api.Client
+	version             string
+	includeDependencies bool
+}
+
+func (u *Updater) IncludeDependencies() {
+	u.includeDependencies = true
+}
+
+func (u *Updater) SetVersion(version string) {
+	u.version = version
 }
 
 func (u *Updater) SetClient(client *api.Client) {
@@ -30,7 +73,7 @@ func (u *Updater) get() error {
 	if u.config == nil {
 		c := &Config{}
 
-		err := u.Client().GET("", c)
+		err := u.Client().GET(u.version, c)
 		if err != nil {
 			return err
 		}
@@ -40,7 +83,7 @@ func (u *Updater) get() error {
 	return nil
 }
 
-func (u *Updater) LatestVersions(plugins []string) ([]DepInfo, error) {
+func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 	if u.config == nil {
 		err := u.get()
 		if err != nil {
@@ -52,7 +95,7 @@ func (u *Updater) LatestVersions(plugins []string) ([]DepInfo, error) {
 	for _, p := range u.config.Plugins {
 		if Contains(plugins, p.Name) {
 			// add the plugin
-			if !contains(deps, p.Name) {
+			if !Contains(deps, p.Name) {
 				deps = append(deps, DepInfo{Name: p.Name, Version: p.Version})
 			} else {
 				err := setVersionIfNewer(deps, p.Name, p.Version)
@@ -61,15 +104,17 @@ func (u *Updater) LatestVersions(plugins []string) ([]DepInfo, error) {
 				}
 			}
 
-			// add the plugin dependencies
-			for _, d := range p.Dependencies {
-				if !d.Optional {
-					if !contains(deps, d.Name) {
-						deps = append(deps, DepInfo{Name: d.Name, Version: d.Version})
-					} else {
-						err := setVersionIfNewer(deps, d.Name, d.Version)
-						if err != nil {
-							return nil, err
+			if u.includeDependencies {
+				// add the plugin dependencies
+				for _, d := range p.Dependencies {
+					if !d.Optional {
+						if !Contains(deps, d.Name) {
+							deps = append(deps, DepInfo{Name: d.Name, Version: d.Version})
+						} else {
+							err := setVersionIfNewer(deps, d.Name, d.Version)
+							if err != nil {
+								return nil, err
+							}
 						}
 					}
 				}
@@ -77,16 +122,11 @@ func (u *Updater) LatestVersions(plugins []string) ([]DepInfo, error) {
 		}
 	}
 
-	return deps, nil
-}
+	sort.Slice(deps, func(i, j int) bool {
+		return deps[i].Name < deps[j].Name
+	})
 
-func contains(deps []DepInfo, name string) bool {
-	for _, d := range deps {
-		if d.Name == name {
-			return true
-		}
-	}
-	return false
+	return deps, nil
 }
 
 func setVersionIfNewer(deps []DepInfo, name string, version string) error {
@@ -94,16 +134,18 @@ func setVersionIfNewer(deps []DepInfo, name string, version string) error {
 		if deps[i].Name == name {
 			v1, err := semver.NewVersion(deps[i].Version)
 			if err != nil {
-				return err
+				logrus.Debugf("version %s is invalid for %s", deps[i].Version, name)
 			}
 
 			v2, err := semver.NewVersion(version)
 			if err != nil {
-				return err
+				logrus.Debugf("version %s is invalid for %s", version, name)
 			}
 
-			if v2.GreaterThan(v1) {
-				deps[i].Version = version
+			if v1 != nil && v2 != nil {
+				if v2.GreaterThan(v1) {
+					deps[i].Version = version
+				}
 			}
 		}
 	}

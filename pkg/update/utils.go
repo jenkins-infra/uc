@@ -1,8 +1,8 @@
 package update
 
-func Contains(s []string, e string) bool {
+func Contains(s []DepInfo, name string) bool {
 	for _, a := range s {
-		if a == e {
+		if a.Name == name {
 			return true
 		}
 	}
