@@ -85,6 +85,8 @@ func (c *UpdateCmd) Run() error {
 		c.Updater.IncludeDependencies()
 	}
 
+	c.Updater.SetVersion(c.JenkinsVersion)
+
 	depsOut, err := c.Updater.LatestVersions(depsIn)
 	if err != nil {
 		return errors.New("unable to determine latest versions")
