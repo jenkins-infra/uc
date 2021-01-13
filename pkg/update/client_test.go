@@ -2,12 +2,11 @@ package update_test
 
 import (
 	"fmt"
-	"strings"
 	"testing"
 
-	"github.com/garethjevans/updatecenter/pkg/update"
+	"github.com/garethjevans/uc/pkg/update"
 
-	"github.com/garethjevans/updatecenter/pkg/api"
+	"github.com/garethjevans/uc/pkg/api"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -182,121 +181,6 @@ func TestCanParseUpdateCentre_CompleteList(t *testing.T) {
 	for _, d := range deps {
 		t.Log(d.String())
 	}
-}
-
-func TestCanParseUpdateCentre_CompleteList_WithVersion(t *testing.T) {
-	u := update.Updater{}
-	u.SetVersion("2.263.1")
-
-	depsIn, err := update.FromStrings([]string{
-		"ansicolor",
-		"antisamy-markup-formatter",
-		"authentication-tokens",
-		"azure-container-agents",
-		"azure-vm-agents",
-		"basic-branch-build-strategies",
-		"blueocean",
-		"blueocean-autofavorite",
-		"blueocean-commons",
-		"blueocean-config",
-		"blueocean-core-js",
-		"blueocean-dashboard",
-		"blueocean-display-url",
-		"blueocean-events",
-		"blueocean-git-pipeline",
-		"blueocean-github-pipeline",
-		"blueocean-i18n",
-		"blueocean-jira",
-		"blueocean-jwt",
-		"blueocean-personalization",
-		"blueocean-pipeline-api-impl",
-		"blueocean-pipeline-editor",
-		"blueocean-pipeline-scm-api",
-		"blueocean-rest",
-		"blueocean-rest-impl",
-		"blueocean-web",
-		"branch-api",
-		"build-name-setter",
-		"config-file-provider",
-		"cloud-stats",
-		"configuration-as-code",
-		"credentials",
-		"credentials-binding",
-		"datadog",
-		"ec2",
-		"embeddable-build-status",
-		"extended-read-permission",
-		"git",
-		"git-client",
-		"github",
-		"github-api",
-		"github-autostatus",
-		"github-branch-source",
-		"github-checks",
-		"github-label-filter",
-		"groovy",
-		"inline-pipeline",
-		"javadoc",
-		"jira",
-		"job-dsl",
-		"junit",
-		"kubernetes",
-		"kubernetes-credentials",
-		"kubernetes-credentials-provider",
-		"ldap",
-		"lockable-resources",
-		"pipeline-utility-steps",
-		"metrics",
-		"matrix-auth",
-		"matrix-project",
-		"pipeline-build-step",
-		"pipeline-github",
-		"pipeline-graph-analysis",
-		"pipeline-input-step",
-		"pipeline-milestone-step",
-		"pipeline-model-api",
-		"pipeline-model-definition",
-		"pipeline-model-extensions",
-		"pipeline-rest-api",
-		"pipeline-stage-step",
-		"pipeline-stage-tags-metadata",
-		"pipeline-stage-view",
-		"plain-credentials",
-		"prometheus",
-		"scm-api",
-		"scm-filter-branch-pr",
-		"script-security",
-		"ssh-agent",
-		"ssh-credentials",
-		"support-core",
-		"timestamper",
-		"token-macro",
-		"toolenv",
-		"variant",
-		"warnings-ng",
-		"workflow-aggregator",
-		"workflow-api",
-		"workflow-basic-steps",
-		"workflow-cps",
-		"workflow-cps-global-lib",
-		"workflow-durable-task-step",
-		"workflow-job",
-		"workflow-multibranch",
-		"workflow-scm-step",
-		"workflow-step-api",
-		"workflow-support"})
-	assert.NoError(t, err)
-
-	deps, err := u.LatestVersions(depsIn)
-	assert.NoError(t, err)
-
-	assert.Equal(t, 96, len(deps))
-	assertContains(t, deps, "scm-api")
-	assertContains(t, deps, "workflow-support")
-
-	depsAsStrings := update.AsStrings(deps)
-
-	t.Logf(strings.Join(depsAsStrings, "\n    - "))
 }
 
 func TestCanParseUpdateCentre_CompleteListWithVersions(t *testing.T) {

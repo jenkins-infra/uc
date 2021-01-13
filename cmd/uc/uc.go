@@ -6,8 +6,8 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/garethjevans/updatecenter/pkg/cmd"
-	"github.com/garethjevans/updatecenter/pkg/version"
+	"github.com/garethjevans/uc/pkg/cmd"
+	"github.com/garethjevans/uc/pkg/version"
 	"github.com/spf13/cobra/doc"
 
 	"github.com/spf13/cobra"

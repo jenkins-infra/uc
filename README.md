@@ -1,4 +1,4 @@
-# updatecenter
+# uc
 
 a small CLI that can be used to update a plugins.txt file for installing plugins into a jenkins docker image.
 

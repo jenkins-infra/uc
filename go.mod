@@ -1,4 +1,4 @@
-module github.com/garethjevans/updatecenter
+module github.com/garethjevans/uc
 
 go 1.15
 

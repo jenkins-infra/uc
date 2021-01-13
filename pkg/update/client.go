@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/Masterminds/semver/v3"
-	"github.com/garethjevans/updatecenter/pkg/api"
+	"github.com/garethjevans/uc/pkg/api"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )

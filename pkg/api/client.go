@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	timeout = time.Second * 5
+	timeout = time.Second * 10
 	url     = "https://updates.jenkins.io/update-center.actual.json"
 )
 

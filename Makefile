@@ -3,8 +3,8 @@ NAME := uc
 BINARY_NAME := uc
 GO := GO111MODULE=on GO15VENDOREXPERIMENT=1 go
 GO_NOMOD := GO111MODULE=off go
-PACKAGE_NAME := github.com/garethjevans/updatecenter
-ROOT_PACKAGE := github.com/garethjevans/updatecenter
+PACKAGE_NAME := github.com/garethjevans/uc
+ROOT_PACKAGE := github.com/garethjevans/uc
 ORG := garethjevans
 
 # set dev version unless VERSION is explicitly set via environment
@@ -117,7 +117,7 @@ goreleaser:
 	step-go-releaser --organisation=$(ORG) --revision=$(REV) --branch=$(BRANCH) --build-date=$(BUILD_DATE) --go-version=$(GO_VERSION) --root-package=$(ROOT_PACKAGE) --version=$(VERSION)
 
 docs: build
-	./build/updatecenter docs
+	./build/uc docs
 
 lint:
 	golangci-lint run
