@@ -26,4 +26,4 @@ jobs:
           version: latest
           args: release --rm-dist
         env:
-          HOMEBREW_TOKEN: ${{ secrets.HOMEBREW_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.HOMEBREW_TOKEN }}
