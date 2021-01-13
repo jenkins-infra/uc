@@ -107,6 +107,5 @@ func (c *UpdateCmd) Run() error {
 		fmt.Println(dataToWrite)
 	}
 
-
 	return nil
 }
