@@ -43,6 +43,15 @@ func FromStrings(input []string) ([]DepInfo, error) {
 	return deps, nil
 }
 
+func AsStrings(deps []DepInfo) []string{
+	out := []string{}
+	for _, d := range deps {
+		out = append(out, d.String())
+	}
+	return out
+}
+
+
 type Updater struct {
 	config              *Config
 	client              *api.Client
