@@ -1,0 +1,3599 @@
+{
+  "connectionCheckUrl": "http://www.google.com/",
+  "core": {
+    "buildDate": "Jan 05, 2021",
+    "name": "core",
+    "sha1": "omIe8QboC0QHLM9Hjy7Um3eFDJQ=",
+    "sha256": "XtfCJTE0OveubnLveLrf0tUJimymWMmQ7ReVp+VMV6k=",
+    "url": "https://updates.jenkins.io/download/war/2.274/jenkins.war",
+    "version": "2.274"
+  },
+  "deprecations": {
+    "CFLint": {
+      "url": "https://issues.jenkins-ci.org/browse/INFRA-2487"
+    },
+    "DotCi-Plugins-Starter-Pack": {
+      "url": "https://issues.jenkins-ci.org/browse/INFRA-2487"
+    },
+    "PUCM": {
+      "url": "https://wiki.jenkins.io/x/fIBVAw"
+    }
+  },
+  "id": "default",
+  "plugins": {
+    "42crunch-security-audit": {
+      "buildDate": "Oct 06, 2020",
+      "dependencies": [
+        {
+          "name": "credentials-binding",
+          "optional": false,
+          "version": "1.20"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.3.0"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "anton"
+        }
+      ],
+      "excerpt": "Performs API contract security audit to get a detailed analysis of the possible vulnerabilities and other issues in the API contract.",
+      "gav": "io.jenkins.plugins:42crunch-security-audit:3.8",
+      "labels": [
+        "analysis",
+        "security",
+        "test"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "42crunch-security-audit",
+      "popularity": 16,
+      "previousTimestamp": "2020-09-16T18:23:55.00Z",
+      "previousVersion": "3.7",
+      "releaseTimestamp": "2020-10-06T18:44:43.00Z",
+      "requiredCore": "2.164.3",
+      "scm": "https://github.com/jenkinsci/42crunch-security-audit-plugin",
+      "sha1": "3mh8jULWM7REfAAEhFXUhBp3bug=",
+      "sha256": "2tQqbsbMpNXuDI6MKZ3S4GxKv3apleD7ZlSzi30gSaE=",
+      "title": "42Crunch REST API Static Security Testing",
+      "url": "https://updates.jenkins.io/download/plugins/42crunch-security-audit/3.8/42crunch-security-audit.hpi",
+      "version": "3.8",
+      "wiki": "https://plugins.jenkins.io/42crunch-security-audit"
+    },
+    "AnchorChain": {
+      "buildDate": "Mar 11, 2012",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "direvius",
+          "email": "direvius@gmail.com",
+          "name": "Alexey Lavrenuke"
+        }
+      ],
+      "excerpt": "Adds some links to the sidebar at every build. The data are obtained from a user selected file in a working directory.",
+      "gav": "org.jenkins-ci.plugins:AnchorChain:1.0",
+      "labels": [
+        "report"
+      ],
+      "name": "AnchorChain",
+      "popularity": 627,
+      "releaseTimestamp": "2012-03-11T14:59:11.00Z",
+      "requiredCore": "1.398",
+      "scm": "https://github.com/jenkinsci/anchor-chain-plugin",
+      "sha1": "rY1W96ad9TJI1F3phFG8X4LE26Q=",
+      "sha256": "kmW5FrU9RG3O06JRLJt+1YGU0rB6pQoaZ57Vzm6Oc1s=",
+      "title": "AnchorChain",
+      "url": "https://updates.jenkins.io/download/plugins/AnchorChain/1.0/AnchorChain.hpi",
+      "version": "1.0",
+      "wiki": "https://plugins.jenkins.io/AnchorChain"
+    },
+    "ApicaLoadtest": {
+      "buildDate": "Feb 15, 2016",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "andrasnemes",
+          "email": "andras.nemes@apicasystem.com",
+          "name": "Andras Nemes"
+        }
+      ],
+      "excerpt": "This plugin integrates Apica Loadtests to Jenkins.",
+      "gav": "com.apica:ApicaLoadtest:1.10",
+      "labels": [
+        "builder"
+      ],
+      "name": "ApicaLoadtest",
+      "popularity": 16,
+      "previousTimestamp": "2016-01-18T14:21:23.00Z",
+      "previousVersion": "1.9",
+      "releaseTimestamp": "2016-02-15T14:55:26.00Z",
+      "requiredCore": "1.610",
+      "sha1": "nyD1O51FoMhXIN1fVhHvzlgiRAg=",
+      "sha256": "7exv16CW3KljYOdLbeoka6IHye+CT5Ern7ayvIfAF48=",
+      "title": "Apica Loadtest",
+      "url": "https://updates.jenkins.io/download/plugins/ApicaLoadtest/1.10/ApicaLoadtest.hpi",
+      "version": "1.10",
+      "wiki": "https://plugins.jenkins.io/ApicaLoadtest"
+    },
+    "BlameSubversion": {
+      "buildDate": "Jan 04, 2013",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "tangjinou",
+          "email": "tangjinou@gmail.com",
+          "name": "Developer Guy"
+        }
+      ],
+      "excerpt": "This plug-in provides utilities for getting svn info and build number synchronize from upstream job to downstream job",
+      "gav": "org.jvnet.hudson.plugins:BlameSubversion:1.200",
+      "labels": [
+        "scm"
+      ],
+      "name": "BlameSubversion",
+      "popularity": 864,
+      "releaseTimestamp": "2013-01-04T16:34:43.00Z",
+      "requiredCore": "1.355",
+      "scm": "https://github.com/jenkinsci/BlameSubversion-plugin",
+      "sha1": "9tDzZ/EpFwOi4aKFTyhF4UqQU/Y=",
+      "sha256": "u+ArmZG9lVevZc/FQmvr6vyHTv/BjkCcATTJwZyfX8s=",
+      "title": "Blame Subversion",
+      "url": "https://updates.jenkins.io/download/plugins/BlameSubversion/1.200/BlameSubversion.hpi",
+      "version": "1.200",
+      "wiki": "https://plugins.jenkins.io/BlameSubversion"
+    },
+    "BlazeMeterJenkinsPlugin": {
+      "buildDate": "Oct 29, 2018",
+      "dependencies": [
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.4"
+        },
+        {
+          "name": "workflow-step-api",
+          "optional": false,
+          "version": "2.9"
+        },
+        {
+          "name": "job-dsl",
+          "optional": true,
+          "version": "1.50"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "sat_blazemeter",
+          "email": "sat@blazemeter.com",
+          "name": "Artem Fedorov (BlazeMeter)"
+        }
+      ],
+      "excerpt": "This plugin integrates <a href=\"http://www.blazemeter.com\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">BlazeMeter</a> - the cloud load testing service to Jenkins.",
+      "gav": "com.blazemeter.plugins:BlazeMeterJenkinsPlugin:4.7",
+      "labels": [
+        "builder"
+      ],
+      "name": "BlazeMeterJenkinsPlugin",
+      "popularity": 470,
+      "previousTimestamp": "2018-08-27T15:07:25.00Z",
+      "previousVersion": "4.6",
+      "releaseTimestamp": "2018-10-29T09:13:55.00Z",
+      "requiredCore": "1.580.1",
+      "scm": "https://github.com/jenkinsci/blazemeter-plugin",
+      "sha1": "3YHrD28DV9P1UXQ3fxIuOggtBVs=",
+      "sha256": "G7OV3f8RzD2ULYwAkZgSzPOvV225gIf+dsPV6DiGCSk=",
+      "title": "BlazeMeter",
+      "url": "https://updates.jenkins.io/download/plugins/BlazeMeterJenkinsPlugin/4.7/BlazeMeterJenkinsPlugin.hpi",
+      "version": "4.7",
+      "wiki": "https://plugins.jenkins.io/BlazeMeterJenkinsPlugin"
+    },
+    "ColumnsPlugin": {
+      "buildDate": "Dec 21, 2012",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "hanabi",
+          "email": "jenkins@hanabi.se",
+          "name": "Marcus Jacobsson"
+        }
+      ],
+      "excerpt": "A set of columns to the build list",
+      "gav": "org.jenkins-ci.plugins:ColumnsPlugin:1.0",
+      "labels": [],
+      "name": "ColumnsPlugin",
+      "popularity": 79,
+      "releaseTimestamp": "2012-12-21T14:34:42.00Z",
+      "requiredCore": "1.466",
+      "sha1": "NGboN/IG0e5vCYmKoFlaHEK+Dc8=",
+      "sha256": "/2tJRQpHFRhaP44Tg+9hy1VOtvsRYNJHz6njz9Sooqg=",
+      "title": "Columns Pack",
+      "url": "https://updates.jenkins.io/download/plugins/ColumnsPlugin/1.0/ColumnsPlugin.hpi",
+      "version": "1.0",
+      "wiki": "https://plugins.jenkins.io/ColumnsPlugin"
+    },
+    "CustomHistory": {
+      "buildDate": "Jul 01, 2013",
+      "dependencies": [
+        {
+          "name": "parameterized-trigger",
+          "optional": true,
+          "version": "2.10"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "ryg_",
+          "email": "rgrigoryev@gmail.com",
+          "name": "Roman Grigoryev"
+        }
+      ],
+      "excerpt": "This plugin collect and shows custom history from file",
+      "gav": "org.jenkins-ci.plugins:CustomHistory:1.6",
+      "labels": [
+        "report",
+        "scm-related"
+      ],
+      "name": "CustomHistory",
+      "popularity": 220,
+      "previousTimestamp": "2013-06-25T03:56:31.00Z",
+      "previousVersion": "1.5",
+      "releaseTimestamp": "2013-07-01T19:01:40.00Z",
+      "requiredCore": "1.495",
+      "scm": "https://github.com/jenkinsci/custom-history-plugin",
+      "sha1": "ynnBM2jWo25ZLDdP3ybBOnV/Pio=",
+      "sha256": "vw+1TnQDq3cPJbRgafBl3wf63GwemAelpTRkQ/TDD+Y=",
+      "title": "CustomHistory",
+      "url": "https://updates.jenkins.io/download/plugins/CustomHistory/1.6/CustomHistory.hpi",
+      "version": "1.6",
+      "wiki": "https://plugins.jenkins.io/CustomHistory"
+    },
+    "DotCi": {
+      "buildDate": "Feb 05, 2018",
+      "dependencies": [
+        {
+          "name": "rebuild",
+          "optional": false,
+          "version": "1.25"
+        },
+        {
+          "name": "workflow-basic-steps",
+          "optional": false,
+          "version": "2.2"
+        },
+        {
+          "name": "matrix-project",
+          "optional": false,
+          "version": "1.6"
+        },
+        {
+          "name": "github-api",
+          "optional": false,
+          "version": "1.90"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "sgaddipati",
+          "email": "surya.gaddipati@gmail.com",
+          "name": "Surya Gaddipati"
+        }
+      ],
+      "excerpt": "Github integration, build management through .ci.yml, environment management though docker.",
+      "gav": "com.groupon.jenkins-ci.plugins:DotCi:2.40.00",
+      "labels": [],
+      "name": "DotCi",
+      "popularity": 314,
+      "previousTimestamp": "2017-02-21T14:22:39.00Z",
+      "previousVersion": "2.39.9",
+      "releaseTimestamp": "2018-02-05T22:20:22.00Z",
+      "requiredCore": "2.26",
+      "scm": "https://github.com/jenkinsci/DotCi",
+      "sha1": "hqt3cfJt61yBaya3pjWRlGN6hfg=",
+      "sha256": "e1zdikzRF3zmGL0w2QT0st5Fw2St/rTo5JvJ6S890CQ=",
+      "title": "DotCi",
+      "url": "https://updates.jenkins.io/download/plugins/DotCi/2.40.00/DotCi.hpi",
+      "version": "2.40.00",
+      "wiki": "https://plugins.jenkins.io/DotCi"
+    },
+    "DotCi-DockerPublish": {
+      "buildDate": "Apr 29, 2016",
+      "dependencies": [
+        {
+          "name": "DotCi",
+          "optional": false,
+          "version": "2.7.1"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "hristoast",
+          "email": "me@hristos.triantafillou.us",
+          "name": "Hristos N. Triantafillou"
+        }
+      ],
+      "excerpt": "Publish docker images to a docker registry from a DotCi job",
+      "gav": "com.groupon.jenkins-ci.plugins:DotCi-DockerPublish:1.0.3",
+      "labels": [],
+      "name": "DotCi-DockerPublish",
+      "popularity": 183,
+      "previousTimestamp": "2016-02-08T15:49:46.00Z",
+      "previousVersion": "1.0.2",
+      "releaseTimestamp": "2016-04-29T18:48:14.00Z",
+      "requiredCore": "1.618",
+      "sha1": "sNXJ8wzzHQh5Zn8+EbRM019v4mk=",
+      "sha256": "sYs7ejUx3uCXK/z2vy1+atvLYU3v1MydZUoZnsZyDsQ=",
+      "title": "DotCi DockerPublish",
+      "url": "https://updates.jenkins.io/download/plugins/DotCi-DockerPublish/1.0.3/DotCi-DockerPublish.hpi",
+      "version": "1.0.3",
+      "wiki": "https://plugins.jenkins.io/DotCi-DockerPublish"
+    },
+    "DotCi-Fig-template": {
+      "buildDate": "Dec 24, 2015",
+      "dependencies": [
+        {
+          "name": "DotCi-InstallPackages",
+          "optional": false,
+          "version": "1.1.7"
+        },
+        {
+          "name": "github-oauth",
+          "optional": false,
+          "version": "0.20"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "vvitayau",
+          "email": "valdis.vitayaudom@gmail.com",
+          "name": "Valdis Vitayaudom"
+        }
+      ],
+      "excerpt": "This plugin is a sample to explain how to write a Jenkins plugin.",
+      "gav": "com.groupon.jenkins-ci.plugins:DotCi-Fig-template:1.1.0",
+      "labels": [],
+      "name": "DotCi-Fig-template",
+      "popularity": 21,
+      "previousTimestamp": "2015-05-02T09:09:49.00Z",
+      "previousVersion": "1.0.4",
+      "releaseTimestamp": "2015-12-24T05:12:55.00Z",
+      "requiredCore": "1.596",
+      "sha1": "se/2tVlop40u2R0rKys6Tr6EioM=",
+      "sha256": "n/SA5NPVEsD0NRxXXveldpJTmL8+tuid7DSsdAflJ+s=",
+      "title": "DotCi Fig template",
+      "url": "https://updates.jenkins.io/download/plugins/DotCi-Fig-template/1.1.0/DotCi-Fig-template.hpi",
+      "version": "1.1.0",
+      "wiki": "https://plugins.jenkins.io/DotCi-Fig-template"
+    },
+    "DotCi-InstallPackages": {
+      "buildDate": "Aug 10, 2016",
+      "dependencies": [
+        {
+          "name": "DotCi",
+          "optional": false,
+          "version": "2.32.1"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "sgaddipati",
+          "email": "surya.gaddipati@gmail.com",
+          "name": "Surya Gaddipati"
+        }
+      ],
+      "excerpt": "Adds Install packages support to DotCi",
+      "gav": "com.groupon.jenkins-ci.plugins:DotCi-InstallPackages:1.3.1",
+      "labels": [],
+      "name": "DotCi-InstallPackages",
+      "popularity": 30,
+      "previousTimestamp": "2016-07-12T19:00:05.00Z",
+      "previousVersion": "1.3.0",
+      "releaseTimestamp": "2016-08-10T13:47:43.00Z",
+      "requiredCore": "1.618",
+      "sha1": "7RsAaQBkW+2S6DVhD3n3iBtDmSs=",
+      "sha256": "9tBQlQhhCJBfZq7I1BzG6ZfA6YgASWcBs4jdo57ChPU=",
+      "title": "DotCi InstallPackages",
+      "url": "https://updates.jenkins.io/download/plugins/DotCi-InstallPackages/1.3.1/DotCi-InstallPackages.hpi",
+      "version": "1.3.1",
+      "wiki": "https://plugins.jenkins.io/DotCi-InstallPackages"
+    },
+    "DotCiInstallPackages": {
+      "buildDate": "Dec 22, 2015",
+      "dependencies": [
+        {
+          "name": "DotCi",
+          "optional": false,
+          "version": "2.16.1"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "victorv"
+        }
+      ],
+      "excerpt": "Adds Install packages support to DotCi",
+      "gav": "com.groupon.jenkins:DotCiInstallPackages:1.1.2",
+      "labels": [],
+      "name": "DotCiInstallPackages",
+      "popularity": 3,
+      "previousTimestamp": "2015-10-22T19:04:21.00Z",
+      "previousVersion": "1.1.1",
+      "releaseTimestamp": "2015-12-22T20:48:02.00Z",
+      "requiredCore": "1.618",
+      "sha1": "0ITTIBuG+Yt1UR+cipdUmze7VM4=",
+      "sha256": "EUyBqeq3o85n38KsMKcLDf9etlPmenuqH1gnHKb/Npg=",
+      "title": "DotCiInstallPackages",
+      "url": "https://updates.jenkins.io/download/plugins/DotCiInstallPackages/1.1.2/DotCiInstallPackages.hpi",
+      "version": "1.1.2",
+      "wiki": "https://plugins.jenkins.io/DotCiInstallPackages"
+    },
+    "Exclusion": {
+      "buildDate": "Apr 19, 2016",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "anthonyRoux",
+          "email": "m.roux.a@gmail.com",
+          "name": "Anthony Roux"
+        }
+      ],
+      "excerpt": "This plugin manage exclusion between jobs.",
+      "gav": "org.jenkins-ci.plugins:Exclusion:0.12",
+      "labels": [
+        "builder"
+      ],
+      "name": "Exclusion",
+      "popularity": 1379,
+      "previousTimestamp": "2015-10-27T19:08:20.00Z",
+      "previousVersion": "0.11",
+      "releaseTimestamp": "2016-04-19T20:06:52.00Z",
+      "requiredCore": "1.609.1",
+      "scm": "https://github.com/jenkinsci/exclusion-plugin",
+      "sha1": "cxnDJcb9Av7Wn5GdJdCDuTkhXgc=",
+      "sha256": "BMrARiu8AoqacxmDa3EFn1+AIb/2sGKjcJAQ4Pn6ivY=",
+      "title": "Exclusion",
+      "url": "https://updates.jenkins.io/download/plugins/Exclusion/0.12/Exclusion.hpi",
+      "version": "0.12",
+      "wiki": "https://plugins.jenkins.io/Exclusion"
+    },
+    "GatekeeperPlugin": {
+      "buildDate": "Aug 20, 2015",
+      "dependencies": [
+        {
+          "name": "multiple-scms",
+          "optional": false,
+          "version": "0.5"
+        },
+        {
+          "name": "envinject",
+          "optional": false,
+          "version": "1.89"
+        },
+        {
+          "name": "mercurial",
+          "optional": false,
+          "version": "1.54"
+        },
+        {
+          "name": "git",
+          "optional": false,
+          "version": "2.4.0"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "maikelwever",
+          "email": "maikel@maikelwever.nl",
+          "name": "Maikel Wever"
+        },
+        {
+          "developerId": "bubenkoff",
+          "email": "bubenkoff@gmail.com",
+          "name": "Anatoly Bubenkov"
+        }
+      ],
+      "excerpt": "Plugin to do automatic integration merging, gatekeeper style.",
+      "gav": "org.paylogic:GatekeeperPlugin:3.0.5",
+      "labels": [],
+      "name": "GatekeeperPlugin",
+      "popularity": 17,
+      "previousTimestamp": "2015-08-20T20:43:16.00Z",
+      "previousVersion": "3.0.4",
+      "releaseTimestamp": "2015-08-20T21:07:04.00Z",
+      "requiredCore": "1.624",
+      "scm": "https://github.com/jenkinsci/gatekeeper-plugin",
+      "sha1": "AEPAq4ScnMTDnnj3AwrzKWPA3wE=",
+      "sha256": "yOnLqA3WoUtN/tnTdxB89eQt+5Gl/e/wP8JNeTTC25A=",
+      "title": "Gatekeeper",
+      "url": "https://updates.jenkins.io/download/plugins/GatekeeperPlugin/3.0.5/GatekeeperPlugin.hpi",
+      "version": "3.0.5",
+      "wiki": "https://plugins.jenkins.io/GatekeeperPlugin"
+    },
+    "JDK_Parameter_Plugin": {
+      "buildDate": "Aug 19, 2013",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "baris_batiege",
+          "email": "baris.batiege@datalex.com",
+          "name": "Baris Batiege"
+        },
+        {
+          "developerId": "fneves",
+          "email": "fabio.neves@datalex.com",
+          "name": "Fabio Neves"
+        }
+      ],
+      "excerpt": "Lets you specify a set of JDKs that can be picked from as a build parameter.",
+      "gav": "org.jenkins-ci.plugins:JDK_Parameter_Plugin:1.0",
+      "labels": [
+        "parameter"
+      ],
+      "name": "JDK_Parameter_Plugin",
+      "popularity": 4927,
+      "releaseTimestamp": "2013-08-19T16:12:24.00Z",
+      "requiredCore": "1.480.3",
+      "scm": "https://github.com/jenkinsci/JDK_Parameter_Choice",
+      "sha1": "/f6Lyfc2phasZmbq70hPMAjut84=",
+      "sha256": "4RExflUaV5N/olhYQbwekhIqFtWmjZCDouCtIkGIJC0=",
+      "title": "JDK Parameter",
+      "url": "https://updates.jenkins.io/download/plugins/JDK_Parameter_Plugin/1.0/JDK_Parameter_Plugin.hpi",
+      "version": "1.0",
+      "wiki": "https://plugins.jenkins.io/JDK_Parameter_Plugin"
+    },
+    "JiraTestResultReporter": {
+      "buildDate": "Nov 01, 2018",
+      "compatibleSinceVersion": "2.0.0",
+      "dependencies": [
+        {
+          "name": "junit",
+          "optional": false,
+          "version": "1.21"
+        },
+        {
+          "name": "matrix-project",
+          "optional": false,
+          "version": "1.6"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "andreituicu",
+          "email": "andrei.tuicu@gmail.com",
+          "name": "Andrei Tuicu"
+        },
+        {
+          "developerId": "catalinluta",
+          "email": "luta.catalin@gmail.com",
+          "name": "Catalin Luta"
+        },
+        {
+          "developerId": "maplesteve",
+          "name": "Stephan Esch"
+        }
+      ],
+      "excerpt": "Plugin for creating JIRA issues directly from Jenkins and linking them to JUnit tests.",
+      "gav": "org.jenkins-ci.plugins:JiraTestResultReporter:2.0.7",
+      "labels": [
+        "external"
+      ],
+      "name": "JiraTestResultReporter",
+      "popularity": 2206,
+      "previousTimestamp": "2017-11-14T09:33:41.00Z",
+      "previousVersion": "2.0.6",
+      "releaseTimestamp": "2018-11-01T15:09:28.00Z",
+      "requiredCore": "2.27",
+      "scm": "https://github.com/jenkinsci/JiraTestResultReporter-plugin",
+      "sha1": "eMQAWGm7ZsE8lA4+Iw4H5Pa4xMg=",
+      "sha256": "/HKmEFZ5i77Yv/35LGOYBNNk4DUKWmlMv/hlvOnl4N0=",
+      "title": "JiraTestResultReporter",
+      "url": "https://updates.jenkins.io/download/plugins/JiraTestResultReporter/2.0.7/JiraTestResultReporter.hpi",
+      "version": "2.0.7",
+      "wiki": "https://plugins.jenkins.io/JiraTestResultReporter"
+    },
+    "Matrix-sorter-plugin": {
+      "buildDate": "May 31, 2017",
+      "dependencies": [
+        {
+          "name": "matrix-project",
+          "optional": false,
+          "version": "1.0"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "lvotypko",
+          "email": "lvotypko@redhat.com",
+          "name": "Lucie Votypkova"
+        }
+      ],
+      "excerpt": "",
+      "gav": "org.jenkins-ci.plugins:Matrix-sorter-plugin:1.3",
+      "labels": [],
+      "name": "Matrix-sorter-plugin",
+      "popularity": 411,
+      "previousTimestamp": "2012-05-31T13:52:46.00Z",
+      "previousVersion": "1.1",
+      "releaseTimestamp": "2017-05-31T13:44:03.00Z",
+      "requiredCore": "1.580",
+      "scm": "https://github.com/jenkinsci/Matrix-sorter-plugin",
+      "sha1": "zD9OYG2IE4/57EBjkqHLwnEeZh0=",
+      "sha256": "p8sHfcHBTFhjFo9L3oo+c2dPYciLCTqYO31P/fYk/7E=",
+      "title": "Matrix sorter",
+      "url": "https://updates.jenkins.io/download/plugins/Matrix-sorter-plugin/1.3/Matrix-sorter-plugin.hpi",
+      "version": "1.3",
+      "wiki": "https://plugins.jenkins.io/Matrix-sorter-plugin"
+    },
+    "NegotiateSSO": {
+      "buildDate": "Nov 07, 2019",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "FarmGeek4Life",
+          "name": "Bryson Gibbons"
+        }
+      ],
+      "excerpt": "Enables Single Sign-On with NTLM or Kerberos using Waffle (https://github.com/dblock/waffle).<br /> It uses a negotiate filter, and will fall back to a basic filter if negotiate fails.<br /> It is designed to work in conjunction with the Active Directory plugin, since it ties into the security realm currently set up.",
+      "gav": "org.jenkins-ci.plugins:NegotiateSSO:1.4",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "NegotiateSSO",
+      "popularity": 304,
+      "previousTimestamp": "2019-03-13T17:39:57.00Z",
+      "previousVersion": "1.3",
+      "releaseTimestamp": "2019-11-07T22:30:05.00Z",
+      "requiredCore": "2.181",
+      "scm": "https://github.com/jenkinsci/negotiatesso-plugin",
+      "sha1": "ErJqGIAri/rOVTeIWZCwYmm3ml0=",
+      "sha256": "Ax307ggwAhtZ4+MM+TU2oZP6EkS4JYsr27eztmrql8o=",
+      "title": "Windows Negotiate SSO",
+      "url": "https://updates.jenkins.io/download/plugins/NegotiateSSO/1.4/NegotiateSSO.hpi",
+      "version": "1.4",
+      "wiki": "https://plugins.jenkins.io/NegotiateSSO"
+    },
+    "Office-365-Connector": {
+      "buildDate": "Sep 02, 2020",
+      "dependencies": [
+        {
+          "name": "display-url-api",
+          "optional": false,
+          "version": "2.2.0"
+        },
+        {
+          "name": "scm-api",
+          "optional": false,
+          "version": "2.6.3"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        },
+        {
+          "name": "token-macro",
+          "optional": false,
+          "version": "2.6"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "damianszczepanik",
+          "email": "damianszczepanik@github",
+          "name": "Damian Szczepanik"
+        },
+        {
+          "developerId": "outconn",
+          "email": "outconn@microsoft.com",
+          "name": "Out conn"
+        },
+        {
+          "developerId": "srhebbar",
+          "email": "srhebbar@microsoft.com",
+          "name": "Srivardhan Hebbar"
+        }
+      ],
+      "excerpt": "Sends jobs status notifications to Microsoft Teams and Outlook (Office 365).",
+      "gav": "org.jenkins-ci.plugins:Office-365-Connector:4.13.2",
+      "labels": [
+        "notifier"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "Office-365-Connector",
+      "popularity": 13069,
+      "previousTimestamp": "2020-07-30T18:51:55.00Z",
+      "previousVersion": "4.13.1",
+      "releaseTimestamp": "2020-09-02T19:08:25.00Z",
+      "requiredCore": "2.107.3",
+      "scm": "https://github.com/jenkinsci/office-365-connector",
+      "sha1": "OiKQS/xc69I8RkL3f+nOs8eYriQ=",
+      "sha256": "JxWDg3UUiPUyGbSAtTuE+/nIV95+F2J3SMnyReFIcyk=",
+      "title": "Office 365 Connector",
+      "url": "https://updates.jenkins.io/download/plugins/Office-365-Connector/4.13.2/Office-365-Connector.hpi",
+      "version": "4.13.2",
+      "wiki": "https://plugins.jenkins.io/Office-365-Connector"
+    },
+    "Parameterized-Remote-Trigger": {
+      "buildDate": "Oct 06, 2020",
+      "compatibleSinceVersion": "3.1.4-SNAPSHOT",
+      "dependencies": [
+        {
+          "name": "workflow-step-api",
+          "optional": true,
+          "version": "2.13"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.16"
+        },
+        {
+          "name": "script-security",
+          "optional": true,
+          "version": "1.34"
+        },
+        {
+          "name": "token-macro",
+          "optional": false,
+          "version": "2.3"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "cashlalala",
+          "name": "KaiHsiang Chang"
+        }
+      ],
+      "excerpt": "This plugin triggers a job on a remote Jenkins host",
+      "gav": "org.jenkins-ci.plugins:Parameterized-Remote-Trigger:3.1.5.1",
+      "labels": [
+        "builder",
+        "parameter",
+        "trigger"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "Parameterized-Remote-Trigger",
+      "popularity": 13566,
+      "previousTimestamp": "2020-10-04T17:20:37.00Z",
+      "previousVersion": "3.1.5",
+      "releaseTimestamp": "2020-10-06T13:43:18.00Z",
+      "requiredCore": "1.642.3",
+      "scm": "https://github.com/jenkinsci/parameterized-remote-trigger-plugin",
+      "sha1": "vCHAU0x6yi+5yeJxdx+7PYPbUzg=",
+      "sha256": "Xvzek+w5/dXuXqCISjxjoH9QvcfLpT2bg/V2oicJcEQ=",
+      "title": "Parameterized Remote Trigger",
+      "url": "https://updates.jenkins.io/download/plugins/Parameterized-Remote-Trigger/3.1.5.1/Parameterized-Remote-Trigger.hpi",
+      "version": "3.1.5.1",
+      "wiki": "https://plugins.jenkins.io/Parameterized-Remote-Trigger"
+    },
+    "PrioritySorter": {
+      "buildDate": "Jan 12, 2018",
+      "compatibleSinceVersion": "3.1",
+      "dependencies": [
+        {
+          "name": "workflow-durable-task-step",
+          "optional": true,
+          "version": "2.4"
+        },
+        {
+          "name": "matrix-project",
+          "optional": true,
+          "version": "1.4"
+        },
+        {
+          "name": "cloudbees-folder",
+          "optional": true,
+          "version": "5.0"
+        },
+        {
+          "name": "job-restrictions",
+          "optional": true,
+          "version": "0.4"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "emsa23",
+          "email": "emsa@switchbeat.com",
+          "name": "Magnus Sandberg"
+        }
+      ],
+      "excerpt": "This plugin allows for the build queue to be sorted based on pre-assigned priorities for each job.",
+      "gav": "org.jenkins-ci.plugins:PrioritySorter:3.6.0",
+      "labels": [
+        "adopt-this-plugin",
+        "listview-column",
+        "misc"
+      ],
+      "name": "PrioritySorter",
+      "popularity": 4714,
+      "previousTimestamp": "2017-06-18T09:09:23.00Z",
+      "previousVersion": "3.5.1",
+      "releaseTimestamp": "2018-01-12T17:54:37.00Z",
+      "requiredCore": "1.580",
+      "scm": "https://github.com/jenkinsci/priority-sorter-plugin",
+      "sha1": "OQuSzM2PEbqtIL5D6RBzPjtRBuU=",
+      "sha256": "pUjfFtmhdExKXNLSfJ7XGNFGcMNG/rkWIY4qSWBhIEM=",
+      "title": "Priority Sorter",
+      "url": "https://updates.jenkins.io/download/plugins/PrioritySorter/3.6.0/PrioritySorter.hpi",
+      "version": "3.6.0",
+      "wiki": "https://plugins.jenkins.io/PrioritySorter"
+    },
+    "SBuild": {
+      "buildDate": "Mar 20, 2014",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "tobiasroeser",
+          "email": "le.petit.fou@web.de",
+          "name": "Tobias Roeser"
+        }
+      ],
+      "excerpt": "This plugin enables direct execution of SBuild targets.",
+      "gav": "org.jenkins-ci.plugins:SBuild:1.0.2",
+      "labels": [
+        "builder"
+      ],
+      "name": "SBuild",
+      "popularity": 15,
+      "previousTimestamp": "2013-12-21T13:40:39.00Z",
+      "previousVersion": "1.0.1",
+      "releaseTimestamp": "2014-03-20T23:28:47.00Z",
+      "requiredCore": "1.509.4",
+      "scm": "https://github.com/jenkinsci/sbuild-plugin",
+      "sha1": "EH5jmznwr7rdixa1Wh96N7ddvSE=",
+      "sha256": "I/sSgM7dBTwnHZZAhszbm4yEKzJBaZrn2Pls5fHQqfQ=",
+      "title": "SBuild",
+      "url": "https://updates.jenkins.io/download/plugins/SBuild/1.0.2/SBuild.hpi",
+      "version": "1.0.2",
+      "wiki": "https://plugins.jenkins.io/SBuild"
+    },
+    "SSSCM": {
+      "buildDate": "Sep 15, 2011",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "richscze"
+        }
+      ],
+      "excerpt": "This plugin enables a shell script to control the source.",
+      "gav": "ssscm:SSSCM:1.0",
+      "labels": [],
+      "name": "SSSCM",
+      "popularity": 120,
+      "releaseTimestamp": "2011-09-15T21:14:36.00Z",
+      "requiredCore": "1.323",
+      "scm": "https://github.com/jenkinsci/shell-script-scm-plugin",
+      "sha1": "icFbnck8LcwZnI6+j4QPD9utxiA=",
+      "sha256": "mHt0gSE35yAZ9F+IZNjypijBMBb0EdEhuvBqVuTPdgI=",
+      "title": "SSSCM",
+      "url": "https://updates.jenkins.io/download/plugins/SSSCM/1.0/SSSCM.hpi",
+      "version": "1.0",
+      "wiki": "https://plugins.jenkins.io/SSSCM"
+    },
+    "StashBranchParameter": {
+      "buildDate": "Feb 11, 2017",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "eernie",
+          "email": "oldenkamperwin@gmail.com",
+          "name": "Erwin Oldenkamp"
+        }
+      ],
+      "excerpt": "This plugin lets the user to select a branch or tag. The plugin uses the rest-api off your local stash server.",
+      "gav": "org.jenkins-ci.plugins:StashBranchParameter:0.3.0",
+      "labels": [
+        "parameter"
+      ],
+      "name": "StashBranchParameter",
+      "popularity": 849,
+      "previousTimestamp": "2015-12-01T23:42:26.00Z",
+      "previousVersion": "0.2.0",
+      "releaseTimestamp": "2017-02-11T14:45:23.00Z",
+      "requiredCore": "1.639",
+      "sha1": "RIGt9ld1bcH907P94jfMpRJFypA=",
+      "sha256": "HfosFz9r2Shhu8oXrGZW5BwYxjX7D94iXy1PibQwwXY=",
+      "title": "Stash Branch Parameter",
+      "url": "https://updates.jenkins.io/download/plugins/StashBranchParameter/0.3.0/StashBranchParameter.hpi",
+      "version": "0.3.0",
+      "wiki": "https://plugins.jenkins.io/StashBranchParameter"
+    },
+    "Surround-SCM-plugin": {
+      "buildDate": "Jul 13, 2018",
+      "dependencies": [
+        {
+          "name": "plain-credentials",
+          "optional": false,
+          "version": "1.0"
+        },
+        {
+          "name": "scm-api",
+          "optional": false,
+          "version": "1.3"
+        },
+        {
+          "name": "workflow-scm-step",
+          "optional": false,
+          "version": "1.14.2"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "1.16.1"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.5"
+        },
+        {
+          "name": "mailer",
+          "optional": false,
+          "version": "1.16"
+        }
+      ],
+      "developers": [
+        {
+          "email": "vincentp@seapine.com",
+          "name": "Paul Vincent"
+        }
+      ],
+      "excerpt": "This plugin integrates the source control tool <a href=\"https://www.perforce.com/products/surround-scm\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Surround SCM</a> to Jenkins.",
+      "gav": "org.jenkins-ci.plugins:Surround-SCM-plugin:1.12",
+      "labels": [
+        "scm"
+      ],
+      "name": "Surround-SCM-plugin",
+      "popularity": 130,
+      "previousTimestamp": "2018-07-09T18:26:33.00Z",
+      "previousVersion": "1.11",
+      "releaseTimestamp": "2018-07-13T19:23:40.00Z",
+      "requiredCore": "1.580.3",
+      "scm": "https://github.com/jenkinsci/Surround-SCM-plugin",
+      "sha1": "2mBob8oUXG0CQKa89hRHWLuvX+U=",
+      "sha256": "BzaeYgNccoQep4LWoE62TT4mL7p4ugq/CBooZWc8Q74=",
+      "title": "Seapine Surround SCM",
+      "url": "https://updates.jenkins.io/download/plugins/Surround-SCM-plugin/1.12/Surround-SCM-plugin.hpi",
+      "version": "1.12",
+      "wiki": "https://plugins.jenkins.io/Surround-SCM-plugin"
+    },
+    "TestComplete": {
+      "buildDate": "Dec 23, 2020",
+      "dependencies": [
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.19"
+        },
+        {
+          "name": "junit",
+          "optional": false,
+          "version": "1.19"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.7"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "Igor.Filin"
+        }
+      ],
+      "excerpt": "Runs automated tests with TestComplete or TestExecute from Jenkins.",
+      "gav": "org.jenkins-ci.plugins:TestComplete:2.6.1",
+      "labels": [
+        "builder",
+        "report"
+      ],
+      "name": "TestComplete",
+      "popularity": 1089,
+      "previousTimestamp": "2020-08-18T07:38:52.00Z",
+      "previousVersion": "2.6",
+      "releaseTimestamp": "2020-12-23T08:04:16.00Z",
+      "requiredCore": "2.121.1",
+      "scm": "https://github.com/jenkinsci/testcomplete-plugin",
+      "sha1": "FdcgHkMi5TTVELbPo/gwH+XEGgY=",
+      "sha256": "CHuAbTAPMILcnMwJd3xOJqgRz1nSq+xc8bQcV6Krwdk=",
+      "title": "TestComplete support",
+      "url": "https://updates.jenkins.io/download/plugins/TestComplete/2.6.1/TestComplete.hpi",
+      "version": "2.6.1",
+      "wiki": "https://plugins.jenkins.io/TestComplete"
+    },
+    "TestFairy": {
+      "buildDate": "May 28, 2019",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "testfairy",
+          "email": "jenkins@testfairy.com",
+          "name": "TestFairy"
+        }
+      ],
+      "excerpt": "This plugin will upload .ipa or .apk file(s) to <a href=\"http://testfairy.com\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">TestFairy</a>.",
+      "gav": "org.jenkins-ci.plugins:TestFairy:4.17.2",
+      "labels": [
+        "android",
+        "upload"
+      ],
+      "name": "TestFairy",
+      "popularity": 211,
+      "previousTimestamp": "2018-04-16T10:25:51.00Z",
+      "previousVersion": "4.16",
+      "releaseTimestamp": "2019-05-28T15:20:15.00Z",
+      "requiredCore": "1.596",
+      "scm": "https://github.com/jenkinsci/testfairy-plugin",
+      "sha1": "sKjUIEmxyTN2EPTOm4XdaLqJATo=",
+      "sha256": "fiaVI9KmUNh+NB2otkuYsQXmZON67OWGYy72IsR1N8k=",
+      "title": "TestFairy",
+      "url": "https://updates.jenkins.io/download/plugins/TestFairy/4.17.2/TestFairy.hpi",
+      "version": "4.17.2",
+      "wiki": "https://plugins.jenkins.io/TestFairy"
+    },
+    "TwilioNotifier": {
+      "buildDate": "Dec 27, 2011",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "christer",
+          "email": "christer.fahlgren@gmail.com",
+          "name": "Christer Fahlgren"
+        }
+      ],
+      "excerpt": "Send text messages or make calls on build failures using Twilio",
+      "gav": "com.twilio.jenkins:TwilioNotifier:0.2.1",
+      "labels": [],
+      "name": "TwilioNotifier",
+      "popularity": 90,
+      "previousTimestamp": "2011-12-27T18:57:37.00Z",
+      "previousVersion": "0.2.0",
+      "releaseTimestamp": "2011-12-27T19:01:52.00Z",
+      "requiredCore": "1.409",
+      "scm": "https://github.com/jenkinsci/twilio-notifier-plugin",
+      "sha1": "H1vq0/9tFtMVw8+kUlL2W8TkSjE=",
+      "sha256": "L5fTeXf6VZ/l9j4AlOUOA++/S/iSS/AXqhZfp9Z3Rb4=",
+      "title": "TwilioNotifier",
+      "url": "https://updates.jenkins.io/download/plugins/TwilioNotifier/0.2.1/TwilioNotifier.hpi",
+      "version": "0.2.1",
+      "wiki": "https://plugins.jenkins.io/TwilioNotifier"
+    },
+    "URLSCM": {
+      "buildDate": "Nov 02, 2011",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "mdonohue",
+          "name": "Michael Donohue"
+        },
+        {
+          "developerId": "jieryn",
+          "email": "jieryn@gmail.com",
+          "name": "Jesse Farinacci"
+        }
+      ],
+      "excerpt": "A URL SCM plugin for Hudson. This plugin supports polling and checkout. Polling is done by checking the last-modified header returned when connecting to a URL. Checkout is done by copying the URL data into the workspace.",
+      "gav": "org.jvnet.hudson.plugins:URLSCM:1.6",
+      "labels": [
+        "scm"
+      ],
+      "name": "URLSCM",
+      "popularity": 650,
+      "releaseTimestamp": "2011-11-02T14:15:18.00Z",
+      "requiredCore": "1.392",
+      "scm": "https://github.com/jenkinsci/URLSCM-plugin",
+      "sha1": "aglxMDptHgY5Xk31EXgB8NafzKU=",
+      "sha256": "kYghIC5VJc4tIPLgY0A75tWUFXux7DWZ8AaowC0Bva8=",
+      "title": "URL SCM",
+      "url": "https://updates.jenkins.io/download/plugins/URLSCM/1.6/URLSCM.hpi",
+      "version": "1.6",
+      "wiki": "https://plugins.jenkins.io/URLSCM"
+    },
+    "abap-ci": {
+      "buildDate": "Oct 27, 2020",
+      "dependencies": [
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "andau",
+          "email": "not shown",
+          "name": "Andreas Gautsch"
+        }
+      ],
+      "excerpt": "Provides Continuous Integration capabilities for ABAP",
+      "gav": "io.jenkins.plugins:abap-ci:1.18",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "abap-ci",
+      "popularity": 8,
+      "previousTimestamp": "2020-07-19T21:43:40.00Z",
+      "previousVersion": "1.15",
+      "releaseTimestamp": "2020-10-27T19:48:39.00Z",
+      "requiredCore": "2.164.3",
+      "scm": "https://github.com/jenkinsci/abap-ci-plugin",
+      "sha1": "dgFI36ixIsNYKjInbr9nAAabjHo=",
+      "sha256": "ACmVDx/cmg1wnUANoDt14C8axYG1C/NktJOA4kLxc6c=",
+      "title": "Abap Continuous Integration",
+      "url": "https://updates.jenkins.io/download/plugins/abap-ci/1.18/abap-ci.hpi",
+      "version": "1.18",
+      "wiki": "https://plugins.jenkins.io/abap-ci"
+    },
+    "absint-a3": {
+      "buildDate": "Oct 05, 2017",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "absint",
+          "email": "support@absint.com",
+          "name": "Technical Support"
+        }
+      ],
+      "excerpt": "Provides Jenkins integration for the AbsInt Advanced Analyzer (a³) tools.",
+      "gav": "org.jenkins-ci.plugins:absint-a3:1.1.0",
+      "labels": [
+        "buildwrapper"
+      ],
+      "name": "absint-a3",
+      "popularity": 22,
+      "previousTimestamp": "2017-08-08T10:21:40.00Z",
+      "previousVersion": "1.0.3",
+      "releaseTimestamp": "2017-10-05T12:41:26.00Z",
+      "requiredCore": "1.625.3",
+      "scm": "https://github.com/jenkinsci/absint-a3-plugin",
+      "sha1": "nOZcdINoqJTlrtl8BwDj5U2Yadw=",
+      "sha256": "5MT0wGqK07PIxGeC1/NWXkrbATrHj2eKHzv25ZHi82o=",
+      "title": "AbsInt a³",
+      "url": "https://updates.jenkins.io/download/plugins/absint-a3/1.1.0/absint-a3.hpi",
+      "version": "1.1.0",
+      "wiki": "https://plugins.jenkins.io/absint-a3"
+    },
+    "absint-astree": {
+      "buildDate": "Oct 11, 2018",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "jherter",
+          "email": "herter@absint.com",
+          "name": "Joerg Herter"
+        }
+      ],
+      "excerpt": "Provides Jenkins integration for the Astrée static code analyzer.",
+      "gav": "org.jenkins-ci.plugins:absint-astree:1.0.8",
+      "labels": [
+        "buildwrapper"
+      ],
+      "name": "absint-astree",
+      "popularity": 21,
+      "previousTimestamp": "2018-05-29T10:40:38.00Z",
+      "previousVersion": "1.0.7",
+      "releaseTimestamp": "2018-10-11T07:01:37.00Z",
+      "requiredCore": "1.625.3",
+      "scm": "https://github.com/jenkinsci/absint-astree-plugin",
+      "sha1": "dr7rM/ndCl9J4S9jOC3AsyCH+aY=",
+      "sha256": "MthAnqOTMo3yW15P3b2xzC6gUJAFhQTn84qF0D89Nz0=",
+      "title": "AbsInt Astrée",
+      "url": "https://updates.jenkins.io/download/plugins/absint-astree/1.0.8/absint-astree.hpi",
+      "version": "1.0.8",
+      "wiki": "https://plugins.jenkins.io/absint-astree"
+    },
+    "accelerated-build-now-plugin": {
+      "buildDate": "Jul 31, 2013",
+      "dependencies": [
+        {
+          "name": "maven-plugin",
+          "optional": false,
+          "version": "1.523"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "anthonydahanne",
+          "email": "anthony.dahanne@gmail.com",
+          "name": "Anthony Dahanne"
+        }
+      ],
+      "excerpt": "A plug-in that enables you to instantly run a job on a busy Jenkins cluster (top of the queue, can kill a build to execute now)",
+      "gav": "org.terracotta.jenkins.plugins:accelerated-build-now-plugin:1.0.1",
+      "labels": [
+        "adopt-this-plugin",
+        "trigger"
+      ],
+      "name": "accelerated-build-now-plugin",
+      "popularity": 639,
+      "releaseTimestamp": "2013-07-31T15:49:14.00Z",
+      "requiredCore": "1.523",
+      "scm": "https://github.com/jenkinsci/accelerated-build-now-plugin",
+      "sha1": "3unyVqpC+qiGqcwjnwd1WOzV41c=",
+      "sha256": "AeN9o5PpHaJ2l37W0ShwjX9vKczrRtGdCtCFfOG+dRM=",
+      "title": "accelerated-build-now-plugin",
+      "url": "https://updates.jenkins.io/download/plugins/accelerated-build-now-plugin/1.0.1/accelerated-build-now-plugin.hpi",
+      "version": "1.0.1",
+      "wiki": "https://plugins.jenkins.io/accelerated-build-now-plugin"
+    },
+    "accurev": {
+      "buildDate": "Jan 11, 2021",
+      "dependencies": [
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.3.0"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "casz",
+          "name": "Joseph Petersen"
+        }
+      ],
+      "excerpt": "This plugin integrates <a href=\"http://www.accurev.com/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">AccuRev SCM</a> to Jenkins.",
+      "gav": "org.jenkins-ci.plugins:accurev:0.7.24",
+      "labels": [
+        "adopt-this-plugin",
+        "scm"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "accurev",
+      "popularity": 240,
+      "previousTimestamp": "2020-01-24T10:30:51.00Z",
+      "previousVersion": "0.7.23",
+      "releaseTimestamp": "2021-01-11T11:09:04.00Z",
+      "requiredCore": "2.138.4",
+      "scm": "https://github.com/jenkinsci/accurev-plugin",
+      "sha1": "9a4ebBvjc53vyg65Hs2tHu63ovo=",
+      "sha256": "dKvzuZeLR7s/568lEpeS3zHDIKUoMwT1l+QVUuk5RDE=",
+      "title": "AccuRev",
+      "url": "https://updates.jenkins.io/download/plugins/accurev/0.7.24/accurev.hpi",
+      "version": "0.7.24",
+      "wiki": "https://plugins.jenkins.io/accurev"
+    },
+    "ace-editor": {
+      "buildDate": "Mar 03, 2016",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "tfennelly"
+        }
+      ],
+      "excerpt": "JavaScript GUI Lib: ACE Editor bundle plugin.",
+      "gav": "org.jenkins-ci.ui:ace-editor:1.1",
+      "labels": [],
+      "name": "ace-editor",
+      "popularity": 252534,
+      "previousTimestamp": "2015-11-06T12:41:36.00Z",
+      "previousVersion": "1.0.1",
+      "releaseTimestamp": "2016-03-03T12:09:31.00Z",
+      "requiredCore": "1.580.1",
+      "sha1": "Oe0JR9zZtBR2muKLPrlVZD4l1eA=",
+      "sha256": "q8lwKIk8inFYGl9VnqSOjh8aZRZPrultq/7Z6V6autI=",
+      "title": "JavaScript GUI Lib: ACE Editor bundle",
+      "url": "https://updates.jenkins.io/download/plugins/ace-editor/1.1/ace-editor.hpi",
+      "version": "1.1",
+      "wiki": "https://plugins.jenkins.io/ace-editor"
+    },
+    "active-directory": {
+      "buildDate": "Dec 24, 2020",
+      "compatibleSinceVersion": "2.0",
+      "dependencies": [
+        {
+          "name": "configuration-as-code",
+          "optional": true,
+          "version": "1.35"
+        },
+        {
+          "name": "mailer",
+          "optional": false,
+          "version": "1.5"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "kohsuke",
+          "name": "Kohsuke Kawaguchi"
+        },
+        {
+          "developerId": "fbelzunc",
+          "name": "Felix Belzunce Arcos"
+        }
+      ],
+      "excerpt": "This plugin enables authentication through Active Directory.",
+      "gav": "org.jenkins-ci.plugins:active-directory:2.23",
+      "labels": [
+        "user"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "active-directory",
+      "popularity": 32270,
+      "previousTimestamp": "2020-11-26T12:33:10.00Z",
+      "previousVersion": "2.22",
+      "releaseTimestamp": "2020-12-24T15:24:36.00Z",
+      "requiredCore": "2.235.5",
+      "scm": "https://github.com/jenkinsci/active-directory-plugin",
+      "sha1": "LX+NlT4GLOhYlUuZl3aMc09moDc=",
+      "sha256": "3BKDBBSMPMxSsV9GblPciUCuOnJane8yx97mitd2PbQ=",
+      "title": "Active Directory",
+      "url": "https://updates.jenkins.io/download/plugins/active-directory/2.23/active-directory.hpi",
+      "version": "2.23",
+      "wiki": "https://plugins.jenkins.io/active-directory"
+    },
+    "acunetix": {
+      "buildDate": "May 19, 2020",
+      "dependencies": [
+        {
+          "name": "plain-credentials",
+          "optional": false,
+          "version": "1.4"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.11"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "Acunetix",
+          "email": "product@acunetix.com",
+          "name": "Acunetix"
+        }
+      ],
+      "excerpt": "Integration of Acunetix scanner with Jenkins",
+      "gav": "com.acunetix:acunetix:1.2.9",
+      "labels": [],
+      "name": "acunetix",
+      "popularity": 133,
+      "previousTimestamp": "2020-04-21T17:05:28.00Z",
+      "previousVersion": "1.2.8",
+      "releaseTimestamp": "2020-05-19T11:32:03.00Z",
+      "requiredCore": "2.73.3",
+      "scm": "https://github.com/jenkinsci/acunetix-plugin",
+      "sha1": "FSsO7V9IuGEOkCXiITvOC0Hig/w=",
+      "sha256": "ZCTVwtlPK6m2Rc9a2k79mZMtb60gG+TCfglzQTHzj8A=",
+      "title": "Acunetix",
+      "url": "https://updates.jenkins.io/download/plugins/acunetix/1.2.9/acunetix.hpi",
+      "version": "1.2.9",
+      "wiki": "https://plugins.jenkins.io/acunetix"
+    },
+    "acunetix-360-scan": {
+      "buildDate": "Nov 25, 2020",
+      "dependencies": [
+        {
+          "name": "workflow-api",
+          "optional": false,
+          "version": "2.38"
+        },
+        {
+          "name": "workflow-step-api",
+          "optional": false,
+          "version": "2.22"
+        },
+        {
+          "name": "cloudbees-folder",
+          "optional": false,
+          "version": "6.11.1"
+        },
+        {
+          "name": "command-launcher",
+          "optional": false,
+          "version": "1.1"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.3.1"
+        },
+        {
+          "name": "role-strategy",
+          "optional": false,
+          "version": "2.16"
+        },
+        {
+          "name": "script-security",
+          "optional": false,
+          "version": "1.71"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "acunetix360",
+          "email": "360@acunetix.com",
+          "name": "Acunetix360"
+        }
+      ],
+      "excerpt": "Plugin for starting Acunetix 360 Scans.",
+      "gav": "org.jenkins-ci.plugins:acunetix-360-scan:1.2.7",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "acunetix-360-scan",
+      "popularity": 29,
+      "previousTimestamp": "2020-05-11T09:53:04.00Z",
+      "previousVersion": "1.2.6",
+      "releaseTimestamp": "2020-11-25T09:03:43.00Z",
+      "requiredCore": "2.212",
+      "scm": "https://github.com/jenkinsci/acunetix-360-scan-plugin",
+      "sha1": "Ok52K5hOgq35XCLnrAzIjlgOWGA=",
+      "sha256": "pdOizbxRvI8dHCTxR2N/+1blJ+bvqUdIfzrdIWeY2d0=",
+      "title": "Acunetix 360 Scan",
+      "url": "https://updates.jenkins.io/download/plugins/acunetix-360-scan/1.2.7/acunetix-360-scan.hpi",
+      "version": "1.2.7",
+      "wiki": "https://plugins.jenkins.io/acunetix-360-scan"
+    },
+    "adaptive-disconnector": {
+      "buildDate": "Oct 30, 2014",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "olivergondza",
+          "email": "ogondza@gmail.com",
+          "name": "Oliver Gondža"
+        }
+      ],
+      "excerpt": "Run node monitors after build failure to detect infrastructure problems early",
+      "gav": "org.jenkins-ci.plugins:adaptive-disconnector:0.2",
+      "labels": [],
+      "name": "adaptive-disconnector",
+      "popularity": 39,
+      "previousTimestamp": "2014-02-05T19:30:27.00Z",
+      "previousVersion": "0.1",
+      "releaseTimestamp": "2014-10-30T21:26:20.00Z",
+      "requiredCore": "1.480",
+      "scm": "https://github.com/jenkinsci/adaptive-disconnector-plugin",
+      "sha1": "nFnMY8miQfmFi6ZyOAQih9WwKMc=",
+      "sha256": "u2GH+VseVEalraLyrzZZL8ST3B/qxOvFBWIGt9ss75U=",
+      "title": "Adaptive Disconnector",
+      "url": "https://updates.jenkins.io/download/plugins/adaptive-disconnector/0.2/adaptive-disconnector.hpi",
+      "version": "0.2",
+      "wiki": "https://plugins.jenkins.io/adaptive-disconnector"
+    },
+    "additional-identities-plugin": {
+      "buildDate": "Oct 20, 2015",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "jglick"
+        }
+      ],
+      "excerpt": "Additional user property for user identity on other systems. Jenkins then won&#39;t create duplicated users when such an identity is extracted during SCM changelog parsing, or other user-related events.",
+      "gav": "com.cloudbees.jenkins.plugins:additional-identities-plugin:1.1",
+      "labels": [],
+      "name": "additional-identities-plugin",
+      "popularity": 267,
+      "previousTimestamp": "2012-09-27T13:52:01.00Z",
+      "previousVersion": "1.0",
+      "releaseTimestamp": "2015-10-20T15:09:15.00Z",
+      "requiredCore": "1.488",
+      "scm": "https://github.com/jenkinsci/additional-identities-plugin",
+      "sha1": "9khYVdSjPCpcLrNbrGhbRCu/O/Q=",
+      "sha256": "wToGiatTeNYAPwcK4ZzW6ATfAZ/x1cUfcPDHoO6aX3Y=",
+      "title": "Additional Identities",
+      "url": "https://updates.jenkins.io/download/plugins/additional-identities-plugin/1.1/additional-identities-plugin.hpi",
+      "version": "1.1",
+      "wiki": "https://plugins.jenkins.io/additional-identities-plugin"
+    },
+    "additional-metrics": {
+      "buildDate": "Jul 27, 2019",
+      "dependencies": [
+        {
+          "name": "workflow-aggregator",
+          "optional": true,
+          "version": "2.2"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "chadiem",
+          "email": "chadimsr@gmail.com",
+          "name": "Chadi El Masri"
+        }
+      ],
+      "excerpt": "Provides additional metrics for List Views: Success/Failure Rates, Min/Max/Avg run and checkout durations, Success/Failure Time Rates.",
+      "gav": "org.jenkins-ci.plugins:additional-metrics:1.3",
+      "labels": [],
+      "minimumJavaVersion": "1.7",
+      "name": "additional-metrics",
+      "popularity": 443,
+      "previousTimestamp": "2018-07-11T07:09:40.00Z",
+      "previousVersion": "1.2",
+      "releaseTimestamp": "2019-07-27T21:53:15.00Z",
+      "requiredCore": "1.651.3",
+      "scm": "https://github.com/jenkinsci/additional-metrics-plugin",
+      "sha1": "2K6VyRCdeb2m/yVdnLD/wuz1fC4=",
+      "sha256": "eC9utQmu+PoFrmwlJML/RIL6gMEEt6Ljh5llnQwFiWc=",
+      "title": "Additional Metrics",
+      "url": "https://updates.jenkins.io/download/plugins/additional-metrics/1.3/additional-metrics.hpi",
+      "version": "1.3",
+      "wiki": "https://plugins.jenkins.io/additional-metrics"
+    },
+    "adobe-cloud-manager": {
+      "buildDate": "May 28, 2020",
+      "dependencies": [
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "ahmedmusallam",
+          "email": "ahmed@ahmedmusallam.com",
+          "name": "Ahmed Musallam"
+        }
+      ],
+      "excerpt": "TODO",
+      "gav": "io.jenkins.plugins:adobe-cloud-manager:1.0.2",
+      "labels": [
+        "cloud",
+        "deployment",
+        "devops"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "adobe-cloud-manager",
+      "popularity": 27,
+      "previousTimestamp": "2020-05-28T17:57:30.00Z",
+      "previousVersion": "1.0.1",
+      "releaseTimestamp": "2020-05-28T19:44:53.00Z",
+      "requiredCore": "2.164.3",
+      "scm": "https://github.com/jenkinsci/adobe-cloud-manager-plugin",
+      "sha1": "9fwzyxtIfQYlY1u5xv8G7vPJ72M=",
+      "sha256": "Stv9y73v1pk65OLUAhkQwui8ec/nuTrXhQl5CueItHY=",
+      "title": "Adobe Cloud Manager",
+      "url": "https://updates.jenkins.io/download/plugins/adobe-cloud-manager/1.0.2/adobe-cloud-manager.hpi",
+      "version": "1.0.2",
+      "wiki": "https://plugins.jenkins.io/adobe-cloud-manager"
+    },
+    "adoptopenjdk": {
+      "buildDate": "Aug 07, 2020",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "mmchr",
+          "email": "hr.mohr@gmail.com",
+          "name": "Mads Mohr Christensen"
+        }
+      ],
+      "excerpt": "Provides an installer for the JDK tool that downloads the JDK from https://adoptopenjdk.net",
+      "gav": "io.jenkins.plugins:adoptopenjdk:1.3",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "adoptopenjdk",
+      "popularity": 1265,
+      "previousTimestamp": "2019-09-09T15:00:36.00Z",
+      "previousVersion": "1.2",
+      "releaseTimestamp": "2020-08-07T10:57:42.00Z",
+      "requiredCore": "2.164.3",
+      "scm": "https://github.com/jenkinsci/adoptopenjdk-plugin",
+      "sha1": "c7VqNYnzBVBrQE9c163sAO+VaCc=",
+      "sha256": "7IRXmX1gQSkw0sRsSwXBZbjL+/8zGjxKNdmi30i0+yM=",
+      "title": "AdoptOpenJDK installer",
+      "url": "https://updates.jenkins.io/download/plugins/adoptopenjdk/1.3/adoptopenjdk.hpi",
+      "version": "1.3",
+      "wiki": "https://plugins.jenkins.io/adoptopenjdk"
+    },
+    "advanced-installer-msi-builder": {
+      "buildDate": "Nov 27, 2020",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "advinst",
+          "email": "support@advancedinstaller.com",
+          "name": "Advanced Installer"
+        }
+      ],
+      "excerpt": "Thie plugin allows to build setups using Advanced Installer.",
+      "gav": "org.jenkins-ci.plugins:advanced-installer-msi-builder:2.1.0",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "advanced-installer-msi-builder",
+      "popularity": 253,
+      "previousTimestamp": "2018-11-13T10:14:45.00Z",
+      "previousVersion": "2.0.3",
+      "releaseTimestamp": "2020-11-27T13:38:48.00Z",
+      "requiredCore": "2.157",
+      "scm": "https://github.com/jenkinsci/advanced-installer-msi-builder-plugin",
+      "sha1": "WRJVfCq11WZHm1i8xEhniEEpwMY=",
+      "sha256": "Uf509bLLZEdtpNGJ3F3JFfLiK+bSN6OakqgvWqdtIIk=",
+      "title": "Advanced Installer Msi Builder",
+      "url": "https://updates.jenkins.io/download/plugins/advanced-installer-msi-builder/2.1.0/advanced-installer-msi-builder.hpi",
+      "version": "2.1.0",
+      "wiki": "https://plugins.jenkins.io/advanced-installer-msi-builder"
+    },
+    "agent-loadbalance": {
+      "buildDate": "Feb 27, 2018",
+      "dependencies": [
+        {
+          "name": "job-restrictions",
+          "optional": false,
+          "version": "0.6"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.7"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "surenpi",
+          "email": "zxjlwt@126.com",
+          "name": "SuRen"
+        }
+      ],
+      "excerpt": "Jenkins agent load balance.",
+      "gav": "com.surenpi.jenkins:agent-loadbalance:1.0",
+      "labels": [
+        "agent"
+      ],
+      "name": "agent-loadbalance",
+      "popularity": 75,
+      "releaseTimestamp": "2018-02-27T04:30:52.00Z",
+      "requiredCore": "2.7.3",
+      "scm": "https://github.com/jenkinsci/agent-loadbalance-plugin",
+      "sha1": "VqjHTxAWnlhW8JLY4ogCZ932Og4=",
+      "sha256": "bGIMQic9cPO1ep2oApUHqs23lIPG3fX4BZJtKCDivT4=",
+      "title": "Agent LoadBalance",
+      "url": "https://updates.jenkins.io/download/plugins/agent-loadbalance/1.0/agent-loadbalance.hpi",
+      "version": "1.0",
+      "wiki": "https://plugins.jenkins.io/agent-loadbalance"
+    },
+    "agent-server-parameter": {
+      "buildDate": "Jun 19, 2020",
+      "dependencies": [
+        {
+          "name": "rebuild",
+          "optional": true,
+          "version": "1.25"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "sunweisheng",
+          "email": "sunweisheng@live.cn",
+          "name": "SunWeiSheng"
+        }
+      ],
+      "excerpt": "Select agent server before Jenkins build.",
+      "gav": "io.jenkins.plugins:agent-server-parameter:1.0",
+      "labels": [
+        "agent"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "agent-server-parameter",
+      "popularity": 63,
+      "releaseTimestamp": "2020-06-19T17:48:23.00Z",
+      "requiredCore": "2.164.1",
+      "scm": "https://github.com/jenkinsci/agent-server-parameter-plugin",
+      "sha1": "/4XjUA8Js1H03JHlT4+8QOaW8U0=",
+      "sha256": "XBUOHt5HXBYpMd70FZ/fgYWgUcAhean3YyCpew/FpxY=",
+      "title": "Agent Server Parameter",
+      "url": "https://updates.jenkins.io/download/plugins/agent-server-parameter/1.0/agent-server-parameter.hpi",
+      "version": "1.0",
+      "wiki": "https://plugins.jenkins.io/agent-server-parameter"
+    },
+    "aio-tests": {
+      "buildDate": "Dec 28, 2020",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "aiosupport",
+          "name": "AIO Tests Support"
+        }
+      ],
+      "excerpt": "Publish your test results to AIO Tests - Jira as a post build action from Jenkins",
+      "gav": "io.jenkins.plugins:aio-tests:1.1",
+      "labels": [
+        "jira",
+        "test"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "aio-tests",
+      "popularity": 1,
+      "releaseTimestamp": "2020-12-28T10:50:26.00Z",
+      "requiredCore": "2.235.1",
+      "scm": "https://github.com/jenkinsci/aio-tests-plugin",
+      "sha1": "JqnHpHxQ8VnrZaVWoXAZIE/ajto=",
+      "sha256": "CE1qKvkIU49FAgWQO7JcISC6PAaURbj6hYopm3pZlpo=",
+      "title": "AIO Tests",
+      "url": "https://updates.jenkins.io/download/plugins/aio-tests/1.1/aio-tests.hpi",
+      "version": "1.1",
+      "wiki": "https://plugins.jenkins.io/aio-tests"
+    },
+    "alauda-devops-credentials-provider": {
+      "buildDate": "Oct 27, 2019",
+      "dependencies": [
+        {
+          "name": "alauda-kubernetes-support",
+          "optional": false,
+          "version": "2.3.0"
+        },
+        {
+          "name": "cloudbees-folder",
+          "optional": false,
+          "version": "6.1.2"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.16"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "alaudaDevelopers",
+          "email": "devs@alauda.io",
+          "name": "Alauda Developers"
+        }
+      ],
+      "excerpt": "This plugin will provide a credentials store backed by Kubernetes",
+      "gav": "io.alauda.jenkins.plugins:alauda-devops-credentials-provider:2.4.1",
+      "labels": [],
+      "name": "alauda-devops-credentials-provider",
+      "popularity": 50,
+      "previousTimestamp": "2019-10-27T11:33:24.00Z",
+      "previousVersion": "2.4.0",
+      "releaseTimestamp": "2019-10-27T11:40:30.00Z",
+      "requiredCore": "2.83",
+      "scm": "https://github.com/jenkinsci/alauda-devops-credentials-provider-plugin",
+      "sha1": "eKSu7+dwpgHCtydXZnX/M4zx1K8=",
+      "sha256": "J7hZiMzfOD4M7QPkR9OQAn148fQwgqRkXayE1KCTlGo=",
+      "title": "Alauda DevOps Credentials Provider",
+      "url": "https://updates.jenkins.io/download/plugins/alauda-devops-credentials-provider/2.4.1/alauda-devops-credentials-provider.hpi",
+      "version": "2.4.1",
+      "wiki": "https://plugins.jenkins.io/alauda-devops-credentials-provider"
+    },
+    "alauda-devops-pipeline": {
+      "buildDate": "Sep 24, 2019",
+      "dependencies": [
+        {
+          "name": "alauda-kubernetes-support",
+          "optional": false,
+          "version": "2.3.0"
+        },
+        {
+          "name": "workflow-cps",
+          "optional": false,
+          "version": "2.17"
+        },
+        {
+          "name": "durable-task",
+          "optional": false,
+          "version": "1.12"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.7"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "alaudaDevelopers",
+          "email": "devs@alauda.io",
+          "name": "Alauda Developers"
+        }
+      ],
+      "excerpt": "This plugin provides Jenkins pipeline DSL interactions for kubenetes.",
+      "gav": "com.alauda.jenkins.plugins:alauda-devops-pipeline:2.3.2",
+      "labels": [],
+      "name": "alauda-devops-pipeline",
+      "popularity": 71,
+      "previousTimestamp": "2019-09-24T05:21:46.00Z",
+      "previousVersion": "2.3.1",
+      "releaseTimestamp": "2019-09-24T14:53:07.00Z",
+      "requiredCore": "2.83",
+      "scm": "https://github.com/jenkinsci/alauda-devops-pipeline-plugin",
+      "sha1": "lOi350RH6Urtxf2zNcKf6qyETPw=",
+      "sha256": "UkpZnnnDF6iwtpKpemP+s3R488aJgZrPe2Z9Lq2XuUc=",
+      "title": "Alauda DevOps Pipeline",
+      "url": "https://updates.jenkins.io/download/plugins/alauda-devops-pipeline/2.3.2/alauda-devops-pipeline.hpi",
+      "version": "2.3.2",
+      "wiki": "https://plugins.jenkins.io/alauda-devops-pipeline"
+    },
+    "alauda-devops-sync": {
+      "buildDate": "Oct 30, 2019",
+      "dependencies": [
+        {
+          "name": "alauda-devops-credentials-provider",
+          "optional": false,
+          "version": "2.0.0"
+        },
+        {
+          "name": "alauda-kubernetes-support",
+          "optional": false,
+          "version": "2.3.0"
+        },
+        {
+          "name": "blueocean-rest-impl",
+          "optional": false,
+          "version": "1.5.0"
+        },
+        {
+          "name": "blueocean-rest",
+          "optional": false,
+          "version": "1.5.0"
+        },
+        {
+          "name": "kubernetes",
+          "optional": false,
+          "version": "1.5"
+        },
+        {
+          "name": "pipeline-rest-api",
+          "optional": false,
+          "version": "2.10"
+        },
+        {
+          "name": "workflow-multibranch",
+          "optional": false,
+          "version": "2.18"
+        },
+        {
+          "name": "workflow-scm-step",
+          "optional": false,
+          "version": "2.6"
+        },
+        {
+          "name": "workflow-step-api",
+          "optional": false,
+          "version": "2.14"
+        },
+        {
+          "name": "workflow-support",
+          "optional": false,
+          "version": "2.18"
+        },
+        {
+          "name": "badge",
+          "optional": false,
+          "version": "1.5"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.16"
+        },
+        {
+          "name": "git-client",
+          "optional": false,
+          "version": "2.7.0"
+        },
+        {
+          "name": "git",
+          "optional": false,
+          "version": "3.6.0"
+        },
+        {
+          "name": "label-linked-jobs",
+          "optional": false,
+          "version": "5.1.2"
+        },
+        {
+          "name": "pipeline-input-step",
+          "optional": false,
+          "version": "2.8"
+        },
+        {
+          "name": "pipeline-stage-step",
+          "optional": false,
+          "version": "2.3"
+        },
+        {
+          "name": "script-security",
+          "optional": false,
+          "version": "1.42"
+        },
+        {
+          "name": "ssh-credentials",
+          "optional": false,
+          "version": "1.13"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.14"
+        },
+        {
+          "name": "subversion",
+          "optional": false,
+          "version": "2.12.1"
+        },
+        {
+          "name": "variant",
+          "optional": false,
+          "version": "1.1"
+        },
+        {
+          "name": "pipeline-model-definition",
+          "optional": false,
+          "version": "1.3.1"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "alaudaDevelopers",
+          "email": "devs@alauda.io",
+          "name": "Alauda Developers"
+        }
+      ],
+      "excerpt": "Sync your Alauda DevOps PipelineConfigs with Jenkins jobs.",
+      "gav": "io.alauda.jenkins.plugins:alauda-devops-sync:2.4.2",
+      "labels": [],
+      "name": "alauda-devops-sync",
+      "popularity": 25,
+      "previousTimestamp": "2019-10-25T03:21:36.00Z",
+      "previousVersion": "2.4.1",
+      "releaseTimestamp": "2019-10-30T11:10:30.00Z",
+      "requiredCore": "2.83",
+      "scm": "https://github.com/jenkinsci/alauda-devops-sync-plugin",
+      "sha1": "pmw2aY0gUYVpal3Vw/8+WHFZngE=",
+      "sha256": "I2epXjSsb/Ed+lmDE87wLAHCcFvTiri16/E8QXi1QKk=",
+      "title": "Alauda DevOps Sync",
+      "url": "https://updates.jenkins.io/download/plugins/alauda-devops-sync/2.4.2/alauda-devops-sync.hpi",
+      "version": "2.4.2",
+      "wiki": "https://plugins.jenkins.io/alauda-devops-sync"
+    },
+    "alauda-kubernetes-support": {
+      "buildDate": "Sep 23, 2019",
+      "dependencies": [
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.16"
+        },
+        {
+          "name": "plain-credentials",
+          "optional": false,
+          "version": "1.4"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "alaudaDevelopers",
+          "email": "devs@alauda.io",
+          "name": "Alauda Developers"
+        }
+      ],
+      "excerpt": "This plugin allows users to config kubernetes and share configuration to other plugins.",
+      "gav": "io.alauda.jenkins.plugins:alauda-kubernetes-support:2.3.0",
+      "labels": [
+        "kubernetes"
+      ],
+      "name": "alauda-kubernetes-support",
+      "popularity": 113,
+      "previousTimestamp": "2019-08-20T11:13:13.00Z",
+      "previousVersion": "2.2.0",
+      "releaseTimestamp": "2019-09-23T11:07:15.00Z",
+      "requiredCore": "2.83",
+      "scm": "https://github.com/jenkinsci/alauda-kubernetes-support-plugin",
+      "sha1": "UuukdI0OcXE6jWvZN63y/zPF2oc=",
+      "sha256": "7847U7WXQlBBWUDEW7754tS70So86KlbVU7xlZWh+NI=",
+      "title": "Alauda Kubernetes Suport",
+      "url": "https://updates.jenkins.io/download/plugins/alauda-kubernetes-support/2.3.0/alauda-kubernetes-support.hpi",
+      "version": "2.3.0",
+      "wiki": "https://plugins.jenkins.io/alauda-kubernetes-support"
+    },
+    "alauda-pipeline": {
+      "buildDate": "Jul 01, 2019",
+      "dependencies": [
+        {
+          "name": "workflow-api",
+          "optional": false,
+          "version": "2.22"
+        },
+        {
+          "name": "workflow-cps",
+          "optional": false,
+          "version": "2.38"
+        },
+        {
+          "name": "workflow-step-api",
+          "optional": false,
+          "version": "2.14"
+        },
+        {
+          "name": "git",
+          "optional": false,
+          "version": "3.2.0"
+        },
+        {
+          "name": "junit",
+          "optional": false,
+          "version": "1.21"
+        },
+        {
+          "name": "scm-api",
+          "optional": false,
+          "version": "2.2.3"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.10"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "chengjingtao",
+          "email": "jtcheng@alauda.io",
+          "name": "chengjingtao"
+        }
+      ],
+      "excerpt": "This plugin provides Jenkins pipeline DSL interactions for Alauda.io",
+      "gav": "io.alauda.jenkins.plugins:alauda-pipeline:1.4.3",
+      "labels": [],
+      "name": "alauda-pipeline",
+      "popularity": 57,
+      "previousTimestamp": "2019-04-29T14:56:48.00Z",
+      "previousVersion": "1.4.2",
+      "releaseTimestamp": "2019-07-01T02:23:20.00Z",
+      "requiredCore": "2.60.3",
+      "scm": "https://github.com/jenkinsci/alauda-pipeline-plugin",
+      "sha1": "28d2fa2m/Soh/c9DU3UctN51YzQ=",
+      "sha256": "kIM+sheJBNJPGQAnpAec/ad9krlD0Yts9gE6jJ6lMUo=",
+      "title": "Alauda Pipeline",
+      "url": "https://updates.jenkins.io/download/plugins/alauda-pipeline/1.4.3/alauda-pipeline.hpi",
+      "version": "1.4.3",
+      "wiki": "https://plugins.jenkins.io/alauda-pipeline"
+    },
+    "alibabacloud-credentials": {
+      "buildDate": "Nov 18, 2020",
+      "dependencies": [
+        {
+          "name": "bouncycastle-api",
+          "optional": false,
+          "version": "2.18"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.3.11"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "zhongwandong"
+        }
+      ],
+      "excerpt": "This plugin integrates Jenkins with Alibaba Cloud credentials",
+      "gav": "com.alibabacloud.jenkins:alibabacloud-credentials:1.0",
+      "labels": [
+        "cluster"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "alibabacloud-credentials",
+      "popularity": 19,
+      "releaseTimestamp": "2020-11-18T06:24:20.00Z",
+      "requiredCore": "2.190.1",
+      "scm": "https://github.com/jenkinsci/alibabacloud-credentials-plugin",
+      "sha1": "c5SVLpf+hI+tVvj5y+bTX0xLq3k=",
+      "sha256": "1pBh/H17MhKwRwoXWjmbTDMnGGFUiK1WnrCFYciewxA=",
+      "title": "Alibaba Cloud Credentials",
+      "url": "https://updates.jenkins.io/download/plugins/alibabacloud-credentials/1.0/alibabacloud-credentials.hpi",
+      "version": "1.0",
+      "wiki": "https://plugins.jenkins.io/alibabacloud-credentials"
+    },
+    "alibabacloud-ecs": {
+      "buildDate": "Dec 22, 2020",
+      "dependencies": [
+        {
+          "name": "alibabacloud-credentials",
+          "optional": false,
+          "version": "1.0"
+        },
+        {
+          "name": "workflow-step-api",
+          "optional": false,
+          "version": "2.22"
+        },
+        {
+          "name": "bouncycastle-api",
+          "optional": false,
+          "version": "2.18"
+        },
+        {
+          "name": "command-launcher",
+          "optional": false,
+          "version": "1.2"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.3.11"
+        },
+        {
+          "name": "ssh-credentials",
+          "optional": false,
+          "version": "1.18.1"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        },
+        {
+          "name": "trilead-api",
+          "optional": false,
+          "version": "1.0.8"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "kunlun.ykl",
+          "email": "kunlun.ykl@alibaba-inc.com",
+          "name": "Kunlun Yang"
+        }
+      ],
+      "excerpt": "This plugin integrates Jenkins with <a href=\"https://www.aliyun.com/product/ecs\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Alibaba Cloud ECS</a> or anything implementing the ECS API&#39;s such as an CentOS.",
+      "gav": "com.alibabacloud.jenkins:alibabacloud-ecs:1.3",
+      "labels": [
+        "cluster"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "alibabacloud-ecs",
+      "popularity": 10,
+      "previousTimestamp": "2020-12-03T14:04:49.00Z",
+      "previousVersion": "1.2",
+      "releaseTimestamp": "2020-12-22T12:52:12.00Z",
+      "requiredCore": "2.190.1",
+      "scm": "https://github.com/jenkinsci/alibabacloud-ecs-plugin",
+      "sha1": "mBtbTlOwhGEJ80l9s2edPwaxtBQ=",
+      "sha256": "mBb6NvLinD4BPAZfzCWx6hbW8VIrO5JmM5wynIrRvDc=",
+      "title": "Alibaba Cloud ECS",
+      "url": "https://updates.jenkins.io/download/plugins/alibabacloud-ecs/1.3/alibabacloud-ecs.hpi",
+      "version": "1.3",
+      "wiki": "https://plugins.jenkins.io/alibabacloud-ecs"
+    },
+    "alibabacloud-edas": {
+      "buildDate": "Dec 08, 2020",
+      "dependencies": [
+        {
+          "name": "alibabacloud-credentials",
+          "optional": false,
+          "version": "1.0"
+        },
+        {
+          "name": "job-dsl",
+          "optional": false,
+          "version": "1.77"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "jungle",
+          "email": "353187194@qq.com",
+          "name": "Hellojungle"
+        }
+      ],
+      "excerpt": "This Plugin allows you to deploy into Alicloud EDAS",
+      "gav": "io.jenkins.plugins:alibabacloud-edas:1.0.0",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "alibabacloud-edas",
+      "popularity": 2,
+      "releaseTimestamp": "2020-12-08T02:52:57.00Z",
+      "requiredCore": "2.190.1",
+      "scm": "https://github.com/jenkinsci/alibabacloud-edas-plugin",
+      "sha1": "dal/cx38IVOJaYXbBoQbYUs1P5M=",
+      "sha256": "tpQ1ljXyuEAAB9AiVPD5GBkxe14W6a5/e+z5L/ZFWhY=",
+      "title": "EDAS",
+      "url": "https://updates.jenkins.io/download/plugins/alibabacloud-edas/1.0.0/alibabacloud-edas.hpi",
+      "version": "1.0.0",
+      "wiki": "https://plugins.jenkins.io/alibabacloud-edas"
+    },
+    "aliyun-oss-uploader": {
+      "buildDate": "Mar 22, 2020",
+      "dependencies": [
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.7"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "raylax",
+          "email": "raylax@inurl.org",
+          "name": "YangchunYu"
+        }
+      ],
+      "excerpt": "",
+      "gav": "io.jenkins.plugins:aliyun-oss-uploader:1.3",
+      "labels": [],
+      "name": "aliyun-oss-uploader",
+      "popularity": 374,
+      "previousTimestamp": "2019-08-19T01:36:51.00Z",
+      "previousVersion": "1.1",
+      "releaseTimestamp": "2020-03-22T11:51:11.00Z",
+      "requiredCore": "2.7.3",
+      "scm": "https://github.com/jenkinsci/aliyun-oss-uploader-plugin",
+      "sha1": "UpwOwlfARuFI3UFPnlx6SFbm3wM=",
+      "sha256": "IasWaTlQdmOhLrbcDTbicb1MHwvL5PGhrghUpjtgqto=",
+      "title": "Aliyun OSS Uploader",
+      "url": "https://updates.jenkins.io/download/plugins/aliyun-oss-uploader/1.3/aliyun-oss-uploader.hpi",
+      "version": "1.3",
+      "wiki": "https://plugins.jenkins.io/aliyun-oss-uploader"
+    },
+    "all-changes": {
+      "buildDate": "Apr 23, 2017",
+      "dependencies": [
+        {
+          "name": "parameterized-trigger",
+          "optional": true,
+          "version": "2.30"
+        },
+        {
+          "name": "dashboard-view",
+          "optional": false,
+          "version": "2.9.9"
+        },
+        {
+          "name": "workflow-job",
+          "optional": false,
+          "version": "1.14"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "wolfs",
+          "name": "Stefan Wolf"
+        },
+        {
+          "developerId": "pskumar448",
+          "email": "pskumar448@gmail.com",
+          "name": "Suresh Kumar"
+        }
+      ],
+      "excerpt": "This plugin shows all changes (also from dependent projects, sub-projects, ...) for a project",
+      "gav": "org.jenkins-ci.plugins:all-changes:1.5",
+      "labels": [
+        "report",
+        "ui"
+      ],
+      "name": "all-changes",
+      "popularity": 2424,
+      "previousTimestamp": "2016-06-06T03:52:09.00Z",
+      "previousVersion": "1.4",
+      "releaseTimestamp": "2017-04-23T16:13:37.00Z",
+      "requiredCore": "1.625.3",
+      "scm": "https://github.com/jenkinsci/all-changes-plugin",
+      "sha1": "AO85gLtqcUxak3V1hncvdj4mrz0=",
+      "sha256": "RVDLddS4iqcz32pbR82ln2GIJoUtOdWk8tr3FvNYpDU=",
+      "title": "All changes",
+      "url": "https://updates.jenkins.io/download/plugins/all-changes/1.5/all-changes.hpi",
+      "version": "1.5",
+      "wiki": "https://plugins.jenkins.io/all-changes"
+    },
+    "allure-jenkins-plugin": {
+      "buildDate": "Dec 02, 2020",
+      "compatibleSinceVersion": "2.19",
+      "dependencies": [
+        {
+          "name": "script-security",
+          "optional": false,
+          "version": "1.25"
+        },
+        {
+          "name": "matrix-project",
+          "optional": false,
+          "version": "1.11"
+        },
+        {
+          "name": "structs",
+          "optional": true,
+          "version": "1.5"
+        },
+        {
+          "name": "job-dsl",
+          "optional": true,
+          "version": "1.51"
+        },
+        {
+          "name": "job-dsl-core",
+          "optional": true,
+          "version": "1.51"
+        },
+        {
+          "name": "workflow-step-api",
+          "optional": true,
+          "version": "2.4"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "dchr",
+          "email": "dchr@yandex-team.ru",
+          "name": "Denis Chernilevsky"
+        },
+        {
+          "developerId": "eroshenkoam",
+          "email": "eroshenkoam@qameta.io",
+          "name": "Artem Eroshenko"
+        },
+        {
+          "developerId": "mavlyutov",
+          "email": "mavlyutov@yandex-team.ru",
+          "name": "Marat Mavlyutov"
+        },
+        {
+          "developerId": "pupssman",
+          "email": "pupssman@yandex-team.ru",
+          "name": "Ivan Kalinin"
+        },
+        {
+          "developerId": "vania-pooh",
+          "email": "vania-pooh@yandex-team.ru",
+          "name": "Ivan Krutov"
+        },
+        {
+          "developerId": "baev",
+          "email": "baev.dm@gmail.com",
+          "name": "Dmitry Baev"
+        }
+      ],
+      "excerpt": "This plugin integrates Allure reporting tool into Jenkins.",
+      "gav": "ru.yandex.qatools.allure:allure-jenkins-plugin:2.29.0",
+      "labels": [
+        "report"
+      ],
+      "name": "allure-jenkins-plugin",
+      "popularity": 11211,
+      "previousTimestamp": "2019-03-21T12:04:20.00Z",
+      "previousVersion": "2.28.1",
+      "releaseTimestamp": "2020-12-02T17:40:58.00Z",
+      "requiredCore": "1.642.4",
+      "scm": "https://github.com/jenkinsci/allure-plugin",
+      "sha1": "vkuM6peMy6diIUUB7ecUqZwf+7U=",
+      "sha256": "5Mgv9F3w1gzwnnWrRrKaNXLmO2wlqVhxF49SjHGkZw8=",
+      "title": "Allure",
+      "url": "https://updates.jenkins.io/download/plugins/allure-jenkins-plugin/2.29.0/allure-jenkins-plugin.hpi",
+      "version": "2.29.0",
+      "wiki": "https://plugins.jenkins.io/allure-jenkins-plugin"
+    },
+    "amazon-ecr": {
+      "buildDate": "May 16, 2017",
+      "dependencies": [
+        {
+          "name": "aws-credentials",
+          "optional": false,
+          "version": "1.19"
+        },
+        {
+          "name": "aws-java-sdk",
+          "optional": false,
+          "version": "1.11.68.1"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.11"
+        },
+        {
+          "name": "docker-commons",
+          "optional": false,
+          "version": "1.6"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "ndeloof",
+          "email": "nicolas.deloof@gmail.com",
+          "name": "Nicolas De Loof"
+        },
+        {
+          "developerId": "ifernandezcalvo",
+          "email": "kuisathaverat@gmail.com",
+          "name": "Ivan Fernandez Calvo"
+        }
+      ],
+      "excerpt": "This plugin generates Docker authentication token from Amazon Credentials to access Amazon ECR.",
+      "gav": "com.cloudbees.jenkins.plugins:amazon-ecr:1.6",
+      "labels": [
+        "adopt-this-plugin"
+      ],
+      "name": "amazon-ecr",
+      "popularity": 6556,
+      "previousTimestamp": "2016-10-29T13:55:33.00Z",
+      "previousVersion": "1.4",
+      "releaseTimestamp": "2017-05-16T08:34:19.00Z",
+      "requiredCore": "1.642.1",
+      "scm": "https://github.com/jenkinsci/amazon-ecr-plugin",
+      "sha1": "r8duXOEq8AAPVhdBcL568gH0rxU=",
+      "sha256": "wuPkJM3WPRATKXpfG6OewUAGi+ibTeT10R4UzEloZ5o=",
+      "title": "Amazon ECR",
+      "url": "https://updates.jenkins.io/download/plugins/amazon-ecr/1.6/amazon-ecr.hpi",
+      "version": "1.6",
+      "wiki": "https://plugins.jenkins.io/amazon-ecr"
+    },
+    "amazon-ecs": {
+      "buildDate": "Sep 23, 2020",
+      "dependencies": [
+        {
+          "name": "workflow-step-api",
+          "optional": false,
+          "version": "2.22"
+        },
+        {
+          "name": "apache-httpcomponents-client-4-api",
+          "optional": false,
+          "version": "4.5.10-2.0"
+        },
+        {
+          "name": "aws-credentials",
+          "optional": false,
+          "version": "1.28"
+        },
+        {
+          "name": "aws-java-sdk",
+          "optional": false,
+          "version": "1.11.723"
+        },
+        {
+          "name": "credentials-binding",
+          "optional": false,
+          "version": "1.21"
+        },
+        {
+          "name": "durable-task",
+          "optional": false,
+          "version": "1.34"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        },
+        {
+          "name": "variant",
+          "optional": false,
+          "version": "1.3"
+        },
+        {
+          "name": "pipeline-model-extensions",
+          "optional": true,
+          "version": "1.6.0"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "webratz",
+          "email": "dvcs@webratz.de",
+          "name": "Andreas Sieferlinger"
+        },
+        {
+          "developerId": "pgarbe",
+          "email": "jenkins@garbe.io",
+          "name": "Philipp Garbe"
+        }
+      ],
+      "excerpt": "Use Amazon EC2 Container Service to provide elastic agents.",
+      "gav": "com.cloudbees.jenkins.plugins:amazon-ecs:1.37",
+      "labels": [
+        "adopt-this-plugin",
+        "aws",
+        "cluster",
+        "slaves"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "amazon-ecs",
+      "popularity": 4123,
+      "previousTimestamp": "2020-06-17T14:34:59.00Z",
+      "previousVersion": "1.36",
+      "releaseTimestamp": "2020-09-23T07:08:55.00Z",
+      "requiredCore": "2.176.1",
+      "scm": "https://github.com/jenkinsci/amazon-ecs-plugin",
+      "sha1": "J6YytXeNgDWKg3ggkmWqudsiBRg=",
+      "sha256": "1GlGfqZ7sBCG9qdZ3vxRJOtbUjRTchuNHkD95/oGjoc=",
+      "title": "Amazon Elastic Container Service (ECS) / Fargate",
+      "url": "https://updates.jenkins.io/download/plugins/amazon-ecs/1.37/amazon-ecs.hpi",
+      "version": "1.37",
+      "wiki": "https://plugins.jenkins.io/amazon-ecs"
+    },
+    "amqp-build-trigger": {
+      "buildDate": "Aug 27, 2019",
+      "dependencies": [
+        {
+          "name": "workflow-job",
+          "optional": false,
+          "version": "2.12.2"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "kpvdr",
+          "email": "kpvdr@apache.org",
+          "name": "Kim van der Riet"
+        }
+      ],
+      "excerpt": "This plugin allows jobs to connect to one or more AMQP sources (often brokers with a queue or topic), receive messages from them, and trigger a build when the message is received.",
+      "gav": "io.jenkins.plugins:amqp-build-trigger:1.0",
+      "labels": [],
+      "name": "amqp-build-trigger",
+      "popularity": 5,
+      "releaseTimestamp": "2019-08-27T14:35:01.00Z",
+      "requiredCore": "2.7.3",
+      "scm": "https://github.com/jenkinsci/amqp-build-trigger-plugin",
+      "sha1": "qV2eSBcFNVcIwNSJhx4w75a5D7k=",
+      "sha256": "ksGWi+B/oMnpv9C6dTnN5/6FCCgcAoq9Z0exAIF+NGE=",
+      "title": "AMQP Build Trigger",
+      "url": "https://updates.jenkins.io/download/plugins/amqp-build-trigger/1.0/amqp-build-trigger.hpi",
+      "version": "1.0",
+      "wiki": "https://plugins.jenkins.io/amqp-build-trigger"
+    },
+    "analysis-model-api": {
+      "buildDate": "Jan 04, 2021",
+      "dependencies": [
+        {
+          "name": "plugin-util-api",
+          "optional": false,
+          "version": "1.6.1"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "uhafner",
+          "email": "ullrich.hafner@gmail.com",
+          "name": "Ullrich Hafner"
+        }
+      ],
+      "excerpt": "Static Analysis Model and Parsers API used by the Warnings plugin.",
+      "gav": "io.jenkins.plugins:analysis-model-api:9.6.0",
+      "labels": [
+        "api-plugin"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "analysis-model-api",
+      "popularity": 19555,
+      "previousTimestamp": "2021-01-03T14:18:52.00Z",
+      "previousVersion": "9.5.0",
+      "releaseTimestamp": "2021-01-04T14:01:03.00Z",
+      "requiredCore": "2.204.6",
+      "scm": "https://github.com/jenkinsci/analysis-model-api-plugin",
+      "sha1": "FlQgQWDpLoTZ5EbK+U55D5Ogg+s=",
+      "sha256": "d4YJ07UHd6t8nBF+p5blIFaXobdqr8Jk0w3nsOZDpAo=",
+      "title": "Analysis Model API",
+      "url": "https://updates.jenkins.io/download/plugins/analysis-model-api/9.6.0/analysis-model-api.hpi",
+      "version": "9.6.0",
+      "wiki": "https://plugins.jenkins.io/analysis-model-api"
+    },
+    "anchore-container-scanner": {
+      "buildDate": "Dec 07, 2020",
+      "dependencies": [
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.7"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.16"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "nurmi",
+          "email": "nurmi@anchore.com",
+          "name": "Daniel Nurmi"
+        },
+        {
+          "developerId": "swathigangisetty",
+          "email": "swathi@anchore.com",
+          "name": "Swathi Gangisetty"
+        }
+      ],
+      "excerpt": "This plugin provides container image scanning using Anchore Engine",
+      "gav": "org.jenkins-ci.plugins:anchore-container-scanner:1.0.23",
+      "labels": [
+        "builder",
+        "scm",
+        "security"
+      ],
+      "name": "anchore-container-scanner",
+      "popularity": 1032,
+      "previousTimestamp": "2020-01-06T19:46:37.00Z",
+      "previousVersion": "1.0.22",
+      "releaseTimestamp": "2020-12-07T19:44:38.00Z",
+      "requiredCore": "1.625.3",
+      "scm": "https://github.com/jenkinsci/anchore-container-scanner-plugin",
+      "sha1": "msoNLSpVYrtLQ2UuLx753Z/RdKc=",
+      "sha256": "3j3+f2d6XBtklM+lve5+qJ/sddmteBYmZJGlhDWHrB8=",
+      "title": "Anchore Container Image Scanner",
+      "url": "https://updates.jenkins.io/download/plugins/anchore-container-scanner/1.0.23/anchore-container-scanner.hpi",
+      "version": "1.0.23",
+      "wiki": "https://plugins.jenkins.io/anchore-container-scanner"
+    },
+    "android-apk-size-watcher": {
+      "buildDate": "Sep 08, 2017",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "xgleich1",
+          "email": "xgleich1@gmail.com",
+          "name": "Daniel Gronau"
+        }
+      ],
+      "excerpt": "Watch over the changing size of your .apk file and fail your build once the change exceeds your specified threshold.",
+      "gav": "org.jenkins-ci.plugins:android-apk-size-watcher:1.0.1",
+      "labels": [],
+      "name": "android-apk-size-watcher",
+      "popularity": 178,
+      "previousTimestamp": "2017-08-30T18:29:59.00Z",
+      "previousVersion": "1.0",
+      "releaseTimestamp": "2017-09-08T20:27:19.00Z",
+      "requiredCore": "1.625.3",
+      "scm": "https://github.com/jenkinsci/android-apk-size-watcher-plugin",
+      "sha1": "2eNVEaRva0RkCX5nIdR9lm65DOA=",
+      "sha256": "McP+Dy/5kgw9yZtVuOaF7BX3+NvYBFKfv8h/zt+IDus=",
+      "title": "Android Apk Size Watcher",
+      "url": "https://updates.jenkins.io/download/plugins/android-apk-size-watcher/1.0.1/android-apk-size-watcher.hpi",
+      "version": "1.0.1",
+      "wiki": "https://plugins.jenkins.io/android-apk-size-watcher"
+    },
+    "android-emulator": {
+      "buildDate": "Sep 01, 2020",
+      "dependencies": [
+        {
+          "name": "matrix-project",
+          "optional": false,
+          "version": "1.14"
+        },
+        {
+          "name": "port-allocator",
+          "optional": false,
+          "version": "1.8"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "orrc",
+          "email": "chris@orr.me.uk",
+          "name": "Christopher Orr"
+        },
+        {
+          "developerId": "nfalco79",
+          "email": "nfalco79@hotmail.com",
+          "name": "Nikolas Falco"
+        }
+      ],
+      "excerpt": "Starts an Android emulator with given properties before a build, then shuts it down after.",
+      "gav": "org.jenkins-ci.plugins:android-emulator:3.1.2",
+      "labels": [
+        "android",
+        "buildwrapper"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "android-emulator",
+      "popularity": 3843,
+      "previousTimestamp": "2020-08-02T19:08:17.00Z",
+      "previousVersion": "3.1.1",
+      "releaseTimestamp": "2020-09-01T07:09:11.00Z",
+      "requiredCore": "2.138.4",
+      "scm": "https://github.com/jenkinsci/android-emulator-plugin",
+      "sha1": "NyvW8qGRGoFCEcmYGIHgjlD6JHg=",
+      "sha256": "7Rbx6qv2GPqic26fTvvWfX/vsTJo/KkxMn2Ah1p2LmU=",
+      "title": "Android Emulator",
+      "url": "https://updates.jenkins.io/download/plugins/android-emulator/3.1.2/android-emulator.hpi",
+      "version": "3.1.2",
+      "wiki": "https://plugins.jenkins.io/android-emulator"
+    },
+    "android-signing": {
+      "buildDate": "Jul 23, 2017",
+      "compatibleSinceVersion": "2.1.0",
+      "dependencies": [
+        {
+          "name": "workflow-cps",
+          "optional": true,
+          "version": "2.0"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.0"
+        },
+        {
+          "name": "job-dsl",
+          "optional": true,
+          "version": "1.58"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "restjohn",
+          "email": "restjohn@gmail.com",
+          "name": "Robert St. John"
+        }
+      ],
+      "excerpt": "Sign Android APK bundles with a private key Jenkins manages and provides.",
+      "gav": "org.jenkins-ci.plugins:android-signing:2.2.5",
+      "labels": [
+        "android",
+        "builder"
+      ],
+      "name": "android-signing",
+      "popularity": 1572,
+      "previousTimestamp": "2017-06-14T22:01:10.00Z",
+      "previousVersion": "2.2.4",
+      "releaseTimestamp": "2017-07-23T12:37:13.00Z",
+      "requiredCore": "1.642.3",
+      "scm": "https://github.com/jenkinsci/android-signing-plugin",
+      "sha1": "NxbfWO831zYmfC4IZ6tvt0AMU6A=",
+      "sha256": "X6j1idlDlgb1TUmVfP1DVnWk2VIFet/2aWdfJ2cDO0A=",
+      "title": "Android Signing",
+      "url": "https://updates.jenkins.io/download/plugins/android-signing/2.2.5/android-signing.hpi",
+      "version": "2.2.5",
+      "wiki": "https://plugins.jenkins.io/android-signing"
+    },
+    "anka-build": {
+      "buildDate": "Dec 02, 2020",
+      "compatibleSinceVersion": "2.0.0",
+      "dependencies": [
+        {
+          "name": "workflow-api",
+          "optional": false,
+          "version": "2.30"
+        },
+        {
+          "name": "workflow-basic-steps",
+          "optional": false,
+          "version": "2.6"
+        },
+        {
+          "name": "workflow-cps",
+          "optional": false,
+          "version": "2.39"
+        },
+        {
+          "name": "workflow-durable-task-step",
+          "optional": false,
+          "version": "2.13"
+        },
+        {
+          "name": "workflow-job",
+          "optional": false,
+          "version": "2.11.2"
+        },
+        {
+          "name": "workflow-step-api",
+          "optional": false,
+          "version": "2.19"
+        },
+        {
+          "name": "workflow-support",
+          "optional": false,
+          "version": "3.2"
+        },
+        {
+          "name": "apache-httpcomponents-client-4-api",
+          "optional": false,
+          "version": "4.5.10-2.0"
+        },
+        {
+          "name": "bouncycastle-api",
+          "optional": false,
+          "version": "2.18"
+        },
+        {
+          "name": "node-iterator-api",
+          "optional": false,
+          "version": "1.5.0"
+        },
+        {
+          "name": "ssh-slaves",
+          "optional": false,
+          "version": "1.30.4"
+        },
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.19"
+        },
+        {
+          "name": "trilead-api",
+          "optional": false,
+          "version": "1.0.3"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "asafg",
+          "email": "asaf.gu6@gmail.com",
+          "name": "Asaf Gur"
+        }
+      ],
+      "excerpt": "This plugin provides integration with Veertu Anka infrastructure",
+      "gav": "org.jenkins-ci.plugins:anka-build:2.3.0",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "anka-build",
+      "popularity": 48,
+      "previousTimestamp": "2020-11-12T11:53:49.00Z",
+      "previousVersion": "2.2.1",
+      "releaseTimestamp": "2020-12-02T09:21:55.00Z",
+      "requiredCore": "2.150.1",
+      "scm": "https://github.com/jenkinsci/anka-build-plugin",
+      "sha1": "Y04OjdYCL2ppGrAQomhEBO0epdg=",
+      "sha256": "lOo6MNYHmOXN6qtVsYzSRYfRBFitPqBZrLX29M9ZwiI=",
+      "title": "Anka",
+      "url": "https://updates.jenkins.io/download/plugins/anka-build/2.3.0/anka-build.hpi",
+      "version": "2.3.0",
+      "wiki": "https://plugins.jenkins.io/anka-build"
+    },
+    "ansible": {
+      "buildDate": "Oct 30, 2020",
+      "compatibleSinceVersion": "1.0",
+      "dependencies": [
+        {
+          "name": "workflow-step-api",
+          "optional": true,
+          "version": "1.10"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.1.0"
+        },
+        {
+          "name": "job-dsl",
+          "optional": true,
+          "version": "1.36"
+        },
+        {
+          "name": "plain-credentials",
+          "optional": false,
+          "version": "1.4"
+        },
+        {
+          "name": "ssh-credentials",
+          "optional": false,
+          "version": "1.10"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "jcsirot",
+          "email": "sirot@chelonix.com",
+          "name": "Jean-Christophe Sirot"
+        }
+      ],
+      "excerpt": "Invoke <a href=\"http://www.ansible.com/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Ansible</a> Ad-Hoc commands and playbooks.",
+      "gav": "org.jenkins-ci.plugins:ansible:1.1",
+      "labels": [
+        "builder",
+        "deployment",
+        "devops",
+        "external",
+        "pipeline"
+      ],
+      "name": "ansible",
+      "popularity": 18917,
+      "previousTimestamp": "2018-03-21T12:34:15.00Z",
+      "previousVersion": "1.0",
+      "releaseTimestamp": "2020-10-30T09:53:30.00Z",
+      "requiredCore": "1.609.1",
+      "scm": "https://github.com/jenkinsci/ansible-plugin",
+      "sha1": "RxeHuGFzzG7woiQ+wS+aNBnRrFE=",
+      "sha256": "e7cqYCYYZDeBFfG2cd494j+rrpe7wHWEyIMO2ekDp9Y=",
+      "title": "Ansible",
+      "url": "https://updates.jenkins.io/download/plugins/ansible/1.1/ansible.hpi",
+      "version": "1.1",
+      "wiki": "https://plugins.jenkins.io/ansible"
+    },
+    "ansible-tower": {
+      "buildDate": "Jun 15, 2020",
+      "dependencies": [
+        {
+          "name": "workflow-step-api",
+          "optional": true,
+          "version": "2.20"
+        },
+        {
+          "name": "credentials",
+          "optional": false,
+          "version": "2.3.0"
+        },
+        {
+          "name": "envinject",
+          "optional": true,
+          "version": "2.1.3"
+        },
+        {
+          "name": "plain-credentials",
+          "optional": true,
+          "version": "1.4"
+        },
+        {
+          "name": "script-security",
+          "optional": false,
+          "version": "1.67"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "john-westcott-iv",
+          "email": "john.westcott.iv@redhat.com",
+          "name": "John Westcott IV"
+        }
+      ],
+      "excerpt": "This plugin connects Jenkins with Ansible Tower",
+      "gav": "org.jenkins-ci.plugins:ansible-tower:0.16.0",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "ansible-tower",
+      "popularity": 2192,
+      "previousTimestamp": "2020-05-22T19:03:31.00Z",
+      "previousVersion": "0.15.0",
+      "releaseTimestamp": "2020-06-15T13:08:13.00Z",
+      "requiredCore": "2.138.4",
+      "scm": "https://github.com/jenkinsci/ansible-tower-plugin",
+      "sha1": "g77GeRZ35ouZ+kPQ0azoYFt0RJw=",
+      "sha256": "1IICDQk1r4bX8FENna4IH8qCR59p2ypITnvcYGlBB1o=",
+      "title": "Ansible Tower",
+      "url": "https://updates.jenkins.io/download/plugins/ansible-tower/0.16.0/ansible-tower.hpi",
+      "version": "0.16.0",
+      "wiki": "https://plugins.jenkins.io/ansible-tower"
+    },
+    "ansicolor": {
+      "buildDate": "Sep 15, 2020",
+      "dependencies": [
+        {
+          "name": "workflow-api",
+          "optional": true,
+          "version": "2.40"
+        },
+        {
+          "name": "workflow-step-api",
+          "optional": true,
+          "version": "2.22"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "dblock",
+          "email": "dblock@dblock.org",
+          "name": "Daniel Doubrovkine"
+        },
+        {
+          "developerId": "tszmytka",
+          "email": "tszmytka@gmail.com",
+          "name": "Tomek Szmytka"
+        }
+      ],
+      "excerpt": "Adds ANSI coloring to the Console Output",
+      "gav": "org.jenkins-ci.plugins:ansicolor:0.7.3",
+      "labels": [
+        "misc"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "ansicolor",
+      "popularity": 39863,
+      "previousTimestamp": "2020-08-01T18:37:46.00Z",
+      "previousVersion": "0.7.2",
+      "releaseTimestamp": "2020-09-15T19:21:56.00Z",
+      "requiredCore": "2.204.1",
+      "scm": "https://github.com/jenkinsci/ansicolor-plugin",
+      "sha1": "Gk+jRwXKbHGZM1Nlj4w04KzyCZU=",
+      "sha256": "14ru7tuOTJmiKkUfUJPt5VDFvNKiW7Qqq0P/e93qQAc=",
+      "title": "AnsiColor",
+      "url": "https://updates.jenkins.io/download/plugins/ansicolor/0.7.3/ansicolor.hpi",
+      "version": "0.7.3",
+      "wiki": "https://plugins.jenkins.io/ansicolor"
+    },
+    "ant": {
+      "buildDate": "Jan 14, 2020",
+      "dependencies": [
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.17"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "armfergom",
+          "name": "Armando Fernandez"
+        }
+      ],
+      "excerpt": "Adds Apache Ant support to Jenkins",
+      "gav": "org.jenkins-ci.plugins:ant:1.11",
+      "labels": [
+        "builder"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "ant",
+      "popularity": 240815,
+      "previousTimestamp": "2019-08-27T15:41:18.00Z",
+      "previousVersion": "1.10",
+      "releaseTimestamp": "2020-01-14T15:46:44.00Z",
+      "requiredCore": "2.150.1",
+      "scm": "https://github.com/jenkinsci/ant-plugin",
+      "sha1": "FqjNO8t3uwOnKX+MYJEyuOtNeqk=",
+      "sha256": "Yr4jGzi82GwBGRUMv8FUqYevH9dWDWDiimo0APRIvFk=",
+      "title": "Ant",
+      "url": "https://updates.jenkins.io/download/plugins/ant/1.11/ant.hpi",
+      "version": "1.11",
+      "wiki": "https://plugins.jenkins.io/ant"
+    },
+    "ant-in-workspace": {
+      "buildDate": "Mar 19, 2018",
+      "dependencies": [
+        {
+          "name": "workflow-job",
+          "optional": true,
+          "version": "1.10"
+        },
+        {
+          "name": "workflow-step-api",
+          "optional": true,
+          "version": "1.10"
+        },
+        {
+          "name": "ant",
+          "optional": false,
+          "version": "1.4"
+        },
+        {
+          "name": "script-security",
+          "optional": false,
+          "version": "1.27"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "phreakadelle",
+          "name": "Stephan Watermeyer"
+        }
+      ],
+      "excerpt": "Plugin extends official Ant Plugin. Allows to use an Ant that is located in the Workspace.",
+      "gav": "org.jenkins-ci.plugins:ant-in-workspace:1.1.0",
+      "labels": [],
+      "name": "ant-in-workspace",
+      "popularity": 1046,
+      "previousTimestamp": "2017-08-16T07:26:44.00Z",
+      "previousVersion": "1.0.0",
+      "releaseTimestamp": "2018-03-19T08:45:18.00Z",
+      "requiredCore": "1.609.3",
+      "scm": "https://github.com/jenkinsci/ant-in-workspace-plugin",
+      "sha1": "+uU2u+PDluu82HxNxx6NYJEXbL4=",
+      "sha256": "/Y+EbYO+fEMlPa+eOMv9CSxvD53gcdpImbZeQjW9bKg=",
+      "title": "Ant In Workspace",
+      "url": "https://updates.jenkins.io/download/plugins/ant-in-workspace/1.1.0/ant-in-workspace.hpi",
+      "version": "1.1.0",
+      "wiki": "https://plugins.jenkins.io/ant-in-workspace"
+    },
+    "antexec": {
+      "buildDate": "Aug 18, 2015",
+      "dependencies": [
+        {
+          "name": "ant",
+          "optional": false,
+          "version": "1.2"
+        },
+        {
+          "name": "token-macro",
+          "optional": false,
+          "version": "1.10"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "svasek",
+          "email": "svasek@gmail.com",
+          "name": "Milos Svasek"
+        }
+      ],
+      "excerpt": "This plugin makes it possible to run Apache Ant code directly from Jenkins-CI",
+      "gav": "org.jenkins-ci.plugins:antexec:1.11",
+      "labels": [],
+      "name": "antexec",
+      "popularity": 1094,
+      "previousTimestamp": "2013-10-31T17:19:12.00Z",
+      "previousVersion": "1.10",
+      "releaseTimestamp": "2015-08-18T11:50:40.00Z",
+      "requiredCore": "1.596",
+      "scm": "https://github.com/jenkinsci/antexec-plugin",
+      "sha1": "WsIoweE66UWdLf3e0bwVf/CBpXA=",
+      "sha256": "KFkBG8uz4PVTvpxjjkC6itz9equl21DTd2Ptbj9wFV0=",
+      "title": "AntExec",
+      "url": "https://updates.jenkins.io/download/plugins/antexec/1.11/antexec.hpi",
+      "version": "1.11",
+      "wiki": "https://plugins.jenkins.io/antexec"
+    },
+    "antisamy-markup-formatter": {
+      "buildDate": "Jul 01, 2020",
+      "compatibleSinceVersion": "2.0",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "jglick"
+        }
+      ],
+      "excerpt": "Uses the <a href=\"https://www.owasp.org/index.php/OWASP_Java_HTML_Sanitizer_Project\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">OWASP Java HTML Sanitizer</a> to allow safe-seeming HTML markup to be entered in project descriptions and the like.",
+      "gav": "org.jenkins-ci.plugins:antisamy-markup-formatter:2.1",
+      "labels": [
+        "security"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "antisamy-markup-formatter",
+      "popularity": 256745,
+      "previousTimestamp": "2020-03-22T13:03:36.00Z",
+      "previousVersion": "2.0",
+      "releaseTimestamp": "2020-07-01T13:14:38.00Z",
+      "requiredCore": "2.121.3",
+      "scm": "https://github.com/jenkinsci/antisamy-markup-formatter-plugin",
+      "sha1": "mZ0rC8iJdWalrv8f+bUZV84I884=",
+      "sha256": "gS/dk3nMrAfiz5Sfk5QJRk0DM2eniZATD8chH3pnAro=",
+      "title": "OWASP Markup Formatter",
+      "url": "https://updates.jenkins.io/download/plugins/antisamy-markup-formatter/2.1/antisamy-markup-formatter.hpi",
+      "version": "2.1",
+      "wiki": "https://plugins.jenkins.io/antisamy-markup-formatter"
+    },
+    "any-buildstep": {
+      "buildDate": "Nov 14, 2011",
+      "dependencies": [
+        {
+          "name": "token-macro",
+          "optional": false,
+          "version": "1.4"
+        },
+        {
+          "name": "run-condition",
+          "optional": false,
+          "version": "0.5"
+        },
+        {
+          "name": "conditional-buildstep",
+          "optional": false,
+          "version": "0.2"
+        },
+        {
+          "name": "flexible-publish",
+          "optional": false,
+          "version": "0.7"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "bap",
+          "email": "bap-jenkins@BapIT.co.uk",
+          "name": "Bap"
+        }
+      ],
+      "excerpt": "Use publishers as builders and builders as publishers :-/",
+      "gav": "org.jenkins-ci.plugins:any-buildstep:0.1",
+      "labels": [],
+      "name": "any-buildstep",
+      "popularity": 2793,
+      "releaseTimestamp": "2011-11-14T18:43:54.00Z",
+      "requiredCore": "1.408",
+      "scm": "https://github.com/jenkinsci/any-buildstep-plugin",
+      "sha1": "46R/wmiCUngBl8Zrt4cRwvGbJuI=",
+      "sha256": "mmLC0QRBnN60VS0PGAs+++Yu3MRpT0fe8aBxKtqwzPo=",
+      "title": "Any Build Step",
+      "url": "https://updates.jenkins.io/download/plugins/any-buildstep/0.1/any-buildstep.hpi",
+      "version": "0.1",
+      "wiki": "https://plugins.jenkins.io/any-buildstep"
+    },
+    "anything-goes-formatter": {
+      "buildDate": "Mar 14, 2012",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "kohsuke",
+          "email": "kk@kohsuke.org",
+          "name": "Kohsuke Kawaguchi"
+        }
+      ],
+      "excerpt": "This plugin adds a markup formatter that&#39;s unsafe but allows more powerful HTML manipulation.",
+      "gav": "org.jenkins-ci.plugins:anything-goes-formatter:1.0",
+      "labels": [
+        "ui"
+      ],
+      "name": "anything-goes-formatter",
+      "popularity": 1076,
+      "releaseTimestamp": "2012-03-14T18:50:57.00Z",
+      "requiredCore": "1.424",
+      "scm": "https://github.com/jenkinsci/anything-goes-formatter",
+      "sha1": "P+91IIgNJvsFUhaxCZLaZPG0VI0=",
+      "sha256": "8frKrrC58nDoyEIY/jPCbWmUs0EF3hSfvNaG98rJYPY=",
+      "title": "anything-goes-formatter",
+      "url": "https://updates.jenkins.io/download/plugins/anything-goes-formatter/1.0/anything-goes-formatter.hpi",
+      "version": "1.0",
+      "wiki": "https://plugins.jenkins.io/anything-goes-formatter"
+    },
+    "apache-httpcomponents-client-4-api": {
+      "buildDate": "Jan 04, 2021",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "oleg_nenashev",
+          "name": "Oleg Nenashev"
+        }
+      ],
+      "excerpt": "Bundles Apache HttpComponents Client 4.x and allows it to be used by Jenkins plugins.",
+      "gav": "org.jenkins-ci.plugins:apache-httpcomponents-client-4-api:4.5.13-1.0",
+      "labels": [
+        "adopt-this-plugin",
+        "api-plugin"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "apache-httpcomponents-client-4-api",
+      "popularity": 258889,
+      "previousTimestamp": "2021-01-01T11:28:20.00Z",
+      "previousVersion": "4.5.12-1.0",
+      "releaseTimestamp": "2021-01-04T07:20:39.00Z",
+      "requiredCore": "2.60.3",
+      "scm": "https://github.com/jenkinsci/apache-httpcomponents-client-4-api-plugin",
+      "sha1": "LRs/mWHlSEu3CkW+jeuI2W/Av5U=",
+      "sha256": "H6Wtr80EPFgqm27ESmo3Fm23e7bVt9LE+ZAq0mOmVjY=",
+      "title": "Apache HttpComponents Client 4.x API",
+      "url": "https://updates.jenkins.io/download/plugins/apache-httpcomponents-client-4-api/4.5.13-1.0/apache-httpcomponents-client-4-api.hpi",
+      "version": "4.5.13-1.0",
+      "wiki": "https://plugins.jenkins.io/apache-httpcomponents-client-4-api"
+    },
+    "apifortress": {
+      "buildDate": "Jul 11, 2017",
+      "dependencies": [],
+      "developers": [
+        {
+          "developerId": "theirish"
+        }
+      ],
+      "excerpt": "This plugin allows you to integrate <a href=\"http://apifortress.com\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">API Fortress</a> API testing in your Jenkins CI projects.",
+      "gav": "com.apifortress.jenkins:apifortress:1.0",
+      "labels": [],
+      "name": "apifortress",
+      "popularity": 25,
+      "releaseTimestamp": "2017-07-11T15:08:16.00Z",
+      "requiredCore": "1.625.3",
+      "scm": "https://github.com/jenkinsci/apifortress-plugin",
+      "sha1": "Xjt1+1zSrU8Nweznmkpn4DAnwro=",
+      "sha256": "nJaZb5shtiK+xRvBiGL4faYaTUigAr846KFGvb3AzKY=",
+      "title": "API Fortress",
+      "url": "https://updates.jenkins.io/download/plugins/apifortress/1.0/apifortress.hpi",
+      "version": "1.0",
+      "wiki": "https://plugins.jenkins.io/apifortress"
+    },
+    "app-detector": {
+      "buildDate": "Nov 19, 2018",
+      "dependencies": [
+        {
+          "name": "matrix-project",
+          "optional": false,
+          "version": "1.4"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "justice3120",
+          "email": "masayoshi.sakamoto@dena.jp",
+          "name": "Masayoshi Sakamoto"
+        }
+      ],
+      "excerpt": "Allow to build on a slave with specific applications and versions present",
+      "gav": "org.jenkins-ci.plugins:app-detector:1.0.6",
+      "labels": [],
+      "name": "app-detector",
+      "popularity": 61,
+      "previousTimestamp": "2017-11-08T04:16:17.00Z",
+      "previousVersion": "1.0.5",
+      "releaseTimestamp": "2018-11-19T10:34:13.00Z",
+      "requiredCore": "1.625.3",
+      "scm": "https://github.com/jenkinsci/app-detector-plugin",
+      "sha1": "jfxtuls9/Ouj5jftZMOqV0K5MZ4=",
+      "sha256": "c0a4+y2NNGJi3xd929+cPrArC+OQro1F7SkfRd08p9Y=",
+      "title": "Application Detector",
+      "url": "https://updates.jenkins.io/download/plugins/app-detector/1.0.6/app-detector.hpi",
+      "version": "1.0.6",
+      "wiki": "https://plugins.jenkins.io/app-detector"
+    },
+    "appaloosa-plugin": {
+      "buildDate": "Jul 12, 2019",
+      "dependencies": [
+        {
+          "name": "promoted-builds",
+          "optional": true,
+          "version": "2.4"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "aheritier",
+          "email": "aheritier@apache.org",
+          "name": "Arnaud Heritier"
+        },
+        {
+          "developerId": "joel1di1",
+          "email": "joel1di1@gmail.com",
+          "name": "Benoit Lafontaine"
+        },
+        {
+          "developerId": "rsfez",
+          "email": "rsfez@octo.com",
+          "name": "Robin Sfez"
+        }
+      ],
+      "excerpt": "Publish your mobile applications (Android, iOS, ...) to the <a href=\"http://www.appaloosa-store.com\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">appaloosa-store</a> platform.",
+      "gav": "org.jenkins-ci.plugins:appaloosa-plugin:1.4.11",
+      "labels": [
+        "android",
+        "ios",
+        "upload"
+      ],
+      "name": "appaloosa-plugin",
+      "popularity": 156,
+      "previousTimestamp": "2019-07-11T13:12:56.00Z",
+      "previousVersion": "1.4.10",
+      "releaseTimestamp": "2019-07-12T09:40:55.00Z",
+      "requiredCore": "1.580",
+      "scm": "https://github.com/jenkinsci/appaloosa-plugin",
+      "sha1": "qsostpBSzwhh2BcSsU/o1AaXHPE=",
+      "sha256": "c0eWBNGcpbDCHQ2u6Uy66kVtidIZx/nzWPctyySTbfw=",
+      "title": "Appaloosa",
+      "url": "https://updates.jenkins.io/download/plugins/appaloosa-plugin/1.4.11/appaloosa-plugin.hpi",
+      "version": "1.4.11",
+      "wiki": "https://plugins.jenkins.io/appaloosa-plugin"
+    },
+    "job-dsl": {
+      "buildDate": "Mar 11, 2020",
+      "compatibleSinceVersion": "1.72",
+      "dependencies": [
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.19"
+        },
+        {
+          "name": "script-security",
+          "optional": false,
+          "version": "1.54"
+        },
+        {
+          "name": "vsphere-cloud",
+          "optional": true,
+          "version": "1.1.11"
+        },
+        {
+          "name": "config-file-provider",
+          "optional": true,
+          "version": "2.15.4"
+        },
+        {
+          "name": "managed-scripts",
+          "optional": true,
+          "version": "1.3"
+        },
+        {
+          "name": "configuration-as-code",
+          "optional": true,
+          "version": "1.15"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "quidryan",
+          "email": "jryan@netflix.com",
+          "name": "Justin Ryan"
+        },
+        {
+          "developerId": "andrewharmellaw",
+          "email": "andrew@harmel-law.com",
+          "name": "Andrew Harmel-Law"
+        },
+        {
+          "developerId": "daspilker",
+          "email": "mail@daniel-spilker.com",
+          "name": "Daniel Spilker"
+        },
+        {
+          "developerId": "sheehan",
+          "email": "mr.sheehan@gmail.com",
+          "name": "Matt Sheehan"
+        }
+      ],
+      "excerpt": "This plugin allows Jobs and Views to be defined via DSLs",
+      "gav": "org.jenkins-ci.plugins:job-dsl:1.77",
+      "labels": [
+        "builder"
+      ],
+      "name": "job-dsl",
+      "popularity": 28862,
+      "previousTimestamp": "2019-08-22T12:12:47.00Z",
+      "previousVersion": "1.76",
+      "releaseTimestamp": "2020-03-11T12:44:24.00Z",
+      "requiredCore": "2.164",
+      "scm": "https://github.com/jenkinsci/job-dsl-plugin",
+      "sha1": "kJUAn4B+nFwuEcBkAifGCGh/ASM=",
+      "sha256": "cHGjXXXQWT48vtaVugzuQRM/MXU7h67upMbgYkUnsiI=",
+      "title": "Job DSL",
+      "url": "https://updates.jenkins.io/download/plugins/job-dsl/1.77/job-dsl.hpi",
+      "version": "1.77",
+      "wiki": "https://plugins.jenkins.io/job-dsl"
+    },
+    "logging": {
+      "buildDate": "Oct 12, 2015",
+      "dependencies": [
+        {
+          "name": "matrix-project",
+          "optional": false,
+          "version": "1.4"
+        },
+        {
+          "name": "job-dsl",
+          "optional": true,
+          "version": "1.37"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "praqma_josra",
+          "name": "Praqma Josra"
+        }
+      ],
+      "excerpt": "Advanced logging for Jenkins. Enabling per build and poll logging for jobs. Logging done on slaves will be included as well.",
+      "gav": "net.praqma:logging:1.0.0",
+      "labels": [
+        "logging",
+        "misc"
+      ],
+      "name": "logging",
+      "popularity": 620,
+      "previousTimestamp": "2013-04-19T12:11:45.00Z",
+      "previousVersion": "0.2.8",
+      "releaseTimestamp": "2015-10-12T14:55:38.00Z",
+      "requiredCore": "1.580",
+      "scm": "https://github.com/jenkinsci/logging-plugin",
+      "sha1": "mW/pfxVpDXn01lE56I+UdV+1AD8=",
+      "sha256": "2vSQP/lX1zmCklvPlcK5eCFBdXF0i9xDF7TAgidqYYk=",
+      "title": "Logging",
+      "url": "https://updates.jenkins.io/download/plugins/logging/1.0.0/logging.hpi",
+      "version": "1.0.0",
+      "wiki": "https://plugins.jenkins.io/logging"
+    },
+    "login-theme": {
+      "buildDate": "Nov 19, 2019",
+      "dependencies": [
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.2"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "Oleg"
+        }
+      ],
+      "excerpt": "This plugin allows extending and overriding the default theme used on the login and signup pages.",
+      "gav": "io.jenkins.plugins:login-theme:1.1",
+      "labels": [
+        "theme"
+      ],
+      "name": "login-theme",
+      "popularity": 2025,
+      "previousTimestamp": "2018-07-06T10:07:39.00Z",
+      "previousVersion": "1.0",
+      "releaseTimestamp": "2019-11-19T13:41:59.00Z",
+      "requiredCore": "2.138.3",
+      "scm": "https://github.com/jenkinsci/login-theme-plugin",
+      "sha1": "dqy0oREY0HvH3tNZlia9+P4QjfU=",
+      "sha256": "qsDDZ8DnQIaaUx5cGppEAR18yHQkQsGXG5xLj7U2GEA=",
+      "title": "Login Theme",
+      "url": "https://updates.jenkins.io/download/plugins/login-theme/1.1/login-theme.hpi",
+      "version": "1.1",
+      "wiki": "https://plugins.jenkins.io/login-theme"
+    },
+    "scm-api": {
+      "buildDate": "Sep 25, 2020",
+      "compatibleSinceVersion": "2.0.0",
+      "dependencies": [
+        {
+          "name": "structs",
+          "optional": false,
+          "version": "1.20"
+        }
+      ],
+      "developers": [
+        {
+          "developerId": "stephenconnolly",
+          "name": "Stephen Connolly"
+        }
+      ],
+      "excerpt": "This plugin provides a new enhanced API for interacting with SCM systems.",
+      "gav": "org.jenkins-ci.plugins:scm-api:2.6.4",
+      "labels": [
+        "api-plugin",
+        "scm"
+      ],
+      "minimumJavaVersion": "1.8",
+      "name": "scm-api",
+      "popularity": 271258,
+      "previousTimestamp": "2019-07-11T16:21:51.00Z",
+      "previousVersion": "2.6.3",
+      "releaseTimestamp": "2020-09-25T20:32:44.00Z",
+      "requiredCore": "2.176.4",
+      "scm": "https://github.com/jenkinsci/scm-api-plugin",
+      "sha1": "DnNCXn0H1VPdtjfDtXo/fMeNb/c=",
+      "sha256": "k1y65LRmeNWt+fqsmmgCn1KgTg0MickDinq5XKa2dtw=",
+      "title": "SCM API",
+      "url": "https://updates.jenkins.io/download/plugins/scm-api/2.6.4/scm-api.hpi",
+      "version": "2.6.4",
+      "wiki": "https://plugins.jenkins.io/scm-api"
+    }
+  },
+  "updateCenterVersion": "1",
+  "warnings": [
+    {
+      "id": "SECURITY-208",
+      "message": "Authentication bypass vulnerability",
+      "name": "google-login",
+      "type": "plugin",
+      "url": "https://jenkins.io/security/advisory/2015-10-12/",
+      "versions": [
+        {
+          "lastVersion": "1.1",
+          "pattern": "1[.][01](|[.-].*)"
+        }
+      ]
+    },
+    {
+      "id": "SECURITY-136",
+      "message": "Stored XSS vulnerability",
+      "name": "extra-columns",
+      "type": "plugin",
+      "url": "https://jenkins.io/security/advisory/2016-04-11/",
+      "versions": [
+        {
+          "lastVersion": "1.16",
+          "pattern": "1[.](\\d|1[0123456])(|[.-].*)"
+        }
+      ]
+    },
+    {
+      "id": "SECURITY-342",
+      "message": "Users with Overall/Read access can enumerate credential IDs",
+      "name": "github-branch-source",
+      "type": "plugin",
+      "url": "https://jenkins.io/security/advisory/2017-07-10/",
+      "versions": [
+        {
+          "lastVersion": "2.0.7",
+          "pattern": "(1[.].*|2[.]0[.][0-7])(|[-].*)"
+        },
+        {
+          "lastVersion": "2.2.0-beta-1",
+          "pattern": "2[.]2[.]0[-](alpha[-].*|beta[-]1)"
+        }
+      ]
+    }
+  ]
+}
