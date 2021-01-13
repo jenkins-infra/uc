@@ -8,83 +8,32 @@ before:
 
 builds:
   - id: uc-linux
-    # Path to main.go file or main package.
-    # Default is `.`.
     main: ./cmd/uc/uc.go
-
-    # Binary name.
-    # Can be a path (e.g. `bin/app`) to wrap the binary in a directory.
-    # Default is the name of the project directory.
     binary: uc
-
-    # Custom ldflags templates.
-    # Default is `-s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}} -X main.builtBy=goreleaser`.
     ldflags:
       - -X github.com/garethjevans/uc/pkg/version.Version={{.Version}} -X github.com/garethjevans/updatecenter/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/updatecenter/pkg/version.BuildDate={{.CommitDate}}
-
-    # GOOS list to build for.
-    # For more info refer to: https://golang.org/doc/install/source#environment
-    # Defaults are darwin and linux.
     goos:
       - linux
-
-    # GOARCH to build for.
-    # For more info refer to: https://golang.org/doc/install/source#environment
-    # Defaults are 386 and amd64.
     goarch:
       - amd64
 
   - id: uc-amd64
-    # Path to main.go file or main package.
-    # Default is `.`.
     main: ./cmd/uc/uc.go
-
-    # Binary name.
-    # Can be a path (e.g. `bin/app`) to wrap the binary in a directory.
-    # Default is the name of the project directory.
     binary: uc
-
-    # Custom ldflags templates.
-    # Default is `-s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}} -X main.builtBy=goreleaser`.
     ldflags:
       - -X github.com/garethjevans/uc/pkg/version.Version={{.Version}} -X github.com/garethjevans/updatecenter/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/updatecenter/pkg/version.BuildDate={{.CommitDate}}
-
-    # GOOS list to build for.
-    # For more info refer to: https://golang.org/doc/install/source#environment
-    # Defaults are darwin and linux.
     goos:
       - darwin
-
-    # GOARCH to build for.
-    # For more info refer to: https://golang.org/doc/install/source#environment
-    # Defaults are 386 and amd64.
     goarch:
       - amd64
 
   - id: uc-windows-amd64
-    # Path to main.go file or main package.
-    # Default is `.`.
     main: ./cmd/uc/uc.go
-
-    # Binary name.
-    # Can be a path (e.g. `bin/app`) to wrap the binary in a directory.
-    # Default is the name of the project directory.
     binary: uc
-
-    # Custom ldflags templates.
-    # Default is `-s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}} -X main.builtBy=goreleaser`.
     ldflags:
       - -X github.com/garethjevans/updatecenter/pkg/version.Version={{.Version}} -X github.com/garethjevans/updatecenter/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/updatecenter/pkg/version.BuildDate={{.CommitDate}}
-
-    # GOOS list to build for.
-    # For more info refer to: https://golang.org/doc/install/source#environment
-    # Defaults are darwin and linux.
     goos:
       - windows
-
-    # GOARCH to build for.
-    # For more info refer to: https://golang.org/doc/install/source#environment
-    # Defaults are 386 and amd64.
     goarch:
       - amd64
 
@@ -95,30 +44,25 @@ archives:
         format: zip
 
 checksum:
-  # You can change the name of the checksums file.
-  # Default is `{{ .ProjectName }}_{{ .Version }}_checksums.txt`.
   name_template: "{{ .ProjectName }}-checksums.txt"
-
-  # Algorithm to be used.
-  # Accepted options are sha256, sha512, sha1, crc32, md5, sha224 and sha384.
-  # Default is sha256.
   algorithm: sha256
 
 changelog:
-  # set it to true if you wish to skip the changelog generation
   skip: false
 
 release:
-  # If set to true, will not auto-publish the release.
-  # Default is false.
   draft: false
-
-  # If set to auto, will mark the release as not ready for production
-  # in case there is an indicator for this in the tag e.g. v1.0.0-rc1
-  # If set to true, will mark the release as not ready for production.
-  # Default is false.
   prerelease: false
-
-  # You can change the name of the GitHub release.
-  # Default is `{{.Tag}}`
   name_template: "{{.Tag}}"
+
+brews:
+  - name: uc
+    tap:
+      owner: garethjevans
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TOKEN }}"
+    commit_author:
+      name: garethjevans
+      email: gareth@bryncynfelin.co.uk
+    folder: Formula
+    description: "Utility to update jenkins plugin.txt"
