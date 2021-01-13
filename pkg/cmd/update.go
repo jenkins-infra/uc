@@ -94,7 +94,18 @@ func (c *UpdateCmd) Run() error {
 	for _, dep := range depsOut {
 		depsString = append(depsString, dep.String())
 	}
-	fmt.Println(strings.Join(depsString, "\n"))
+
+	dataToWrite := strings.Join(depsString, "\n")
+
+	if c.Write {
+		bytesToWrite := []byte(dataToWrite)
+		err := ioutil.WriteFile(c.Path, bytesToWrite, 0600)
+		if err != nil {
+			return errors.New("unable to write file")
+		}
+	} else {
+		fmt.Println(dataToWrite)
+	}
 
 	return nil
 }
