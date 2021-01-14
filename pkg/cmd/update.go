@@ -21,6 +21,7 @@ type UpdateCmd struct {
 	JenkinsVersion      string
 	Write               bool
 	IncludeDependencies bool
+	DisplayUpdatesOnly  bool
 }
 
 // NewUpdateCmd defines a new cmd.
@@ -56,6 +57,8 @@ To update all plugins against a specific version of Jenkins:
 		"Update the file rather than display to stdout")
 	cmd.Flags().BoolVarP(&c.IncludeDependencies, "include-dependencies", "d", false,
 		"Add any additional dependencies to the output")
+	cmd.Flags().BoolVarP(&c.DisplayUpdatesOnly, "display-updates-only", "u", false,
+		"Write updates to stdout")
 
 	return cmd
 }
@@ -92,12 +95,14 @@ func (c *UpdateCmd) Run() error {
 		return errors.New("unable to determine latest versions")
 	}
 
-	depsString := []string{}
-	for _, dep := range depsOut {
-		depsString = append(depsString, dep.String())
-	}
-
+	depsString := update.AsStrings(depsOut)
 	dataToWrite := strings.Join(depsString, "\n")
+
+	changed := update.FindAll(depsOut, func(info update.DepInfo) bool {
+		return info.Changed
+	})
+
+	changedString := update.AsStrings(changed)
 
 	if c.Write {
 		bytesToWrite := []byte(dataToWrite)
@@ -106,7 +111,11 @@ func (c *UpdateCmd) Run() error {
 			return errors.New("unable to write file")
 		}
 	} else {
-		fmt.Println(dataToWrite)
+		if c.DisplayUpdatesOnly {
+			fmt.Println(strings.Join(changedString, "\n"))
+		} else {
+			fmt.Println(dataToWrite)
+		}
 	}
 
 	return nil

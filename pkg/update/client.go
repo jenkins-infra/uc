@@ -14,6 +14,7 @@ import (
 type DepInfo struct {
 	Name    string
 	Version string
+	Changed bool
 }
 
 func (d *DepInfo) String() string {
@@ -49,6 +50,15 @@ func AsStrings(deps []DepInfo) []string {
 		out = append(out, d.String())
 	}
 	return out
+}
+
+func FindAll(deps []DepInfo, test func(info DepInfo) bool) (ret []DepInfo) {
+	for _, d := range deps {
+		if test(d) {
+			ret = append(ret, d)
+		}
+	}
+	return
 }
 
 type Updater struct {
@@ -99,12 +109,14 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 		}
 	}
 
-	deps := []DepInfo{}
+	deps := make([]DepInfo, len(plugins))
+	copy(deps, plugins)
+
 	for _, p := range u.config.Plugins {
 		if Contains(plugins, p.Name) {
 			// add the plugin
 			if !Contains(deps, p.Name) {
-				deps = append(deps, DepInfo{Name: p.Name, Version: p.Version})
+				deps = append(deps, DepInfo{Name: p.Name, Version: p.Version, Changed: true})
 			} else {
 				setVersionIfNewer(deps, p.Name, p.Version)
 			}
@@ -114,7 +126,7 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 				for _, d := range p.Dependencies {
 					if !d.Optional {
 						if !Contains(deps, d.Name) {
-							deps = append(deps, DepInfo{Name: d.Name, Version: d.Version})
+							deps = append(deps, DepInfo{Name: d.Name, Version: d.Version, Changed: true})
 						} else {
 							setVersionIfNewer(deps, d.Name, d.Version)
 						}
@@ -147,6 +159,7 @@ func setVersionIfNewer(deps []DepInfo, name string, version string) {
 			if v1 != nil && v2 != nil {
 				if v2.GreaterThan(v1) {
 					deps[i].Version = version
+					deps[i].Changed = true
 				}
 			}
 		}
