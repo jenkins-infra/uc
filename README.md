@@ -4,7 +4,10 @@ a small CLI that can be used to update a plugins.txt file for installing plugins
 
 ## To Install
 
-coming soon....
+```
+brew tap garethjevans/tap
+brew install uc
+```
 
 This can be used a docker container with the following:
 
