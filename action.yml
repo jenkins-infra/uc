@@ -1,0 +1,21 @@
+---
+name: 'UC'
+description: 'Update Jenkins plugins.txt files'
+inputs:
+  path:
+    description: 'Location of plugins.txt'
+    required: false
+    default: 'plugins.txt'
+  jenkins-version:
+    description: 'Version of Jenkins'
+    required: false
+    default: '2.263.2'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - --path
+    - ${{ inputs.path }}
+    - --jenkins-version
+    - ${{ inputs.jenkins-version }}
+    - --display-updates-only
