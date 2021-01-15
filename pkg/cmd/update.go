@@ -53,7 +53,7 @@ To update all plugins against a specific version of Jenkins:
 		},
 	}
 
-	cmd.Flags().StringVarP(&c.Path, "path", "p", "",
+	cmd.Flags().StringVarP(&c.Path, "path", "p", "plugins.txt",
 		"Path to the plugins.txt file")
 	cmd.Flags().StringVarP(&c.JenkinsVersion, "jenkins-version", "j", "",
 		"The version of Jenkins to query against")
