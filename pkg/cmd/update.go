@@ -47,6 +47,7 @@ To update all plugins against a specific version of Jenkins:
 			c.Args = args
 			err := c.Run()
 			if err != nil {
+				logrus.Errorf("unhandled error - %s", err)
 				logrus.Fatal("unable to run command")
 			}
 		},
