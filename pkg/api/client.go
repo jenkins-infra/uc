@@ -124,6 +124,43 @@ func (c Client) GET(version string, data interface{}) error {
 	return nil
 }
 
+// REST performs a REST request and parses the response.
+func (c Client) REST(url string, body io.Reader, data interface{}) error {
+	logrus.Debugf("calling url: %s", url)
+	req, err := http.NewRequest(http.MethodGet, url, body)
+	if err != nil {
+		return err
+	}
+
+	resp, err := c.http.Do(req)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	success := resp.StatusCode >= 200 && resp.StatusCode < 300
+	if !success {
+		logrus.Debugf("failed with resp code %d", resp.StatusCode)
+		return handleHTTPError(resp)
+	}
+
+	if resp.StatusCode == http.StatusNoContent {
+		return nil
+	}
+
+	b, err := ioutil.ReadAll(io.LimitReader(resp.Body, 10000000))
+	if err != nil {
+		return err
+	}
+
+	err = json.Unmarshal(b, &data)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (c Client) Do(req *http.Request) (*http.Response, error) {
 	return c.http.Do(req)
 }
