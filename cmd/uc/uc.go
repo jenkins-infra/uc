@@ -97,9 +97,9 @@ var docsCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		RootCmd.DisableAutoGenTag = true
 
-		err := doc.GenMarkdownTreeCustom(RootCmd, "./docs", nil, nil)
+		err := doc.GenMarkdownTree(RootCmd, "./docs")
 		if err != nil {
-			fmt.Println(err)
+			panic(err)
 		}
 	},
 }
