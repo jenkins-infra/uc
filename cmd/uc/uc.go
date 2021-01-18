@@ -6,6 +6,8 @@ import (
 	"runtime/debug"
 	"strings"
 
+	"github.com/sirupsen/logrus"
+
 	"github.com/garethjevans/uc/pkg/cmd"
 	"github.com/garethjevans/uc/pkg/version"
 	"github.com/spf13/cobra/doc"
@@ -16,6 +18,8 @@ import (
 
 // Version is dynamically set by the toolchain or overridden by the Makefile.
 var Version = version.Version
+
+var Verbose bool
 
 // BuildDate is dynamically set at build time in the Makefile.
 var BuildDate = version.BuildDate
@@ -41,6 +45,8 @@ func init() {
 	RootCmd.AddCommand(docsCmd)
 
 	RootCmd.PersistentFlags().Bool("help", false, "Show help for command")
+	RootCmd.PersistentFlags().BoolVarP(&Verbose, "debug", "v", false, "Debug Output")
+
 	RootCmd.Flags().Bool("version", false, "Show version")
 
 	RootCmd.SetFlagErrorFunc(func(cmd *cobra.Command, err error) error {
@@ -52,6 +58,12 @@ func init() {
 
 	RootCmd.AddCommand(cmd.NewCheckCmd())
 	RootCmd.AddCommand(cmd.NewUpdateCmd())
+
+	RootCmd.PersistentPreRun = func(cmd *cobra.Command, args []string) {
+		if Verbose {
+			logrus.SetLevel(logrus.DebugLevel)
+		}
+	}
 
 	c := completionCmd
 	c.Flags().StringP("shell", "s", "bash", "Shell type: {bash|zsh|fish|powershell}")

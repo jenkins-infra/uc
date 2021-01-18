@@ -9,6 +9,7 @@ a simple CLI to query jenkins update center and maintain a plugins.txt file.
 ### Options
 
 ```
+  -v, --debug     Debug Output
       --help      Show help for command
       --version   Show version
 ```

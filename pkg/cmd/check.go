@@ -74,6 +74,7 @@ func (c *CheckCmd) Run() error {
 		return errors.New("only one of --determine-version-from-dockerfile or --jenkins-version should be used")
 	}
 
+	logrus.Debugf("reading plugins from %s", c.Path)
 	data, err := ioutil.ReadFile(c.Path)
 	if err != nil {
 		return errors.New("unable to read file from path " + c.Path)
@@ -98,8 +99,11 @@ func (c *CheckCmd) Run() error {
 		if err != nil {
 			return errors.New("unable to determine version from Dockerfile")
 		}
-		c.Updater.SetVersion(update.ExtractExactVersion(fullVersion))
+		extractedVersion := update.ExtractExactVersion(fullVersion)
+		logrus.Debugf("using jenkins version %s from dockerfile %s", extractedVersion, c.DockerFilePath)
+		c.Updater.SetVersion(extractedVersion)
 	} else if c.JenkinsVersion != "" {
+		logrus.Debugf("using jenkins version %s", c.JenkinsVersion)
 		c.Updater.SetVersion(c.JenkinsVersion)
 	}
 
