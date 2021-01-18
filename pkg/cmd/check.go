@@ -27,7 +27,7 @@ func NewCheckCmd() *cobra.Command {
 
     uc check --path <path>
 
-To update all plugins against a specific version of Jenkins:
+To check all plugins against a specific version of Jenkins:
 
     uc check --path <path> --jenkins-version <version>
 `,
