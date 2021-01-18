@@ -3,7 +3,6 @@ package cmd
 import (
 	"fmt"
 	"io/ioutil"
-	"os"
 	"strings"
 
 	"github.com/garethjevans/uc/pkg/update"
@@ -14,17 +13,11 @@ import (
 
 // UpdateCmd defines the cmd.
 type UpdateCmd struct {
-	Cmd  *cobra.Command
-	Args []string
+	common
 
-	Updater                        *update.Updater
-	Path                           string
-	JenkinsVersion                 string
-	Write                          bool
-	IncludeDependencies            bool
-	DisplayUpdates                 bool
-	DetermineVersionFromDockerfile bool
-	DockerFilePath                 string
+	Write               bool
+	IncludeDependencies bool
+	DisplayUpdates      bool
 }
 
 // NewUpdateCmd defines a new cmd.
@@ -53,69 +46,42 @@ To update all plugins against a specific version of Jenkins:
 		},
 	}
 
-	cmd.Flags().StringVarP(&c.Path, "path", "p", "plugins.txt",
-		"Path to the plugins.txt file")
-	cmd.Flags().StringVarP(&c.JenkinsVersion, "jenkins-version", "j", "",
-		"The version of Jenkins to query against")
+	c.Cmd = cmd
+	c.addCommonFlags()
+
 	cmd.Flags().BoolVarP(&c.Write, "write", "w", false,
 		"Update the file rather than display to stdout")
 	cmd.Flags().BoolVarP(&c.IncludeDependencies, "include-dependencies", "d", false,
 		"Add any additional dependencies to the output")
 	cmd.Flags().BoolVarP(&c.DisplayUpdates, "display-updates", "u", false,
 		"Write updates to stdout")
-	cmd.Flags().BoolVarP(&c.DetermineVersionFromDockerfile, "determine-version-from-dockerfile", "", false,
-		"Attempt to determine the Jenkins version from a Dockerfile")
-	cmd.Flags().StringVarP(&c.DockerFilePath, "dockerfile-path", "", "Dockerfile",
-		"Path to the Dockerfile")
 
 	return cmd
 }
 
 // Run update help.
 func (c *UpdateCmd) Run() error {
-	if c.Path == "" {
-		return errors.New("--path needs to be set")
-	}
-
-	if c.DetermineVersionFromDockerfile && c.JenkinsVersion != "" {
-		return errors.New("only one of --determine-version-from-dockerfile or --jenkins-version should be used")
-	}
-
-	logrus.Debugf("reading plugins from %s", c.Path)
-	data, err := ioutil.ReadFile(c.Path)
+	err := c.validateCommonFlags()
 	if err != nil {
-		return errors.New("unable to read file from path " + c.Path)
+		return err
 	}
 
-	lines := strings.Split(string(data), "\n")
-	depsIn, err := update.FromStrings(lines)
+	depsIn, err := c.readFromPath()
 	if err != nil {
-		return errors.New("unable to convert file into dependencies")
+		return err
 	}
 
 	if c.Updater == nil {
 		c.Updater = &update.Updater{}
+		version, err := c.determineVersion()
+		if err != nil {
+			return err
+		}
+		c.Updater.SetVersion(version)
 	}
 
 	if c.IncludeDependencies {
 		c.Updater.IncludeDependencies()
-	}
-
-	if c.DetermineVersionFromDockerfile {
-		r, err := os.Open(c.DockerFilePath)
-		if err != nil {
-			return errors.New("unable to open " + c.DockerFilePath)
-		}
-		fullVersion, err := update.DetermineJenkinsVersionFromDockerfile(r)
-		if err != nil {
-			return errors.New("unable to determine version from Dockerfile")
-		}
-		extractedVersion := update.ExtractExactVersion(fullVersion)
-		logrus.Debugf("using jenkins version %s from dockerfile %s", extractedVersion, c.DockerFilePath)
-		c.Updater.SetVersion(extractedVersion)
-	} else if c.JenkinsVersion != "" {
-		logrus.Debugf("using jenkins version %s", c.JenkinsVersion)
-		c.Updater.SetVersion(c.JenkinsVersion)
 	}
 
 	depsOut, err := c.Updater.LatestVersions(depsIn)
