@@ -29,7 +29,8 @@ uc check [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   Show help for command
+  -v, --debug   Debug Output
+      --help    Show help for command
 ```
 
 ### SEE ALSO
