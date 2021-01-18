@@ -1,5 +1,7 @@
 package update
 
+import "regexp"
+
 type Config struct {
 	ConnectionCheckURL  string                     `json:"connectionCheckUrl"`
 	Core                ConfigInfo                 `json:"core"`
@@ -45,6 +47,11 @@ type WarningInfo struct {
 type VersionInfo struct {
 	LastVersion string `json:"lastVersion"`
 	Pattern     string `json:"pattern"`
+}
+
+func (v *VersionInfo) Matches(in string) bool {
+	r := regexp.MustCompile(v.Pattern)
+	return r.MatchString(in)
 }
 
 type Dependency struct {
