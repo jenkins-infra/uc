@@ -292,7 +292,6 @@ func TestCanParseUpdateCentre_CompleteList_WithVersions(t *testing.T) {
 	depsIn, err := update.FromStrings(strings.Split(versionSet, "\n"))
 	assert.NoError(t, err)
 
-	assert.NoError(t, err)
 	deps, err := u.LatestVersions(depsIn)
 	assert.NoError(t, err)
 
@@ -318,7 +317,6 @@ func TestCanParseUpdateCentre_CompleteList_CanDetectUpdates(t *testing.T) {
 	depsIn, err := update.FromStrings(strings.Split(updatedVersionSet, "\n"))
 	assert.NoError(t, err)
 
-	assert.NoError(t, err)
 	deps, err := u.LatestVersions(depsIn)
 	assert.NoError(t, err)
 
@@ -336,6 +334,26 @@ func TestCanParseUpdateCentre_CompleteList_CanDetectUpdates(t *testing.T) {
 
 	t.Log(update.AsStrings(changed))
 	assert.Equal(t, 1, len(changed))
+}
+
+func TestCanParseUpdateCentre_Warnings(t *testing.T) {
+	u := update.Updater{}
+
+	http := &api.FakeHTTP{}
+	client := api.NewClient(api.ReplaceTripper(http))
+	u.SetClient(client)
+	http.StubWithFixture(200, "golden.formatted.json")
+
+	depsIn, err := update.FromStrings(strings.Split(versionSet, "\n"))
+	assert.NoError(t, err)
+
+	warnings, err := u.GetWarnings(depsIn)
+	assert.NoError(t, err)
+
+	assert.Equal(t, 1, len(warnings))
+	assert.Equal(t, "ansicolor", warnings[0].Name)
+	assert.Equal(t, "SECURITY-XXX", warnings[0].ID)
+	assert.Equal(t, "https://jenkins.io/security/advisory/url/", warnings[0].URL)
 }
 
 func assertContains(t *testing.T, deps []update.DepInfo, name string) {

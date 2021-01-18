@@ -18,7 +18,7 @@ func TestCanEvaluateWarnings(t *testing.T) {
 		},
 	}
 
-	assert.True(t, w.Versions[0].Matches("1.0"))
-	assert.True(t, w.Versions[0].Matches("1.1"))
-	assert.False(t, w.Versions[0].Matches("1.2"))
+	assert.True(t, w.Matches("1.0"))
+	assert.True(t, w.Matches("1.1"))
+	assert.False(t, w.Matches("1.2"))
 }
