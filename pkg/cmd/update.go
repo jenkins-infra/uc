@@ -119,6 +119,11 @@ func (c *UpdateCmd) Run() error {
 		return errors.New("unable to determine latest versions")
 	}
 
+	// filter out any empty records
+	depsOut = update.FindAll(depsOut, func(info update.DepInfo) bool {
+		return info.Name != ""
+	})
+
 	depsString := update.AsStrings(depsOut)
 	dataToWrite := strings.Join(depsString, "\n")
 
