@@ -36,7 +36,7 @@ uc update --path plugins.txt -w
 ```
 ## Documentation
 
-More indepth documentation can be found [here](./docs)
+More indepth documentation can be found [here](./docs/uc.md)
 
 ## Development
 
