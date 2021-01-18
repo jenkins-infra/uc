@@ -50,6 +50,7 @@ func init() {
 		return &FlagError{Err: err}
 	})
 
+	RootCmd.AddCommand(cmd.NewCheckCmd())
 	RootCmd.AddCommand(cmd.NewUpdateCmd())
 
 	c := completionCmd

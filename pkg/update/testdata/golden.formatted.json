@@ -3383,15 +3383,15 @@
   "updateCenterVersion": "1",
   "warnings": [
     {
-      "id": "SECURITY-208",
-      "message": "Authentication bypass vulnerability",
-      "name": "google-login",
+      "id": "SECURITY-XXX",
+      "message": "Dummy vulnerability",
+      "name": "ansicolor",
       "type": "plugin",
-      "url": "https://jenkins.io/security/advisory/2015-10-12/",
+      "url": "https://jenkins.io/security/advisory/url/",
       "versions": [
         {
-          "lastVersion": "1.1",
-          "pattern": "1[.][01](|[.-].*)"
+          "lastVersion": "0.8",
+          "pattern": "0[.][7](|[.-].*)"
         }
       ]
     },

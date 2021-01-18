@@ -1,6 +1,10 @@
 package update
 
-import "regexp"
+import (
+	"github.com/Masterminds/semver/v3"
+	"github.com/Upliner/goback/regexp"
+	"github.com/sirupsen/logrus"
+)
 
 type Config struct {
 	ConnectionCheckURL  string                     `json:"connectionCheckUrl"`
@@ -9,6 +13,7 @@ type Config struct {
 	ID                  string                     `json:"id"`
 	Plugins             map[string]PluginInfo      `json:"plugins"`
 	UpdateCenterVersion string                     `json:"updateCenterVersion"`
+	Warnings            []WarningInfo              `json:"warnings"`
 }
 
 type ConfigInfo struct {
@@ -44,6 +49,15 @@ type WarningInfo struct {
 	Versions []VersionInfo `json:"versions"`
 }
 
+func (w *WarningInfo) Matches(in string) bool {
+	for _, v := range w.Versions {
+		if v.Matches(in) {
+			return true
+		}
+	}
+	return false
+}
+
 type VersionInfo struct {
 	LastVersion string `json:"lastVersion"`
 	Pattern     string `json:"pattern"`
@@ -51,7 +65,32 @@ type VersionInfo struct {
 
 func (v *VersionInfo) Matches(in string) bool {
 	r := regexp.MustCompile(v.Pattern)
-	return r.MatchString(in)
+	matches := r.MatchString(in)
+	if !matches {
+		return false
+	}
+
+	logrus.Debugf("matches - %s against %s", in, v.Pattern)
+	logrus.Debugf("-> last version %s", v.LastVersion)
+
+	lastVersion, err := semver.NewVersion(v.LastVersion)
+	if err != nil {
+		logrus.Debugf("lastVersion %s is invalid", lastVersion)
+	}
+
+	inVersion, err := semver.NewVersion(in)
+	if err != nil {
+		logrus.Infof("inVersion %s is invalid", in)
+	}
+
+	if lastVersion != nil && inVersion != nil {
+		logrus.Debugf("checking   lastVersion %s >= inVersion %s", lastVersion, inVersion)
+		if lastVersion.GreaterThan(inVersion) || lastVersion.Equal(inVersion) {
+			return true
+		}
+	}
+
+	return false
 }
 
 type Dependency struct {

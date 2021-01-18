@@ -143,6 +143,30 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 	return deps, nil
 }
 
+func (u *Updater) GetWarnings(plugins []DepInfo) ([]WarningInfo, error) {
+	if u.config == nil {
+		err := u.get()
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	warnings := []WarningInfo{}
+
+	for _, p := range plugins {
+		for _, w := range u.config.Warnings {
+			if w.Name == p.Name {
+				if w.Matches(p.Version) {
+					logrus.Debugf("matches warning for %s & %s", w.Name, p.Version)
+					warnings = append(warnings, w)
+				}
+			}
+		}
+	}
+
+	return warnings, nil
+}
+
 func setVersionIfNewer(deps []DepInfo, name string, version string) {
 	for i := range deps {
 		if deps[i].Name == name {
