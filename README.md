@@ -34,6 +34,9 @@ Update plugins.txt to the latest plugin versions and automatically update the fi
 ```
 uc update --path plugins.txt -w
 ```
+## Documentation
+
+More indepth documentation can be found at [./docs]
 
 ## Development
 
