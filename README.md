@@ -1,3 +1,6 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/garethjevans/uc)](https://goreportcard.com/report/github.com/garethjevans/uc)
+[![Downloads](https://img.shields.io/github/downloads/garethjevans/uc/total.svg)]()
+
 # uc
 
 a small CLI that can be used to update a plugins.txt file for installing plugins into a jenkins docker image.
