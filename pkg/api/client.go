@@ -36,27 +36,6 @@ func NewClient(opts ...ClientOption) *Client {
 	return client
 }
 
-// AddHeader turns a RoundTripper into one that adds a request header.
-func AddHeader(name, value string) ClientOption {
-	return func(tr http.RoundTripper) http.RoundTripper {
-		return &funcTripper{roundTrip: func(req *http.Request) (*http.Response, error) {
-			host := req.Host
-			logrus.Debugf("sending request to host '%s'", host)
-			if name == "Authorization" {
-				if host == "api.github.com" {
-					logrus.Debugf("Adding Authorization Header %s=%s", name, value)
-					req.Header.Add(name, value)
-				}
-			} else {
-				logrus.Debugf("Adding Header %s=%s", name, value)
-				req.Header.Add(name, value)
-			}
-
-			return tr.RoundTrip(req)
-		}}
-	}
-}
-
 func enableTracing() ClientOption {
 	return func(rt http.RoundTripper) http.RoundTripper {
 		return &Tracer{RoundTripper: rt}
@@ -70,20 +49,12 @@ func ReplaceTripper(tr http.RoundTripper) ClientOption {
 	}
 }
 
-type funcTripper struct {
-	roundTrip func(*http.Request) (*http.Response, error)
-}
-
-func (tr funcTripper) RoundTrip(req *http.Request) (*http.Response, error) {
-	return tr.roundTrip(req)
-}
-
 // Client facilitates making HTTP requests to the GitHub API.
 type Client struct {
 	http *http.Client
 }
 
-// REST performs a REST request and parses the response.
+// GET performs a REST request and parses the response.
 func (c Client) GET(version string, data interface{}) error {
 	requestURL := url
 	if version != "" {
@@ -161,10 +132,6 @@ func (c Client) REST(url string, body io.Reader, data interface{}) error {
 	return nil
 }
 
-func (c Client) Do(req *http.Request) (*http.Response, error) {
-	return c.http.Do(req)
-}
-
 func handleHTTPError(resp *http.Response) error {
 	var message string
 	body, err := ioutil.ReadAll(io.LimitReader(resp.Body, 10000000))
@@ -175,6 +142,7 @@ func handleHTTPError(resp *http.Response) error {
 	return fmt.Errorf("http error, '%s' failed (%d): '%s'", resp.Request.URL, resp.StatusCode, message)
 }
 
+// BasicClient returns a basic implemenation of a http client.
 func BasicClient() *Client {
 	var opts []ClientOption
 
