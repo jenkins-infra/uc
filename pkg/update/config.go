@@ -6,9 +6,10 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+// Config struct to store the update center config representation.
 type Config struct {
 	ConnectionCheckURL  string                     `json:"connectionCheckUrl"`
-	Core                ConfigInfo                 `json:"core"`
+	Core                CoreInfo                   `json:"core"`
 	Deprecations        map[string]DeprecationInfo `json:"deprecations"`
 	ID                  string                     `json:"id"`
 	Plugins             map[string]PluginInfo      `json:"plugins"`
@@ -16,7 +17,8 @@ type Config struct {
 	Warnings            []WarningInfo              `json:"warnings"`
 }
 
-type ConfigInfo struct {
+// CoreInfo struct to store the update center core representation.
+type CoreInfo struct {
 	BuildDate string `json:"buildDate"`
 	Name      string `json:"core"`
 	Sha1      string `json:"sha1"`
@@ -25,10 +27,12 @@ type ConfigInfo struct {
 	Version   string `json:"version"`
 }
 
+// DeprecationInfo struct to store the update center deprecation representation.
 type DeprecationInfo struct {
 	URL string `json:"url"`
 }
 
+// PluginInfo struct to store the update center plugin representation.
 type PluginInfo struct {
 	BuildDate    string       `json:"buildDate"`
 	Name         string       `json:"name"`
@@ -40,6 +44,7 @@ type PluginInfo struct {
 	Dependencies []Dependency `json:"dependencies"`
 }
 
+// WarningInfo struct to store the update center warning representation.
 type WarningInfo struct {
 	ID       string        `json:"id"`
 	Message  string        `json:"message"`
@@ -58,6 +63,7 @@ func (w *WarningInfo) Matches(in string) bool {
 	return false
 }
 
+// VersionInfo struct to store the update center version representation.
 type VersionInfo struct {
 	LastVersion string `json:"lastVersion"`
 	Pattern     string `json:"pattern"`
@@ -93,6 +99,7 @@ func (v *VersionInfo) Matches(in string) bool {
 	return false
 }
 
+// Dependency struct to store the update center dependency representation.
 type Dependency struct {
 	Name     string `json:"name"`
 	Optional bool   `json:"optional"`
