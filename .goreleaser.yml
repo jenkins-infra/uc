@@ -16,8 +16,9 @@ builds:
       - linux
     goarch:
       - amd64
+      - arm64
 
-  - id: uc-amd64
+  - id: uc-darwin
     main: ./cmd/uc/uc.go
     binary: uc
     ldflags:
@@ -26,6 +27,7 @@ builds:
       - darwin
     goarch:
       - amd64
+      - arm64
 
   - id: uc-windows-amd64
     main: ./cmd/uc/uc.go
