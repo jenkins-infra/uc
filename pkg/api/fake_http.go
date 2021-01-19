@@ -43,7 +43,7 @@ func (f *FakeHTTP) RoundTrip(req *http.Request) (*http.Response, error) {
 	return resp, nil
 }
 
-// StubWithFixture pre-records an HTTP response from a fixture file
+// StubWithFixture pre-records an HTTP response from a fixture file.
 func (f *FakeHTTP) StubWithFixture(status int, fixtureFileName string) func() {
 	fixturePath := path.Join("./testdata/", fixtureFileName)
 	fixtureFile, err := os.Open(fixturePath)
