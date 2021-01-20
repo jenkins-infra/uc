@@ -66,10 +66,15 @@ type Updater struct {
 	client              *api.Client
 	version             string
 	includeDependencies bool
+	securityUpdates     bool
 }
 
 func (u *Updater) IncludeDependencies() {
 	u.includeDependencies = true
+}
+
+func (u *Updater) SecurityUpdates() {
+	u.securityUpdates = true
 }
 
 func (u *Updater) SetVersion(version string) {
@@ -109,6 +114,13 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 		}
 	}
 
+	warnings, err := u.GetWarnings(plugins)
+	if err != nil {
+		return nil, err
+	}
+
+	logrus.Debugf("got %d warning(s)", len(warnings))
+
 	deps := make([]DepInfo, len(plugins))
 	copy(deps, plugins)
 
@@ -118,7 +130,15 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 			if !Contains(deps, p.Name) {
 				deps = append(deps, DepInfo{Name: p.Name, Version: p.Version, Changed: true})
 			} else {
-				setVersionIfNewer(deps, p.Name, p.Version)
+				if u.securityUpdates {
+					logrus.Debugf("checking if there is a security update for %s", p.Name)
+					if u.isSecurityUpdateForPlugin(warnings, p.Name) {
+						logrus.Debugf("security update available for %s, update to %s", p.Name, p.Version)
+						setVersionIfNewer(deps, p.Name, p.Version)
+					}
+				} else {
+					setVersionIfNewer(deps, p.Name, p.Version)
+				}
 			}
 
 			if u.includeDependencies {
@@ -188,4 +208,13 @@ func setVersionIfNewer(deps []DepInfo, name string, version string) {
 			}
 		}
 	}
+}
+
+func (u *Updater) isSecurityUpdateForPlugin(warnings []WarningInfo, plugin string) bool {
+	for _, w := range warnings {
+		if w.Name == plugin {
+			return true
+		}
+	}
+	return false
 }

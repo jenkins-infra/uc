@@ -1,1 +1,2 @@
 github-branch-source:2.0
+ansicolor:0.7.3
