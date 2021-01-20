@@ -15,6 +15,8 @@ import (
 // CheckCmd defines the cmd.
 type CheckCmd struct {
 	common
+
+	FailOnVulnerability bool
 }
 
 // NewCheckCmd defines a new cmd.
@@ -45,6 +47,9 @@ To check all plugins against a specific version of Jenkins:
 
 	c.Cmd = cmd
 	c.addCommonFlags()
+
+	c.Cmd.Flags().BoolVarP(&c.FailOnVulnerability, "fail-on-vulnerability", "f", false,
+		"Fail with an exit(1) if vulnerabilities exists")
 
 	return cmd
 }
@@ -89,6 +94,10 @@ func (c *CheckCmd) Run() error {
 		}
 
 		t.Render()
+
+		if c.FailOnVulnerability {
+			os.Exit(1)
+		}
 	}
 
 	return nil
