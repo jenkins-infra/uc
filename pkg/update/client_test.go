@@ -356,6 +356,83 @@ func TestCanParseUpdateCentre_Warnings(t *testing.T) {
 	assert.Equal(t, "https://jenkins.io/security/advisory/url/", warnings[0].URL)
 }
 
+func TestCanParseUpdateCentre_NoUpdates(t *testing.T) {
+	u := update.Updater{}
+
+	http := &api.FakeHTTP{}
+	client := api.NewClient(api.ReplaceTripper(http))
+	u.SetClient(client)
+	http.StubWithFixture(200, "uc.no-updates.json")
+
+	depsIn, err := update.FromStrings(strings.Split(`plugin-one:0.1
+plugin-two:0.1
+plugin-three:0.1`, "\n"))
+	assert.NoError(t, err)
+
+	updates, err := u.LatestVersions(depsIn)
+	assert.NoError(t, err)
+
+	assert.Equal(t, 3, len(updates))
+
+	changed := update.FindAll(updates, func(info update.DepInfo) bool {
+		return info.Changed
+	})
+
+	assert.Equal(t, 0, len(changed))
+}
+
+func TestCanParseUpdateCentre_SingleUpdates(t *testing.T) {
+	u := update.Updater{}
+
+	http := &api.FakeHTTP{}
+	client := api.NewClient(api.ReplaceTripper(http))
+	u.SetClient(client)
+	http.StubWithFixture(200, "uc.single-update.json")
+
+	depsIn, err := update.FromStrings(strings.Split(`plugin-one:0.1
+plugin-two:0.1
+plugin-three:0.1`, "\n"))
+	assert.NoError(t, err)
+
+	updates, err := u.LatestVersions(depsIn)
+	assert.NoError(t, err)
+
+	assert.Equal(t, 3, len(updates))
+
+	changed := update.FindAll(updates, func(info update.DepInfo) bool {
+		return info.Changed
+	})
+
+	assert.Equal(t, 1, len(changed))
+	assert.Equal(t, "plugin-two", changed[0].Name)
+}
+
+func TestCanParseUpdateCentre_MultipleUpdates(t *testing.T) {
+	u := update.Updater{}
+
+	http := &api.FakeHTTP{}
+	client := api.NewClient(api.ReplaceTripper(http))
+	u.SetClient(client)
+	http.StubWithFixture(200, "uc.multiple-updates.json")
+
+	depsIn, err := update.FromStrings(strings.Split(`plugin-one:0.1
+plugin-two:0.1
+plugin-three:0.1`, "\n"))
+	assert.NoError(t, err)
+
+	updates, err := u.LatestVersions(depsIn)
+	assert.NoError(t, err)
+
+	assert.Equal(t, 3, len(updates))
+
+	changed := update.FindAll(updates, func(info update.DepInfo) bool {
+		return info.Changed
+	})
+
+	assert.Equal(t, 3, len(changed))
+}
+
+
 func assertContains(t *testing.T, deps []update.DepInfo, name string) {
 	for _, a := range deps {
 		if a.Name == name {

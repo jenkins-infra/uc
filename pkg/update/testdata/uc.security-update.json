@@ -1,0 +1,101 @@
+{
+  "connectionCheckUrl": "http://www.google.com/",
+  "core": {
+    "buildDate": "Jan 05, 2021",
+    "name": "core",
+    "url": "https://updates.jenkins.io/download/war/2.274/jenkins.war",
+    "version": "2.274"
+  },
+  "deprecations": {},
+  "id": "default",
+  "plugins": {
+    "plugin-one": {
+      "buildDate": "Oct 06, 2020",
+      "dependencies": [],
+      "developers": [],
+      "excerpt": "An example plugin",
+      "gav": "io.jenkins.plugins:plugin-one:0.1",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "plugin-one",
+      "popularity": 16,
+      "previousVersion": "0.0.1",
+      "title": "Plugin One",
+      "version": "0.1"
+    },
+    "plugin-two": {
+      "buildDate": "Oct 06, 2020",
+      "dependencies": [],
+      "developers": [],
+      "excerpt": "An example plugin",
+      "gav": "io.jenkins.plugins:plugin-two:0.1",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "plugin-two",
+      "popularity": 16,
+      "previousVersion": "0.0.1",
+      "title": "Plugin Two",
+      "version": "0.1"
+    },
+    "plugin-three": {
+      "buildDate": "Oct 06, 2020",
+      "dependencies": [],
+      "developers": [],
+      "excerpt": "An example plugin",
+      "gav": "io.jenkins.plugins:plugin-three:0.1",
+      "labels": [],
+      "minimumJavaVersion": "1.8",
+      "name": "plugin-three",
+      "popularity": 16,
+      "previousVersion": "0.0.1",
+      "title": "Plugin Three",
+      "version": "0.1"
+    }
+  },
+  "updateCenterVersion": "1",
+  "warnings": [
+    {
+      "id": "SECURITY-XXX",
+      "message": "Dummy vulnerability",
+      "name": "ansicolor",
+      "type": "plugin",
+      "url": "https://jenkins.io/security/advisory/url/",
+      "versions": [
+        {
+          "lastVersion": "0.8",
+          "pattern": "0[.][7](|[.-].*)"
+        }
+      ]
+    },
+    {
+      "id": "SECURITY-136",
+      "message": "Stored XSS vulnerability",
+      "name": "extra-columns",
+      "type": "plugin",
+      "url": "https://jenkins.io/security/advisory/2016-04-11/",
+      "versions": [
+        {
+          "lastVersion": "1.16",
+          "pattern": "1[.](\\d|1[0123456])(|[.-].*)"
+        }
+      ]
+    },
+    {
+      "id": "SECURITY-342",
+      "message": "Users with Overall/Read access can enumerate credential IDs",
+      "name": "github-branch-source",
+      "type": "plugin",
+      "url": "https://jenkins.io/security/advisory/2017-07-10/",
+      "versions": [
+        {
+          "lastVersion": "2.0.7",
+          "pattern": "(1[.].*|2[.]0[.][0-7])(|[-].*)"
+        },
+        {
+          "lastVersion": "2.2.0-beta-1",
+          "pattern": "2[.]2[.]0[-](alpha[-].*|beta[-]1)"
+        }
+      ]
+    }
+  ]
+}
