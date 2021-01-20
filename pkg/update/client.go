@@ -142,16 +142,7 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 			}
 
 			if u.includeDependencies {
-				// add the plugin dependencies
-				for _, d := range p.Dependencies {
-					if !d.Optional {
-						if !Contains(deps, d.Name) {
-							deps = append(deps, DepInfo{Name: d.Name, Version: d.Version, Changed: true})
-						} else {
-							setVersionIfNewer(deps, d.Name, d.Version)
-						}
-					}
-				}
+				deps = addDependenciesForPlugin(deps, p.Dependencies)
 			}
 		}
 	}
@@ -217,4 +208,18 @@ func (u *Updater) isSecurityUpdateForPlugin(warnings []WarningInfo, plugin strin
 		}
 	}
 	return false
+}
+
+func addDependenciesForPlugin(deps []DepInfo, dependencies []Dependency) []DepInfo {
+	// add the plugin dependencies
+	for _, d := range dependencies {
+		if !d.Optional {
+			if !Contains(deps, d.Name) {
+				deps = append(deps, DepInfo{Name: d.Name, Version: d.Version, Changed: true})
+			} else {
+				setVersionIfNewer(deps, d.Name, d.Version)
+			}
+		}
+	}
+	return deps
 }
