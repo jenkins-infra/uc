@@ -22,6 +22,7 @@ uc check [flags]
 ```
       --determine-version-from-dockerfile   Attempt to determine the Jenkins version from a Dockerfile
       --dockerfile-path string              Path to the Dockerfile (default "Dockerfile")
+  -f, --fail-on-vulnerability               Fail with an exit(1) if vulnerabilities exists
   -j, --jenkins-version string              The version of Jenkins to query against
   -p, --path string                         Path to the plugins.txt file (default "plugins.txt")
 ```
