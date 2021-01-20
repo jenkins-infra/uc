@@ -18,6 +18,7 @@ type UpdateCmd struct {
 	Write               bool
 	IncludeDependencies bool
 	DisplayUpdates      bool
+	SecurityUpdates     bool
 }
 
 // NewUpdateCmd defines a new cmd.
@@ -55,6 +56,8 @@ To update all plugins against a specific version of Jenkins:
 		"Add any additional dependencies to the output")
 	cmd.Flags().BoolVarP(&c.DisplayUpdates, "display-updates", "u", false,
 		"Write updates to stdout")
+	cmd.Flags().BoolVarP(&c.SecurityUpdates, "security-updates", "s", false,
+		"Only provide security updates")
 
 	return cmd
 }
@@ -82,6 +85,10 @@ func (c *UpdateCmd) Run() error {
 
 	if c.IncludeDependencies {
 		c.Updater.IncludeDependencies()
+	}
+
+	if c.SecurityUpdates {
+		c.Updater.SecurityUpdates()
 	}
 
 	depsOut, err := c.Updater.LatestVersions(depsIn)

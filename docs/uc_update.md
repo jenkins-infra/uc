@@ -26,6 +26,7 @@ uc update [flags]
   -d, --include-dependencies                Add any additional dependencies to the output
   -j, --jenkins-version string              The version of Jenkins to query against
   -p, --path string                         Path to the plugins.txt file (default "plugins.txt")
+  -s, --security-updates                    Only provide security updates
   -w, --write                               Update the file rather than display to stdout
 ```
 

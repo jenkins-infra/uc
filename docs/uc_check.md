@@ -8,7 +8,7 @@ Validate existing plugin versions against known vulnerabilities:
 
     uc check --path <path>
 
-To update all plugins against a specific version of Jenkins:
+To check all plugins against a specific version of Jenkins:
 
     uc check --path <path> --jenkins-version <version>
 
