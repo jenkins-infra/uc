@@ -20,6 +20,8 @@ docker run -it garethjevans/uc
 
 ## Usage
 
+### Update Plugins to the latest version
+
 Update plugins.txt to the latest plugin versions, no changes will be made to the file, updates will be pushed to `stdout`.
 
 ```
@@ -37,6 +39,37 @@ Update plugins.txt to the latest plugin versions and automatically update the fi
 ```
 uc update --path plugins.txt -w
 ```
+
+### Only apply security updates
+
+```
+uc update --path plugins.txt --security-updates
+```
+
+### Determine the Jenkins version from a Dockerfile
+
+`uc` will attempt to determine the Jenkins version from the parent of the Docker image:
+
+```
+uc update --path plugins.txt --determine-version-from-dockerfile --dockerfile-path /path/to/Dockerfile
+```
+
+### Check for security vulnerabilities
+
+```
+uc check --path plugins.txt
+```
+
+This will display all known security vulnerabilities for the plugin versions listed:
+
+```
++----------------------+--------------+---------------------------------------------------------------+
+| PLUGIN               | ISSUE        | URL                                                           |
++----------------------+--------------+---------------------------------------------------------------+
+| github-branch-source | SECURITY-806 | https://jenkins.io/security/advisory/2018-06-04/#SECURITY-806 |
++----------------------+--------------+---------------------------------------------------------------+
+```
+
 ## Documentation
 
 More indepth documentation can be found [here](./docs/uc.md)
