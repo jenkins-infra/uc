@@ -22,6 +22,7 @@ BUILD_DATE := $(shell date +%Y%m%d-%H:%M:%S)
 BUILDFLAGS := -trimpath -ldflags \
   " -X $(ROOT_PACKAGE)/pkg/version.Version=$(VERSION)\
 		-X $(ROOT_PACKAGE)/pkg/version.Revision=$(REV)\
+		-X $(ROOT_PACKAGE)/pkg/version.BuiltBy=make \
 		-X $(ROOT_PACKAGE)/pkg/version.Sha1=$(SHA1)\
 		-X $(ROOT_PACKAGE)/pkg/version.Branch='$(BRANCH)'\
 		-X $(ROOT_PACKAGE)/pkg/version.BuildDate='$(BUILD_DATE)'\
