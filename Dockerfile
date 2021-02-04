@@ -1,3 +1,12 @@
-FROM alpine:3.12.3
+FROM --platform=${BUILDPLATFORM} alpine:3.13.0
 
-COPY ./build/linux/uc /usr/local/bin
+ARG TARGETOS
+ARG TARGETARCH
+ARG TARGETPLATFORM
+
+LABEL maintainer="Gareth Evans <gareth@bryncynfelin.co.uk>"
+COPY dist/uc-${TARGETOS}_${TARGETOS}_${TARGETARCH}/uc /usr/bin/uc
+
+ENTRYPOINT [ "/usr/bin/uc" ]
+
+CMD ["--help"]
