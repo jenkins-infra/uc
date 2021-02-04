@@ -11,18 +11,20 @@ builds:
     main: ./cmd/uc/uc.go
     binary: uc
     ldflags:
-      - -X github.com/garethjevans/uc/pkg/version.Version={{.Version}} -X github.com/garethjevans/updatecenter/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/updatecenter/pkg/version.BuildDate={{.CommitDate}}
+      - -X github.com/garethjevans/uc/pkg/version.Version={{.Version}} -X github.com/garethjevans/uc/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/uc/pkg/version.BuildDate={{.CommitDate}} -X github.com/garethjevans/uc/pkg/version.BuiltBy=goreleaser
     goos:
       - linux
     goarch:
       - amd64
       - arm64
+      - s390x
+      - ppc64le
 
   - id: uc-darwin
     main: ./cmd/uc/uc.go
     binary: uc
     ldflags:
-      - -X github.com/garethjevans/uc/pkg/version.Version={{.Version}} -X github.com/garethjevans/updatecenter/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/updatecenter/pkg/version.BuildDate={{.CommitDate}}
+      - -X github.com/garethjevans/uc/pkg/version.Version={{.Version}} -X github.com/garethjevans/uc/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/uc/pkg/version.BuildDate={{.CommitDate}} -X github.com/garethjevans/uc/pkg/version.BuiltBy=goreleaser
     goos:
       - darwin
     goarch:
@@ -33,7 +35,7 @@ builds:
     main: ./cmd/uc/uc.go
     binary: uc
     ldflags:
-      - -X github.com/garethjevans/updatecenter/pkg/version.Version={{.Version}} -X github.com/garethjevans/updatecenter/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/updatecenter/pkg/version.BuildDate={{.CommitDate}}
+      - -X github.com/garethjevans/uc/pkg/version.Version={{.Version}} -X github.com/garethjevans/uc/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/uc/pkg/version.BuildDate={{.CommitDate}} -X github.com/garethjevans/uc/pkg/version.BuiltBy=goreleaser
     goos:
       - windows
     goarch:
