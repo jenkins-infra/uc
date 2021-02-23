@@ -1,0 +1,27 @@
+---
+name: 'uc'
+description: 'https://github.com/garethjevans/uc'
+branding:
+  icon: 'tag'
+  color: 'blue'
+inputs:
+  path:
+    description: 'Path to the plugins.txt file to update'
+    required: false
+    default: 'plugins.txt'
+  security-updates:
+    description: 'Only provide security updates [true/false]'
+    required: false
+    default: 'false'
+  jenkins-version:
+    description: 'Sets the jenkins version when querying for updates.  If not set, will attempt to determine the jenkins version from the Dockerfile'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'docker://garethjevans/uc:0.0.13'
+  entrypoint: 'github-actions-entrypoint.sh'
+  env:
+    PLUGINS_PATH: ${{ inputs.path }}
+    SECURITY_UPDATES: ${{ inputs.security-updates }}
+    JENKINS_VERSION: ${{ inputs.jenkins-version }}
