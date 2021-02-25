@@ -23,14 +23,14 @@ func (d *DepInfo) String() string {
 }
 
 func (d *DepInfo) versionOrEmpty() string {
-	if "0.0.0" == d.Version {
+	if d.Version == "0.0.0" {
 		return ""
 	}
 	return d.Version
 }
 
 func (d *DepInfo) formattedComment() string {
-	if "" == d.Comment {
+	if d.Comment == "" {
 		return ""
 	}
 	return fmt.Sprintf(" # %s", d.Comment)
