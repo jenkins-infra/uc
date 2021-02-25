@@ -432,6 +432,31 @@ plugin-three:0.1`, "\n"))
 	assert.Equal(t, 3, len(changed))
 }
 
+func TestCanParseUpdateCentre_MultipleUpdates_WithSkip(t *testing.T) {
+	u := update.Updater{}
+
+	http := &api.FakeHTTP{}
+	client := api.NewClient(api.ReplaceTripper(http))
+	u.SetClient(client)
+	http.StubWithFixture(200, "uc.multiple-updates.json")
+
+	depsIn, err := update.FromStrings(strings.Split(`plugin-one:0.1
+plugin-two:0.1 # noupdate
+plugin-three:0.1`, "\n"))
+	assert.NoError(t, err)
+
+	updates, err := u.LatestVersions(depsIn)
+	assert.NoError(t, err)
+
+	assert.Equal(t, 3, len(updates))
+
+	changed := update.FindAll(updates, func(info update.DepInfo) bool {
+		return info.Changed
+	})
+
+	assert.Equal(t, 2, len(changed))
+}
+
 func TestCanParseUpdateCentre_Deprecations(t *testing.T) {
 	u := update.Updater{}
 
