@@ -1,65 +1,12 @@
 package update
 
 import (
-	"fmt"
 	"sort"
-	"strings"
 
 	"github.com/Masterminds/semver/v3"
 	"github.com/garethjevans/uc/pkg/api"
-	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )
-
-type DepInfo struct {
-	Name    string
-	Version string
-	Changed bool
-}
-
-func (d *DepInfo) String() string {
-	return fmt.Sprintf("%s:%s", d.Name, d.Version)
-}
-
-func FromString(in string) (*DepInfo, error) {
-	if strings.Contains(in, ":") {
-		parts := strings.Split(in, ":")
-		if len(parts) != 2 {
-			return nil, errors.New("unable to parse plugin:version for " + in)
-		}
-		return &DepInfo{Name: parts[0], Version: parts[1]}, nil
-	}
-	return &DepInfo{Name: in, Version: "0.0.0"}, nil
-}
-
-func FromStrings(input []string) ([]DepInfo, error) {
-	deps := []DepInfo{}
-	for _, in := range input {
-		d, err := FromString(in)
-		if err != nil {
-			return nil, err
-		}
-		deps = append(deps, *d)
-	}
-	return deps, nil
-}
-
-func AsStrings(deps []DepInfo) []string {
-	out := []string{}
-	for _, d := range deps {
-		out = append(out, d.String())
-	}
-	return out
-}
-
-func FindAll(deps []DepInfo, test func(info DepInfo) bool) (ret []DepInfo) {
-	for _, d := range deps {
-		if test(d) {
-			ret = append(ret, d)
-		}
-	}
-	return
-}
 
 type Updater struct {
 	config              *Config
@@ -121,37 +68,30 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 
 	logrus.Debugf("got %d warning(s)", len(warnings))
 
-	deps := make([]DepInfo, len(plugins))
-	copy(deps, plugins)
-
-	for _, p := range u.config.Plugins {
-		if Contains(plugins, p.Name) {
-			// add the plugin
-			if !Contains(deps, p.Name) {
-				deps = append(deps, DepInfo{Name: p.Name, Version: p.Version, Changed: true})
-			} else {
-				if u.securityUpdates {
-					logrus.Debugf("checking if there is a security update for %s", p.Name)
-					if u.isSecurityUpdateForPlugin(warnings, p.Name) {
-						logrus.Debugf("security update available for %s, update to %s", p.Name, p.Version)
-						setVersionIfNewer(deps, p.Name, p.Version)
-					}
-				} else {
-					setVersionIfNewer(deps, p.Name, p.Version)
+	for _, plugin := range plugins {
+		if !plugin.SkipUpdate() {
+			p := u.config.Plugins[plugin.Name]
+			if u.securityUpdates {
+				logrus.Debugf("checking if there is a security update for %s", p.Name)
+				if u.isSecurityUpdateForPlugin(warnings, p.Name) {
+					logrus.Debugf("security update available for %s, update to %s", p.Name, p.Version)
+					setVersionIfNewer(plugins, p.Name, p.Version)
 				}
+			} else {
+				setVersionIfNewer(plugins, p.Name, p.Version)
 			}
 
 			if u.includeDependencies {
-				deps = addDependenciesForPlugin(deps, p.Dependencies)
+				plugins = addDependenciesForPlugin(plugins, p.Dependencies)
 			}
 		}
 	}
 
-	sort.Slice(deps, func(i, j int) bool {
-		return deps[i].Name < deps[j].Name
+	sort.Slice(plugins, func(i, j int) bool {
+		return plugins[i].Name < plugins[j].Name
 	})
 
-	return deps, nil
+	return plugins, nil
 }
 
 func (u *Updater) GetWarnings(plugins []DepInfo) ([]WarningInfo, error) {
