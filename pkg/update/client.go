@@ -68,9 +68,6 @@ func (u *Updater) LatestVersions(plugins []DepInfo) ([]DepInfo, error) {
 
 	logrus.Debugf("got %d warning(s)", len(warnings))
 
-	//deps := make([]DepInfo, len(plugins))
-	//copy(deps, plugins)
-
 	for _, plugin := range plugins {
 		if !plugin.SkipUpdate() {
 			p := u.config.Plugins[plugin.Name]
