@@ -70,5 +70,12 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/s390x,linux/ppc64le
           labels: |
             org.opencontainers.image.source=${{ github.event.repository.html_url }}
+            org.opencontainers.image.url=${{ github.event.repository.html_url }}
             org.opencontainers.image.created=${{ steps.prep.outputs.created }}
             org.opencontainers.image.revision=${{ github.sha }}
+            org.label-schema.vcs-url=${{ github.event.repository.html_url }}
+            org.label-schema.url=${{ github.event.repository.html_url }}
+            org.label-schema.vcs-ref=${{ github.sha }}
+            org.label-schema.build-date=${{ steps.prep.outputs.created }}
+          build-args: |
+            UC_VERSION=${{ steps.prep.outputs.version }}
