@@ -1,4 +1,4 @@
-FROM --platform=${BUILDPLATFORM} curlimages/curl:7.75.0 AS build-stage0
+FROM --platform=${BUILDPLATFORM} curlimages/curl:7.76.0 AS build-stage0
 
 ARG TARGETOS
 ARG TARGETARCH
