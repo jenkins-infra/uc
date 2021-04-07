@@ -3,7 +3,6 @@ package update
 import (
 	"sort"
 
-	"github.com/Masterminds/semver/v3"
 	"github.com/garethjevans/uc/pkg/api"
 	"github.com/sirupsen/logrus"
 )
@@ -121,21 +120,9 @@ func (u *Updater) GetWarnings(plugins []DepInfo) ([]WarningInfo, error) {
 func setVersionIfNewer(deps []DepInfo, name string, version string) {
 	for i := range deps {
 		if deps[i].Name == name {
-			v1, err := semver.NewVersion(deps[i].Version)
-			if err != nil {
-				logrus.Debugf("version %s is invalid for %s", deps[i].Version, name)
-			}
-
-			v2, err := semver.NewVersion(version)
-			if err != nil {
-				logrus.Debugf("version %s is invalid for %s", version, name)
-			}
-
-			if v1 != nil && v2 != nil {
-				if v2.GreaterThan(v1) {
-					deps[i].Version = version
-					deps[i].Changed = true
-				}
+			if deps[i].ShouldUpdate(version) {
+				deps[i].Version = version
+				deps[i].Changed = true
 			}
 		}
 	}
