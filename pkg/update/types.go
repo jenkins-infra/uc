@@ -45,11 +45,8 @@ func (d *DepInfo) formattedComment() string {
 func (d *DepInfo) ShouldUpdate(version string) bool {
 	if isSemverCompatible(version) && isSemverCompatible(d.Version) {
 		return compareSemvers(d.Version, version)
-	} else {
-		return compareNonSemvers(d.Version, version)
 	}
-
-	return false
+	return compareNonSemvers(d.Version, version)
 }
 
 func compareSemvers(v1string string, v2string string) bool {
