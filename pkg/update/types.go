@@ -2,10 +2,15 @@ package update
 
 import (
 	"fmt"
+	"github.com/Masterminds/semver/v3"
+	"regexp"
 	"strings"
 
 	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
 )
+
+var semverRE = regexp.MustCompile(`^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$`)
 
 type DepInfo struct {
 	Name    string
@@ -34,6 +39,70 @@ func (d *DepInfo) formattedComment() string {
 		return ""
 	}
 	return fmt.Sprintf(" # %s", d.Comment)
+}
+
+func (d *DepInfo) ShouldUpdate(version string) bool {
+	if isSemverCompatible(version) && isSemverCompatible(d.Version) {
+		return compareSemvers(d.Version, version)
+	} else {
+		return compareNonSemvers(d.Version, version)
+	}
+
+	return false;
+}
+
+func compareSemvers(v1string string, v2string string) bool {
+	v1, err := semver.NewVersion(v1string)
+	if err != nil {
+		logrus.Warnf("version '%s' is invalid", v1string)
+	}
+
+	v2, err := semver.NewVersion(v2string)
+	if err != nil {
+		logrus.Warnf("version '%s' is invalid", v2string)
+	}
+
+	if v1 != nil && v2 != nil {
+		if v2.GreaterThan(v1) {
+			return true
+		}
+	}
+	return false
+}
+
+func compareNonSemvers(v1string string, v2string string) bool {
+	// lets split these versions by the periods and compare each part
+	parts1 := strings.Split(v1string, ".")
+	parts2 := strings.Split(v2string, ".")
+
+	for i := 0; i < max(len(parts1), len(parts2)); i++ {
+		part1 := safePart(i, parts1)
+		part2 := safePart(i, parts2)
+		logrus.Debugf("comparing '%s' and '%s'", part1, part2)
+		if part1 != part2 {
+			return strings.Compare(part1, part2) < 0
+		}
+	}
+
+	return false
+}
+
+func safePart(index int, parts []string) string {
+	if index < len(parts)  {
+		return parts[index]
+	}
+	return ""
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func isSemverCompatible(version string) bool {
+	return semverRE.MatchString(version)
 }
 
 func (d *DepInfo) SkipUpdate() bool {
