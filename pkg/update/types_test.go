@@ -65,9 +65,9 @@ func TestShouldUpdate(t *testing.T) {
 		{in: "ldap", testVersion: "1.0", expectedShouldUpdate: true},
 		{in: "ldap:0", testVersion: "1", expectedShouldUpdate: true},
 		{in: "ldap:1", testVersion: "0", expectedShouldUpdate: false},
-		{in: "ldap:1.26", testVersion:"1.26", expectedShouldUpdate: false},
-		{in: "ldap:1.26", testVersion:"1.27", expectedShouldUpdate: true},
-		{in: "jaxb:2.3.0", testVersion:"2.3.0.1", expectedShouldUpdate: true},
+		{in: "ldap:1.26", testVersion: "1.26", expectedShouldUpdate: false},
+		{in: "ldap:1.26", testVersion: "1.27", expectedShouldUpdate: true},
+		{in: "jaxb:2.3.0", testVersion: "2.3.0.1", expectedShouldUpdate: true},
 		{in: "azure-container-agents:1.2.2", testVersion: "201.v2afdce22b4cf", expectedShouldUpdate: true},
 		{in: "azure-container-agents:201.v2afdce22b4cf", testVersion: "202.v2afdce22b4cf", expectedShouldUpdate: true},
 	}

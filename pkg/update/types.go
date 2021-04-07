@@ -2,9 +2,10 @@ package update
 
 import (
 	"fmt"
-	"github.com/Masterminds/semver/v3"
 	"regexp"
 	"strings"
+
+	"github.com/Masterminds/semver/v3"
 
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
@@ -48,7 +49,7 @@ func (d *DepInfo) ShouldUpdate(version string) bool {
 		return compareNonSemvers(d.Version, version)
 	}
 
-	return false;
+	return false
 }
 
 func compareSemvers(v1string string, v2string string) bool {
@@ -60,7 +61,7 @@ func compareSemvers(v1string string, v2string string) bool {
 			return true
 		}
 	}
-	
+
 	return false
 }
 
@@ -82,7 +83,7 @@ func compareNonSemvers(v1string string, v2string string) bool {
 }
 
 func safePart(index int, parts []string) string {
-	if index < len(parts)  {
+	if index < len(parts) {
 		return parts[index]
 	}
 	return ""
