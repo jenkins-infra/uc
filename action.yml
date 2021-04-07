@@ -19,7 +19,7 @@ inputs:
     default: ''
 runs:
   using: 'docker'
-  image: 'docker://garethjevans/uc:0.0.14'
+  image: 'docker://garethjevans/uc:0.1.0'
   entrypoint: 'github-actions-entrypoint.sh'
   env:
     PLUGINS_PATH: ${{ inputs.path }}
