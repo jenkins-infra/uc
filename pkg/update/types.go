@@ -52,21 +52,15 @@ func (d *DepInfo) ShouldUpdate(version string) bool {
 }
 
 func compareSemvers(v1string string, v2string string) bool {
-	v1, err := semver.NewVersion(v1string)
-	if err != nil {
-		logrus.Warnf("version '%s' is invalid", v1string)
-	}
-
-	v2, err := semver.NewVersion(v2string)
-	if err != nil {
-		logrus.Warnf("version '%s' is invalid", v2string)
-	}
+	v1 := semver.MustParse(v1string)
+	v2 := semver.MustParse(v2string)
 
 	if v1 != nil && v2 != nil {
 		if v2.GreaterThan(v1) {
 			return true
 		}
 	}
+	
 	return false
 }
 
