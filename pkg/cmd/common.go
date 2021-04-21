@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/garethjevans/uc/pkg/update"
+	"github.com/jenkins-infra/uc/pkg/update"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

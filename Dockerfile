@@ -5,7 +5,7 @@ ARG TARGETARCH
 ARG TARGETPLATFORM
 ARG UC_VERSION
 
-RUN curl -L -o /tmp/uc-${TARGETOS}-${TARGETARCH}.tar.gz https://github.com/garethjevans/uc/releases/download/${UC_VERSION}/uc-${TARGETOS}-${TARGETARCH}.tar.gz && \
+RUN curl -L -o /tmp/uc-${TARGETOS}-${TARGETARCH}.tar.gz https://github.com/jenkins-infra/uc/releases/download/${UC_VERSION}/uc-${TARGETOS}-${TARGETARCH}.tar.gz && \
       tar -xvzf /tmp/uc-${TARGETOS}-${TARGETARCH}.tar.gz -C /tmp && \
       chmod a+x /tmp/uc
 

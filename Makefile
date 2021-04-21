@@ -3,9 +3,9 @@ NAME := uc
 BINARY_NAME := uc
 GO := GO111MODULE=on GO15VENDOREXPERIMENT=1 go
 GO_NOMOD := GO111MODULE=off go
-PACKAGE_NAME := github.com/garethjevans/uc
-ROOT_PACKAGE := github.com/garethjevans/uc
-ORG := garethjevans
+PACKAGE_NAME := github.com/jenkins-infra/uc
+ROOT_PACKAGE := github.com/jenkins-infra/uc
+ORG := jenkins-infra
 
 # set dev version unless VERSION is explicitly set via environment
 VERSION ?= $(shell echo "$$(git describe --abbrev=0 --tags 2>/dev/null)-dev+$(REV)" | sed 's/^v//')

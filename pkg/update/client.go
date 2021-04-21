@@ -3,7 +3,7 @@ package update
 import (
 	"sort"
 
-	"github.com/garethjevans/uc/pkg/api"
+	"github.com/jenkins-infra/uc/pkg/api"
 	"github.com/sirupsen/logrus"
 )
 
