@@ -3,7 +3,7 @@ package update
 import (
 	"regexp"
 
-	"github.com/garethjevans/uc/pkg/api"
+	"github.com/jenkins-infra/uc/pkg/api"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )

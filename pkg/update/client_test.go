@@ -5,9 +5,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/garethjevans/uc/pkg/update"
+	"github.com/jenkins-infra/uc/pkg/update"
 
-	"github.com/garethjevans/uc/pkg/api"
+	"github.com/jenkins-infra/uc/pkg/api"
 
 	"github.com/stretchr/testify/assert"
 )

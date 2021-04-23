@@ -6,7 +6,7 @@ import (
 
 	"github.com/jedib0t/go-pretty/v6/table"
 
-	"github.com/garethjevans/uc/pkg/update"
+	"github.com/jenkins-infra/uc/pkg/update"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

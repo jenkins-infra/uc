@@ -3,7 +3,7 @@ package update_test
 import (
 	"testing"
 
-	"github.com/garethjevans/uc/pkg/update"
+	"github.com/jenkins-infra/uc/pkg/update"
 	"github.com/stretchr/testify/assert"
 )
 
