@@ -1,4 +1,4 @@
-module github.com/garethjevans/uc
+module github.com/jenkins-infra/uc
 
 go 1.15
 

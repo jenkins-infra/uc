@@ -1,6 +1,6 @@
 ---
 name: 'uc'
-description: 'https://github.com/garethjevans/uc'
+description: 'https://github.com/jenkins-infra/uc'
 branding:
   icon: 'tag'
   color: 'blue'
@@ -19,7 +19,7 @@ inputs:
     default: ''
 runs:
   using: 'docker'
-  image: 'docker://garethjevans/uc:0.1.0'
+  image: 'docker://jenkinsciinfra/uc:0.1.0'
   entrypoint: 'github-actions-entrypoint.sh'
   env:
     PLUGINS_PATH: ${{ inputs.path }}

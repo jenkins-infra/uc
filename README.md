@@ -1,5 +1,5 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/garethjevans/uc)](https://goreportcard.com/report/github.com/garethjevans/uc)
-[![Downloads](https://img.shields.io/github/downloads/garethjevans/uc/total.svg)]()
+[![Go Report Card](https://goreportcard.com/badge/github.com/jenkins-infra/uc)](https://goreportcard.com/report/github.com/jenkins-infra/uc)
+[![Downloads](https://img.shields.io/github/downloads/jenkins-infra/uc/total.svg)]()
 
 # uc
 
@@ -8,14 +8,14 @@ a small CLI that can be used to update a plugins.txt file for installing plugins
 ## To Install
 
 ```
-brew tap garethjevans/tap
+brew tap jenkins-infra/tap
 brew install uc
 ```
 
 This can be used a docker container with the following:
 
 ```
-docker run -it garethjevans/uc
+docker run -it jenkins-infra/uc
 ```
 
 ## Usage

@@ -11,7 +11,7 @@ builds:
     main: ./cmd/uc/uc.go
     binary: uc
     ldflags:
-      - -X github.com/garethjevans/uc/pkg/version.Version={{.Version}} -X github.com/garethjevans/uc/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/uc/pkg/version.BuildDate={{.CommitDate}} -X github.com/garethjevans/uc/pkg/version.BuiltBy=goreleaser
+      - -X github.com/jenkins-infra/uc/pkg/version.Version={{.Version}} -X github.com/jenkins-infra/uc/pkg/version.Revision={{.ShortCommit}} -X github.com/jenkins-infra/uc/pkg/version.BuildDate={{.CommitDate}} -X github.com/jenkins-infra/uc/pkg/version.BuiltBy=goreleaser
     goos:
       - linux
     goarch:
@@ -24,7 +24,7 @@ builds:
     main: ./cmd/uc/uc.go
     binary: uc
     ldflags:
-      - -X github.com/garethjevans/uc/pkg/version.Version={{.Version}} -X github.com/garethjevans/uc/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/uc/pkg/version.BuildDate={{.CommitDate}} -X github.com/garethjevans/uc/pkg/version.BuiltBy=goreleaser
+      - -X github.com/jenkins-infra/uc/pkg/version.Version={{.Version}} -X github.com/jenkins-infra/uc/pkg/version.Revision={{.ShortCommit}} -X github.com/jenkins-infra/uc/pkg/version.BuildDate={{.CommitDate}} -X github.com/jenkins-infra/uc/pkg/version.BuiltBy=goreleaser
     goos:
       - darwin
     goarch:
@@ -35,7 +35,7 @@ builds:
     main: ./cmd/uc/uc.go
     binary: uc
     ldflags:
-      - -X github.com/garethjevans/uc/pkg/version.Version={{.Version}} -X github.com/garethjevans/uc/pkg/version.Revision={{.ShortCommit}} -X github.com/garethjevans/uc/pkg/version.BuildDate={{.CommitDate}} -X github.com/garethjevans/uc/pkg/version.BuiltBy=goreleaser
+      - -X github.com/jenkins-infra/uc/pkg/version.Version={{.Version}} -X github.com/jenkins-infra/uc/pkg/version.Revision={{.ShortCommit}} -X github.com/jenkins-infra/uc/pkg/version.BuildDate={{.CommitDate}} -X github.com/jenkins-infra/uc/pkg/version.BuiltBy=goreleaser
     goos:
       - windows
     goarch:
@@ -62,11 +62,11 @@ release:
 brews:
   - name: uc
     tap:
-      owner: garethjevans
+      owner: jenkins-infra
       name: homebrew-tap
       token: "{{ .Env.GITHUB_TOKEN }}"
     commit_author:
-      name: garethjevans
+      name: jenkins-infra
       email: gareth@bryncynfelin.co.uk
     folder: Formula
     description: "Utility to update jenkins plugin.txt"

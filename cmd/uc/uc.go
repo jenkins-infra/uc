@@ -8,8 +8,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/garethjevans/uc/pkg/cmd"
-	"github.com/garethjevans/uc/pkg/version"
+	"github.com/jenkins-infra/uc/pkg/cmd"
+	"github.com/jenkins-infra/uc/pkg/version"
 	"github.com/spf13/cobra/doc"
 
 	"github.com/spf13/cobra"
