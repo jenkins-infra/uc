@@ -60,13 +60,19 @@ jobs:
           GIT_COMMITTER_EMAIL: ${{ github.actor }}@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - uses: tibdex/github-app-token@v1
+        id: generate-token
+        with:
+          app_id: ${{ secrets.JENKINS_ADMIN_APP_ID }}
+          private_key: ${{ secrets.JENKINS_ADMIN_APP_PRIVKEY }}
+
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2.4.1
         with:
           version: latest
           args: release --rm-dist
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
