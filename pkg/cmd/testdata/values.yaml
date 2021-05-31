@@ -1,0 +1,14 @@
+controller:
+  imagePullPolicy: IfNotPresent
+  JCasC:
+    enabled: true
+    defaultConfig: false
+    configScripts:
+      no-executors: |
+        jenkins:
+          numExecutors: 2
+  overwritePlugins: true
+  installPlugins:
+    - ansicolor:0.0.0
+    - antisamy-markup-formatter:2.0
+    - authentication-tokens:1.3

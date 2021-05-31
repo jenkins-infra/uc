@@ -69,6 +69,10 @@ func (c *UpdateCmd) Run() error {
 		return err
 	}
 
+	if c.isYaml() && c.Write {
+		return errors.New("cannot use --write with yaml input")
+	}
+
 	depsIn, err := c.readFromPath()
 	if err != nil {
 		return err
