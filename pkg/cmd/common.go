@@ -2,10 +2,11 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/go-yaml/yaml"
 	"io/ioutil"
 	"os"
 	"strings"
+
+	"github.com/go-yaml/yaml"
 
 	"github.com/jenkins-infra/uc/pkg/update"
 	"github.com/pkg/errors"
@@ -81,6 +82,9 @@ func (c *common) readFromPath() ([]update.DepInfo, error) {
 		index := strings.Split(c.YamlLocation, ".")
 
 		pluginsFromYaml, err := locatePluginListFromYaml(values, index)
+		if err != nil {
+			return nil, errors.New("unable to locate plugins from yaml")
+		}
 		depsIn, err = update.FromStrings(pluginsFromYaml)
 		if err != nil {
 			return nil, errors.New("unable to convert file into dependencies")
@@ -104,13 +108,12 @@ func locatePluginListFromYaml(values map[interface{}]interface{}, index []string
 			pluginList, ok := values[i].([]interface{})
 			if ok {
 				stringPluginList := []string{}
-				for _,plugin := range pluginList {
+				for _, plugin := range pluginList {
 					stringPluginList = append(stringPluginList, fmt.Sprintf("%s", plugin))
 				}
 				return stringPluginList, nil
-			} else {
-				return nil, errors.New("unable to locate " + i)
 			}
+			return nil, errors.New("unable to locate " + i)
 		}
 	}
 	return nil, errors.New("unable to locate " + strings.Join(index, "."))

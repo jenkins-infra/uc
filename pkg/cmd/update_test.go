@@ -1,8 +1,9 @@
 package cmd_test
 
 import (
-	"github.com/jenkins-infra/uc/pkg/cmd"
 	"path/filepath"
+
+	"github.com/jenkins-infra/uc/pkg/cmd"
 )
 
 func ExampleDisplayUpdatesFromPluginTxt() {
