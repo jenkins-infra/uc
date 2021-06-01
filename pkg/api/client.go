@@ -60,7 +60,7 @@ func (c Client) GET(version string, data interface{}) error {
 	if version != "" {
 		requestURL += "?version=" + version
 	}
-	logrus.Infof("checking url: %s", requestURL)
+	logrus.Debugf("checking url: %s", requestURL)
 	req, err := http.NewRequest(http.MethodGet, requestURL, nil)
 	if err != nil {
 		return err
