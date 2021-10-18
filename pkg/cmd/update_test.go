@@ -16,7 +16,7 @@ func ExampleDisplayUpdatesFromPluginTxt() {
 
 	// Output:
 	// ansicolor:1.0.0
-	// antisamy-markup-formatter:2.1
+	// antisamy-markup-formatter:2.3
 	// authentication-tokens:1.4
 }
 
@@ -31,6 +31,6 @@ func ExampleDisplayUpdatesFromValuesYaml() {
 
 	// Output:
 	// ansicolor:1.0.0
-	// antisamy-markup-formatter:2.1
+	// antisamy-markup-formatter:2.3
 	// authentication-tokens:1.4
 }
