@@ -1,0 +1,24 @@
+---
+title: Bump antisamy-markup-formatter version in test fixture data
+sources:
+  latestVersion:
+    kind: maven
+    spec:
+      url: "repo.jenkins-ci.org"
+      repository: "releases"
+      groupID: "org.jenkins-ci.plugins"
+      artifactID: "antisamy-markup-formatter"
+conditions:
+  checkForTestData:
+    kind: file
+    disablesourceinput: true
+    spec:
+      file: ./pkg/cmd/update_test.go
+      matchpattern: '// antisamy-markup-formatter:(.*)'
+targets:
+  updateTestData:
+    kind: file
+    spec:
+      file: ./pkg/cmd/update_test.go
+      matchpattern: '// antisamy-markup-formatter:(.*)'
+      replacepattern: '// antisamy-markup-formatter:{{ source `latestVersion` }}'

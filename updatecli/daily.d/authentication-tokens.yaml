@@ -1,0 +1,24 @@
+---
+title: Bump authentication-tokens version in test fixture data
+sources:
+  latestVersion:
+    kind: maven
+    spec:
+      url: "repo.jenkins-ci.org"
+      repository: "releases"
+      groupID: "org.jenkins-ci.plugins"
+      artifactID: "authentication-tokens"
+conditions:
+  checkForTestData:
+    kind: file
+    disablesourceinput: true
+    spec:
+      file: ./pkg/cmd/update_test.go
+      matchpattern: '// authentication-tokens:(.*)'
+targets:
+  updateTestData:
+    kind: file
+    spec:
+      file: ./pkg/cmd/update_test.go
+      matchpattern: '// authentication-tokens:(.*)'
+      replacepattern: '// authentication-tokens:{{ source `latestVersion` }}'
