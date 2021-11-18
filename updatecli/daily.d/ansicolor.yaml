@@ -1,0 +1,24 @@
+---
+title: Bump ansicolor version in test fixture data
+sources:
+  latestVersion:
+    kind: maven
+    spec:
+      url: "repo.jenkins-ci.org"
+      repository: "releases"
+      groupID: "org.jenkins-ci.plugins"
+      artifactID: "ansicolor"
+conditions:
+  checkForTestData:
+    kind: file
+    disablesourceinput: true
+    spec:
+      file: ./pkg/cmd/update_test.go
+      matchpattern: '// ansicolor:(.*)'
+targets:
+  updateTestData:
+    kind: file
+    spec:
+      file: ./pkg/cmd/update_test.go
+      matchpattern: '// ansicolor:(.*)'
+      replacepattern: '// ansicolor:{{ source `latestVersion` }}'
