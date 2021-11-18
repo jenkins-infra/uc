@@ -19,7 +19,7 @@ jobs:
         uses: updatecli/updatecli-action@v1
         with:
           command: diff
-          flags: "--config ./updatecli/updatecli.d --values ./updatecli/values.yaml"
+          flags: "--config ./updatecli/daily.d --values ./updatecli/values.yaml"
         env:
           UPDATECLI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Apply
@@ -27,6 +27,6 @@ jobs:
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
         with:
           command: apply
-          flags: "--config ./updatecli/updatecli.d --values ./updatecli/values.yaml"
+          flags: "--config ./updatecli/daily.d --values ./updatecli/values.yaml"
         env:
           UPDATECLI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
