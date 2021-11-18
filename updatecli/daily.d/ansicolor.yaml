@@ -17,8 +17,18 @@ conditions:
       matchpattern: '// ansicolor:(.*)'
 targets:
   updateTestData:
+    name: Bump ansicolor version in test fixture data
     kind: file
     spec:
       file: ./pkg/cmd/update_test.go
       matchpattern: '// ansicolor:(.*)'
       replacepattern: '// ansicolor:{{ source `latestVersion` }}'
+    scm:
+      github:
+        user: "{{ .github.user }}"
+        email: "{{ .github.email }}"
+        owner: "{{ .github.owner }}"
+        repository: "{{ .github.repository }}"
+        token: "{{ requiredEnv .github.token }}"
+        username: "{{ .github.username }}"
+        branch: "{{ .github.branch }}"
