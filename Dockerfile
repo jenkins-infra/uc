@@ -9,7 +9,7 @@ RUN curl -L -o /tmp/uc-${TARGETOS}-${TARGETARCH}.tar.gz https://github.com/jenki
       tar -xvzf /tmp/uc-${TARGETOS}-${TARGETARCH}.tar.gz -C /tmp && \
       chmod a+x /tmp/uc
 
-FROM --platform=${BUILDPLATFORM} alpine:3.14.2
+FROM --platform=${BUILDPLATFORM} alpine:3.14.3
 LABEL maintainer="Gareth Evans <gareth@bryncynfelin.co.uk>"
 
 COPY --from=build-stage0 /tmp/uc /usr/bin/uc
