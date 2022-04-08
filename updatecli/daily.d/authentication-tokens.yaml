@@ -1,34 +1,50 @@
----
 title: Bump authentication-tokens version in test fixture data
+
+scms:
+  default:
+    kind: github
+    spec:
+      user: "{{ .github.user }}"
+      email: "{{ .github.email }}"
+      owner: "{{ .github.owner }}"
+      repository: "{{ .github.repository }}"
+      token: "{{ requiredEnv .github.token }}"
+      username: "{{ .github.username }}"
+      branch: "{{ .github.branch }}"
+
 sources:
   latestVersion:
     kind: maven
     spec:
       url: "repo.jenkins-ci.org"
       repository: "releases"
-      groupID: "org.jenkins-ci.plugins"
-      artifactID: "authentication-tokens"
+      groupid: "org.jenkins-ci.plugins"
+      artifactid: "authentication-tokens"
+
 conditions:
   checkForTestData:
     kind: file
     disablesourceinput: true
     spec:
       file: ./pkg/cmd/update_test.go
-      matchpattern: '// authentication-tokens:(.*)'
+      matchpattern: "// authentication-tokens:(.*)"
+
 targets:
   updateTestData:
     kind: file
     name: Bump antisamy-markup-formatter version in test fixture data
     spec:
       file: ./pkg/cmd/update_test.go
-      matchpattern: '// authentication-tokens:(.*)'
-      replacepattern: '// authentication-tokens:{{ source `latestVersion` }}'
-    scm:
-      github:
-        user: "{{ .github.user }}"
-        email: "{{ .github.email }}"
-        owner: "{{ .github.owner }}"
-        repository: "{{ .github.repository }}"
-        token: "{{ requiredEnv .github.token }}"
-        username: "{{ .github.username }}"
-        branch: "{{ .github.branch }}"
+      matchpattern: "// authentication-tokens:(.*)"
+      replacepattern: '// authentication-tokens:{{ source "latestVersion" }}'
+    scmid: default
+
+pullrequests:
+  default:
+    kind: github
+    scmid: default
+    targets:
+      - updateTestData
+    spec:
+      labels:
+        - test-data
