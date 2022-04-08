@@ -1,0 +1,75 @@
+title: Bump Golang Version
+
+scms:
+  default:
+    kind: github
+    spec:
+      user: "{{ .github.user }}"
+      email: "{{ .github.email }}"
+      owner: "{{ .github.owner }}"
+      repository: "{{ .github.repository }}"
+      token: "{{ requiredEnv .github.token }}"
+      username: "{{ .github.username }}"
+      branch: "{{ .github.branch }}"
+
+sources:
+  latestGoVersion:
+    name: Get Latest Go Release
+    kind: githubRelease
+    spec:
+      owner: golang
+      repository: go
+      token: "{{ requiredEnv .github.token }}"
+      username: "{{ .github.username }}"
+      versionFilter:
+        kind: regex
+        pattern: 'go1\.(\d*)\.(\d*)$'
+    transformers:
+      - trimPrefix: go
+  gomod:
+    name: Update go.mod
+    kind: shell
+    depends_on:
+      - latestGoVersion
+    spec:
+      command: bash ./updatecli/scripts/updateGomodGoversion.sh ./go.mod {{ source "latestGoVersion" }}
+conditions:
+  workflowgo:
+    name: Ensure step is defined in Github workflow go.yml
+    kind: yaml
+    disablesourceinput: true
+    spec:
+      file: .github/workflows/go.yml
+      key: jobs.build.steps[0].id
+      value: go
+
+targets:
+  workflowgo:
+    name: '[go.yml] Update Golang version to {{ source "latestGoVersion" }}'
+    kind: yaml
+    sourceid: latestGoVersion
+    spec:
+      file: .github/workflows/go.yml
+      key: jobs.build.steps[0].with.go-version
+    scmid: default
+  go.mod:
+    name: '[go.mod] Update Golang version to {{ source "latestGoVersion" }}'
+    sourceid: gomod
+    kind: file
+    spec:
+      file: go.mod
+    scmid: default
+
+pullrequests:
+  default:
+    title: '[updatecli] Bump Golang version to {{ source "latestGoVersion" }}'
+    kind: github
+    scmid: default
+    targets:
+      - workflowgo
+      - go.mod
+    spec:
+      labels:
+        - chore
+        - dependencies
+        - golang
