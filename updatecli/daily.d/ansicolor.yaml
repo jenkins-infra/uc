@@ -1,34 +1,50 @@
----
 title: Bump ansicolor version in test fixture data
+
+scms:
+  default:
+    kind: github
+    spec:
+      user: "{{ .github.user }}"
+      email: "{{ .github.email }}"
+      owner: "{{ .github.owner }}"
+      repository: "{{ .github.repository }}"
+      token: "{{ requiredEnv .github.token }}"
+      username: "{{ .github.username }}"
+      branch: "{{ .github.branch }}"
+
 sources:
   latestVersion:
     kind: maven
     spec:
       url: "repo.jenkins-ci.org"
       repository: "releases"
-      groupID: "org.jenkins-ci.plugins"
-      artifactID: "ansicolor"
+      groupid: "org.jenkins-ci.plugins"
+      artifactid: "ansicolor"
+
 conditions:
   checkForTestData:
     kind: file
     disablesourceinput: true
     spec:
       file: ./pkg/cmd/update_test.go
-      matchpattern: '// ansicolor:(.*)'
+      matchpattern: "// ansicolor:(.*)"
+
 targets:
   updateTestData:
     name: Bump ansicolor version in test fixture data
     kind: file
     spec:
       file: ./pkg/cmd/update_test.go
-      matchpattern: '// ansicolor:(.*)'
-      replacepattern: '// ansicolor:{{ source `latestVersion` }}'
-    scm:
-      github:
-        user: "{{ .github.user }}"
-        email: "{{ .github.email }}"
-        owner: "{{ .github.owner }}"
-        repository: "{{ .github.repository }}"
-        token: "{{ requiredEnv .github.token }}"
-        username: "{{ .github.username }}"
-        branch: "{{ .github.branch }}"
+      matchpattern: "// ansicolor:(.*)"
+      replacepattern: '// ansicolor:{{ source "latestVersion" }}'
+    scmid: default
+
+pullrequests:
+  default:
+    kind: github
+    scmid: default
+    targets:
+      - updateTestData
+    spec:
+      labels:
+        - test-data

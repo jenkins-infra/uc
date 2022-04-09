@@ -1,34 +1,50 @@
----
 title: Bump antisamy-markup-formatter version in test fixture data
+
+scms:
+  default:
+    kind: github
+    spec:
+      user: "{{ .github.user }}"
+      email: "{{ .github.email }}"
+      owner: "{{ .github.owner }}"
+      repository: "{{ .github.repository }}"
+      token: "{{ requiredEnv .github.token }}"
+      username: "{{ .github.username }}"
+      branch: "{{ .github.branch }}"
+
 sources:
   latestVersion:
     kind: maven
     spec:
       url: "repo.jenkins-ci.org"
       repository: "releases"
-      groupID: "org.jenkins-ci.plugins"
-      artifactID: "antisamy-markup-formatter"
+      groupid: "org.jenkins-ci.plugins"
+      artifactid: "antisamy-markup-formatter"
+
 conditions:
   checkForTestData:
     kind: file
     disablesourceinput: true
     spec:
       file: ./pkg/cmd/update_test.go
-      matchpattern: '// antisamy-markup-formatter:(.*)'
+      matchpattern: "// antisamy-markup-formatter:(.*)"
+
 targets:
   updateTestData:
     kind: file
     name: Bump antisamy-markup-formatter version in test fixture data
     spec:
       file: ./pkg/cmd/update_test.go
-      matchpattern: '// antisamy-markup-formatter:(.*)'
-      replacepattern: '// antisamy-markup-formatter:{{ source `latestVersion` }}'
-    scm:
-      github:
-        user: "{{ .github.user }}"
-        email: "{{ .github.email }}"
-        owner: "{{ .github.owner }}"
-        repository: "{{ .github.repository }}"
-        token: "{{ requiredEnv .github.token }}"
-        username: "{{ .github.username }}"
-        branch: "{{ .github.branch }}"
+      matchpattern: "// antisamy-markup-formatter:(.*)"
+      replacepattern: '// antisamy-markup-formatter:{{ source "latestVersion" }}'
+    scmid: default
+
+pullrequests:
+  default:
+    kind: github
+    scmid: default
+    targets:
+      - updateTestData
+    spec:
+      labels:
+        - test-data
