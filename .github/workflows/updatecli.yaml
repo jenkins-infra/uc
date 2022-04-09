@@ -26,8 +26,8 @@ jobs:
         id: generate_token
         if: github.ref == 'refs/heads/main'
         with:
-          app_id: ${{ secrets.UPDATECLIBOT_APP_ID }}
-          private_key: ${{ secrets.UPDATECLIBOT_APP_PRIVKEY }}
+          app_id: ${{ secrets.JENKINS_ADMIN_APP_ID }}
+          private_key: ${{ secrets.JENKINS_ADMIN_APP_PRIVKEY }}
       - name: Apply
         uses: updatecli/updatecli-action@v1.30.0
         if: github.ref == 'refs/heads/main'
@@ -35,5 +35,4 @@ jobs:
           command: apply
           flags: "--config ./updatecli/daily.d --values ./updatecli/values.yaml"
         env:
-          UPDATECLI_GITHUB_ACTOR: ${{ secrets.UPDATECLI_BOT_GITHUB_ACTOR }}
           UPDATECLI_GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
